@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Geekdocs</title>
+    <link>https://opsbear2.github.io/python/</link>
+    <description>Recent content in Python on Geekdocs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 29 Jul 2022 10:39:26 +0800</lastBuildDate><atom:link href="https://opsbear2.github.io/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.foreword</title>
+      <link>https://opsbear2.github.io/python/1.foreword/</link>
+      <pubDate>Fri, 29 Jul 2022 10:39:26 +0800</pubDate>
+      
+      <guid>https://opsbear2.github.io/python/1.foreword/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
