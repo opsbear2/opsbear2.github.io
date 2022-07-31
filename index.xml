@@ -5,7 +5,18 @@
     <link>https://opsbear2.github.io/</link>
     <description>Recent content on Geekdocs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 29 Jul 2022 16:20:07 +0800</lastBuildDate><atom:link href="https://opsbear2.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jul 2022 14:29:33 +0800</lastBuildDate><atom:link href="https://opsbear2.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.openvpn部署文档</title>
+      <link>https://opsbear2.github.io/openvpn/1.quickstart/</link>
+      <pubDate>Sun, 31 Jul 2022 14:29:33 +0800</pubDate>
+      
+      <guid>https://opsbear2.github.io/openvpn/1.quickstart/</guid>
+      <description>1 部署服务端  1.1 服务端环境准备 1.2 修改配置文件   2 部署客户端  2.1 客户端环境准备 2.2 连接服务端   3 其他配置  3.1 客户端提速 3.2 登录认证   4 脚本库  4.1 openvpn安装脚本 4.2 checkpsw认证        1 部署服务端     1.1 服务端环境准备     安装环境
+服务端 centos 7.2*1 10.17.0.10 客户端 centos 7.2*1 10.50.5.10 使用一键安装脚本，交互输入说明如下，执行过程中一直回车即可
+sh openvpn-install.sh &amp;gt;IP address: #脚本自动捕获 &amp;gt;Protocol [1-2]:1 #选择默认的udp协议 &amp;gt;Port: 1194 #默认端口 &amp;gt;DNS [1-5]: 1 #默认DNS &amp;gt;Client name: client #客户端配置文件名字,按需修改 脚本运行完，执行service iptables save查看nat转发规则</description>
+    </item>
+    
     <item>
       <title>8.图片</title>
       <link>https://opsbear2.github.io/frontpage/8.images/</link>
