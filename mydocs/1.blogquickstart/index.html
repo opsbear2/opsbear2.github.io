@@ -1519,7 +1519,7 @@ MacOS   您的Mac已安装Homebrew的情况下，在终端执行  brew install h
 </span></span><span class="line"><span class="cl">drwxr-xr-x   <span class="m">4</span> bear2  staff   128B  <span class="m">7</span> <span class="m">31</span> 14:20 kubernetes
 </span></span><span class="line"><span class="cl">drwxr-xr-x   <span class="m">4</span> bear2  staff   128B  <span class="m">8</span>  <span class="m">1</span> 10:33 openvpn
 </span></span><span class="line"><span class="cl">drwxr-xr-x   <span class="m">4</span> bear2  staff   128B  <span class="m">7</span> <span class="m">31</span> 14:18 python
-</span></span></code></pre></div><p>启动本地站点，在http://localhost:1313/导航到你的网站</p>
+</span></span></code></pre></div><p>启动本地站点，访问http://localhost:1313/导航到你的网站</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># hugo server -D</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">                   <span class="p">|</span> EN
@@ -1586,7 +1586,7 @@ MacOS   您的Mac已安装Homebrew的情况下，在终端执行  brew install h
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">taxonomies</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">   <span class="nx">tag</span> <span class="p">=</span> <span class="s2">&#34;tags&#34;</span>
-</span></span></code></pre></div><p>更换自定义主题后需要重新构建静态页，重新启动本地环境访问站点查看效果</p>
+</span></span></code></pre></div><p>更换自定义主题后需要重新构建静态页，启动本地环境访问站点查看效果</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo -D  <span class="c1">#构建静态页</span>
 </span></span><span class="line"><span class="cl">hugo server -D <span class="c1">#启动本地站点</span>
 </span></span></code></pre></div><p>至此，本地站点环境搭建完成，更多资料见官方文档传送门🚪</p>
@@ -1631,7 +1631,7 @@ MacOS   您的Mac已安装Homebrew的情况下，在终端执行  brew install h
         </a>
     </h2>
 </div>
-<p>在构建静态页后，会在<code>~/public</code>存放网站内容，需要将这些资源推送至Github</p>
+<p>在构建静态页后，会在<code>~/public</code>目录存放网站内容，需要将这些资源推送至Github</p>
 <p>进入<code>~/public</code>,初始化本地仓库</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git init
 </span></span></code></pre></div><p>添加需要上传的文件</p>
@@ -1771,7 +1771,7 @@ MacOS   您的Mac已安装Homebrew的情况下，在终端执行  brew install h
 
 <blockquote class="gdoc-hint tip">
   <div class="gdoc-hint__title flex align-center"><i class="fa tip" title="Tip"></i></div>
-  <div class="gdoc-hint__text"><strong>create_article.sh</strong>脚本的line17<code>index.md</code>文件，Hugo安装完默认不创建，如果想使用脚本生成文章，需要单独创建，然后复制到博客目录下命名<code>_index.md</code>作为隐藏文件，该文件是博客目录的配置文件，可以再里面定义一些功能，例如自定义目录名称、窗口折叠、模块介绍等</div>
+  <div class="gdoc-hint__text"><strong>create_article.sh</strong>脚本的line17<code>index.md</code>文件，Hugo安装完默认不创建，如果想使用脚本生成文章，需要单独生成，然后复制到博客目录下命名<code>_index.md</code>作为隐藏文件，该文件是博客目录的配置文件，可以在里面定义一些功能，例如自定义目录名称、窗口折叠、模块介绍等</div>
 </blockquote>
 
 <p>index.md文件内容</p>
@@ -1809,7 +1809,7 @@ MacOS   您的Mac已安装Homebrew的情况下，在终端执行  brew install h
     </h2>
 </div>
 <p><strong>GitHub Pages</strong>+<strong>Hugo</strong>整体搭建流程简单，基于<strong>go</strong>语言编写的<strong>Hugo</strong>可以快速构建前端页面资源，由于后端是依托</p>
-<p><strong>GitHub</strong>，国内访问站点存在一定的网络延迟，为此可以配置CDN加速来提高网站的访问效率，当然你需要一个可用域名以及<strong>CloudFlare</strong>账号（白嫖CDN加速）</p>
+<p><strong>GitHub</strong>，国内访问站点存在一定的网络延迟，为此可以配置CDN加速来提高网站的访问效率，当然你需要一个可用域名以及<strong>CloudFlare</strong>账号（用于白嫖CDN加速）</p>
 
 
 
@@ -1855,19 +1855,23 @@ MacOS   您的Mac已安装Homebrew的情况下，在终端执行  brew install h
 <p><strong>加速原理</strong></p>
 <p>在CDN配置页面，开启代理后，访问站点会先经过CloudFlare的节点，Cloudflare将网站内容的副本存储在全球分布的数据中心的服务器上，使访问网站更快。当然这是CloudFlare提供的免费服务，生命不止，白嫖不息！</p>
 <p><strong>开启Https访问</strong></p>
-<p>添加完站点和CDN解析后，CloudFlare会免费提供一个<code>SSL/TLS</code>安全证书，需要调整以下配置，你的站点将开启更安全的Https访问</p>
+<p>添加完站点和CDN解析后，CloudFlare还会免费提供一个<code>SSL/TLS</code>安全证书，需要调整以下配置，你的站点将开启更安全的Https访问</p>
 <p><img
   src="https://cdn.jsdelivr.net/gh/opsbear2/ImagesForBlog@master/default/2022-08-01/20220801-203436.png"
   alt="image-20220801203436555"
   
 /></p>
-<p>使用签名证书</p>
+<ol>
+<li>使用签名证书</li>
+</ol>
 <p><img
   src="https://cdn.jsdelivr.net/gh/opsbear2/ImagesForBlog@master/default/2022-08-01/20220801-203711.png"
   alt="image-20220801203711328"
   
 /></p>
-<p>开启自动重写</p>
+<ol start="2">
+<li>开启自动重写</li>
+</ol>
 <p><img
   src="https://cdn.jsdelivr.net/gh/opsbear2/ImagesForBlog@master/default/2022-08-01/20220801-203510.png"
   alt="image-20220801203509941"
