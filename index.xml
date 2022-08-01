@@ -5,7 +5,25 @@
     <link>https://opsbear2.github.io/</link>
     <description>Recent content on Welcome to Bear2&#39;s Secret Garden 💬🐻💬</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 01 Aug 2022 17:36:58 +0800</lastBuildDate><atom:link href="https://opsbear2.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Aug 2022 22:01:36 +0800</lastBuildDate><atom:link href="https://opsbear2.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2.gpt图床搭建教程</title>
+      <link>https://opsbear2.github.io/mydocs/2.imagesbed/</link>
+      <pubDate>Mon, 01 Aug 2022 22:01:36 +0800</pubDate>
+      
+      <guid>https://opsbear2.github.io/mydocs/2.imagesbed/</guid>
+      <description>   1 项目介绍 2 Github创建仓库 3 安装Picgo      1 项目介绍     博客中的图片该如何展示，本文将介绍基于Github+Picgo+Typora搭建的免费图床，保姆级别的搭建教程如下
+ Q1：什么是Github+Picgo+Typora？
+  Github 是一个静态站点托管服务，直接将个人、组织或项目的页面托管于 GitHub 库或仓库 (repository) 中 Picgo 一个用于快速上传图片并获取图片 URL 链接的工具 Typora是一款轻便简洁的Markdown编辑器,支持即时渲染是它最大的特色  2 Github创建仓库     Github的仓库可以作为存放博客图片的后端，比起共享存储，自建nginx站点，它最大的特点是免费（白嫖
+ 创建仓库，设置为公有访问  创建token，用于Picgo访问  【Settings】-&amp;gt;【Developer settings】-&amp;gt;【Personal access tokens】
+点击创建新的token，至此Github配置到此结束
+3 安装Picgo       Picgo官网下载软件，或者从第三方软件源下载，例如
+https://www.macat.vip/?cat=&amp;s=picgo
+  配置Picgo
+安装完成后，初始化界面右侧点击配置，填写Github相关信息
+  </description>
+    </item>
+    
     <item>
       <title>1.基于hugo&#43;github搭建博客</title>
       <link>https://opsbear2.github.io/mydocs/1.blogquickstart/</link>
@@ -13,10 +31,10 @@
       
       <guid>https://opsbear2.github.io/mydocs/1.blogquickstart/</guid>
       <description>1 项目介绍 2 GitHub环境准备 3 安装Hugo 4 将网站推送至Github 5 添加文章 6 网站加速      1 项目介绍     本文介绍如何使用GitHub Pages和Hugo搭建个人博客
- Q1：什么是 GitHub Pages Hugo ？
+ Q1：什么是 GitHub Pages、Hugo ？
   GitHub Pages 是一个静态站点托管服务，直接将个人、组织或项目的页面托管于 GitHub 库或仓库 (repository) 中 Hugo 是一个用 Go 语言编写的静态站点生成器，它针对速度、易用性和可配置性进行了优化，快速灵活  2 GitHub环境准备     在有GitHub账号的基础上，新建一个仓库，库名为${username}.github.io
  GitHub 仓库必须为${username}.github.io，唯一值  3 安装Hugo     根据自己的操作系统，参考以下安装指南
-MacOS   您的Mac已安装Homebrew的情况下，在终端执行  brew install hugo 安装完成后，检查版本  hugo version   Windows  https://gohugo.</description>
+MacOS   你的Mac已安装Homebrew的情况下，在终端执行  brew install hugo 安装完成后，检查版本  hugo version   Windows  https://gohugo.</description>
     </item>
     
     <item>
