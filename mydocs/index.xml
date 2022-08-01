@@ -7,21 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 01 Aug 2022 22:01:36 +0800</lastBuildDate><atom:link href="https://opsbear2.github.io/mydocs/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2.gpt图床搭建教程</title>
+      <title>2.GPT图床搭建教程</title>
       <link>https://opsbear2.github.io/mydocs/2.imagesbed/</link>
       <pubDate>Mon, 01 Aug 2022 22:01:36 +0800</pubDate>
       
       <guid>https://opsbear2.github.io/mydocs/2.imagesbed/</guid>
-      <description>   1 项目介绍 2 Github创建仓库 3 安装Picgo      1 项目介绍     博客中的图片该如何展示，本文将介绍基于Github+Picgo+Typora搭建的免费图床，保姆级别的搭建教程如下
+      <description>1 项目介绍 2 Github创建仓库 3 安装Picgo 4 集成Typora      1 项目介绍     博客中的图片该如何展示，本文将介绍基于Github+Picgo+Typora搭建的免费图床，保姆级别的搭建教程如下
  Q1：什么是Github+Picgo+Typora？
-  Github 是一个静态站点托管服务，直接将个人、组织或项目的页面托管于 GitHub 库或仓库 (repository) 中 Picgo 一个用于快速上传图片并获取图片 URL 链接的工具 Typora是一款轻便简洁的Markdown编辑器,支持即时渲染是它最大的特色  2 Github创建仓库     Github的仓库可以作为存放博客图片的后端，比起共享存储，自建nginx站点，它最大的特点是免费（白嫖
- 创建仓库，设置为公有访问  创建token，用于Picgo访问  【Settings】-&amp;gt;【Developer settings】-&amp;gt;【Personal access tokens】
+  Github 是一个静态站点托管服务，直接将个人、组织或项目的页面托管于 GitHub 库或仓库 (repository) 中 Picgo 是一个用于快速上传图片并获取图片 URL 链接的工具 Typora 是一款轻便简洁的Markdown编辑器，支持即时渲染是它最大的特色  2 Github创建仓库     Github的仓库可以作为存放博客图片的后端，比起共享存储，自建nginx站点，它最大的特点是免费（白嫖
+1.创建仓库，设置为公有访问
+2.创建token，用于Picgo访问
+【Settings】-&amp;gt;【Developer settings】-&amp;gt;【Personal access tokens】
 点击创建新的token，至此Github配置到此结束
-3 安装Picgo       Picgo官网下载软件，或者从第三方软件源下载，例如
+3 安装Picgo     1.下载Picgo
+你可以从Picgo官网下载软件，或者从第三方软件源下载，例如
 https://www.macat.vip/?cat=&amp;s=picgo
-  配置Picgo
-安装完成后，初始化界面右侧点击配置，填写Github相关信息
-  </description>
+更多安装方式见Picgo官方文档传输门🚪 PicgoDocs   2.配置Picgo
+安装完成后，右侧点击【图床配置】，选择GitHub图床，填写以下相关信息
+ 1.</description>
     </item>
     
     <item>
