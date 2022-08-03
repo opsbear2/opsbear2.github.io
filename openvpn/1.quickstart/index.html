@@ -73,7 +73,7 @@ sh openvpn-install.sh &gt;IP address: #脚本自动捕获 &gt;Protocol [1-2]:1 #
       "url" : "https://opsbear2.github.io/openvpn/1.quickstart/",
       "headline": "1.openvpn部署文档",
       "description": "1 部署服务端  1.1 服务端环境准备 1.2 修改配置文件   2 部署客户端  2.1 客户端环境准备 2.2 连接服务端   3 其他配置  3.1 客户端提速 3.2 登录认证   4 脚本库  4.1 openvpn安装脚本 4.2 checkpsw认证        1 部署服务端     1.1 服务端环境准备     安装环境\n服务端 centos 7.2*1 10.17.0.10 客户端 centos 7.2*1 10.50.5.10 使用一键安装脚本，交互输入说明如下，执行过程中一直回车即可\nsh openvpn-install.sh \u003eIP address: #脚本自动捕获 \u003eProtocol [1-2]:1 #选择默认的udp协议 \u003ePort: 1194 #默认端口 \u003eDNS [1-5]: 1 #默认DNS \u003eClient name: client #客户端配置文件名字,按需修改 脚本运行完，执行service iptables save查看nat转发规则",
-      "wordCount" : "2324",
+      "wordCount" : "2296",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -1660,102 +1660,111 @@ sh openvpn-install.sh &gt;IP address: #脚本自动捕获 &gt;Protocol [1-2]:1 #
         </a>
     </h3>
 </div>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+<p>点击<strong>Expand</strong>查看更多</p>
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="9f9cd38b-1">
+    <span>Expand</span>
+    <span>↕</span>
+  </label>
+  <input id="9f9cd38b-1" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Detect Debian users running the script with &#34;sh&#34; instead of bash</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> readlink /proc/<span class="nv">$$</span>/exe <span class="p">|</span> grep -q <span class="s2">&#34;dash&#34;</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;This script needs to be run with bash, not sh&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Detect Debian users running the script with "sh" instead of bash</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> readlink /proc/<span class="nv">$$</span>/exe <span class="p">|</span> grep -q <span class="s2">"dash"</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"This script needs to be run with bash, not sh"</span>
 </span></span><span class="line"><span class="cl">	<span class="nb">exit</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$EUID</span><span class="s2">&#34;</span> -ne <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;Sorry, you need to run this as root&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$EUID</span><span class="s2">"</span> -ne <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"Sorry, you need to run this as root"</span>
 </span></span><span class="line"><span class="cl">	<span class="nb">exit</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> ! -e /dev/net/tun <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;The TUN device is not available
-</span></span></span><span class="line"><span class="cl"><span class="s2">You need to enable TUN before running this script&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"The TUN device is not available
+</span></span></span><span class="line"><span class="cl"><span class="s2">You need to enable TUN before running this script"</span>
 </span></span><span class="line"><span class="cl">	<span class="nb">exit</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> -e /etc/debian_version <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">	<span class="nv">OS</span><span class="o">=</span>debian
 </span></span><span class="line"><span class="cl">	<span class="nv">GROUPNAME</span><span class="o">=</span>nogroup
-</span></span><span class="line"><span class="cl">	<span class="nv">RCLOCAL</span><span class="o">=</span><span class="s1">&#39;/etc/rc.local&#39;</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">RCLOCAL</span><span class="o">=</span><span class="s1">'/etc/rc.local'</span>
 </span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="o">[[</span> -e /etc/centos-release <span class="o">||</span> -e /etc/redhat-release <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">	<span class="nv">OS</span><span class="o">=</span>centos
 </span></span><span class="line"><span class="cl">	<span class="nv">GROUPNAME</span><span class="o">=</span>nobody
-</span></span><span class="line"><span class="cl">	<span class="nv">RCLOCAL</span><span class="o">=</span><span class="s1">&#39;/etc/rc.d/rc.local&#39;</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">RCLOCAL</span><span class="o">=</span><span class="s1">'/etc/rc.d/rc.local'</span>
 </span></span><span class="line"><span class="cl"><span class="k">else</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;Looks like you aren&#39;t running this installer on Debian, Ubuntu or CentOS&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"Looks like you aren't running this installer on Debian, Ubuntu or CentOS"</span>
 </span></span><span class="line"><span class="cl">	<span class="nb">exit</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">newclient <span class="o">()</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">	<span class="c1"># Generates the custom client.ovpn</span>
 </span></span><span class="line"><span class="cl">	cp /etc/openvpn/client-common.txt ~/<span class="nv">$1</span>.ovpn
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;&lt;ca&gt;&#34;</span> &gt;&gt; ~/<span class="nv">$1</span>.ovpn
-</span></span><span class="line"><span class="cl">	cat /etc/openvpn/easy-rsa/pki/ca.crt &gt;&gt; ~/<span class="nv">$1</span>.ovpn
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;&lt;/ca&gt;&#34;</span> &gt;&gt; ~/<span class="nv">$1</span>.ovpn
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;&lt;cert&gt;&#34;</span> &gt;&gt; ~/<span class="nv">$1</span>.ovpn
-</span></span><span class="line"><span class="cl">	cat /etc/openvpn/easy-rsa/pki/issued/<span class="nv">$1</span>.crt &gt;&gt; ~/<span class="nv">$1</span>.ovpn
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;&lt;/cert&gt;&#34;</span> &gt;&gt; ~/<span class="nv">$1</span>.ovpn
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;&lt;key&gt;&#34;</span> &gt;&gt; ~/<span class="nv">$1</span>.ovpn
-</span></span><span class="line"><span class="cl">	cat /etc/openvpn/easy-rsa/pki/private/<span class="nv">$1</span>.key &gt;&gt; ~/<span class="nv">$1</span>.ovpn
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;&lt;/key&gt;&#34;</span> &gt;&gt; ~/<span class="nv">$1</span>.ovpn
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;&lt;tls-auth&gt;&#34;</span> &gt;&gt; ~/<span class="nv">$1</span>.ovpn
-</span></span><span class="line"><span class="cl">	cat /etc/openvpn/ta.key &gt;&gt; ~/<span class="nv">$1</span>.ovpn
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;&lt;/tls-auth&gt;&#34;</span> &gt;&gt; ~/<span class="nv">$1</span>.ovpn
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"<ca>"</span> >> ~/<span class="nv">$1</span>.ovpn
+</span></span><span class="line"><span class="cl">	cat /etc/openvpn/easy-rsa/pki/ca.crt >> ~/<span class="nv">$1</span>.ovpn
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"</ca>"</span> >> ~/<span class="nv">$1</span>.ovpn
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"<cert>"</span> >> ~/<span class="nv">$1</span>.ovpn
+</span></span><span class="line"><span class="cl">	cat /etc/openvpn/easy-rsa/pki/issued/<span class="nv">$1</span>.crt >> ~/<span class="nv">$1</span>.ovpn
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"</cert>"</span> >> ~/<span class="nv">$1</span>.ovpn
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"<key>"</span> >> ~/<span class="nv">$1</span>.ovpn
+</span></span><span class="line"><span class="cl">	cat /etc/openvpn/easy-rsa/pki/private/<span class="nv">$1</span>.key >> ~/<span class="nv">$1</span>.ovpn
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"</key>"</span> >> ~/<span class="nv">$1</span>.ovpn
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"<tls-auth>"</span> >> ~/<span class="nv">$1</span>.ovpn
+</span></span><span class="line"><span class="cl">	cat /etc/openvpn/ta.key >> ~/<span class="nv">$1</span>.ovpn
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"</tls-auth>"</span> >> ~/<span class="nv">$1</span>.ovpn
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> -e /etc/openvpn/server.conf <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">	<span class="k">while</span> :
 </span></span><span class="line"><span class="cl">	<span class="k">do</span>
 </span></span><span class="line"><span class="cl">	clear
-</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;Looks like OpenVPN is already installed.&#34;</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">"Looks like OpenVPN is already installed."</span>
 </span></span><span class="line"><span class="cl">		<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;What do you want to do?&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;   1) Add a new user&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;   2) Revoke an existing user&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;   3) Remove OpenVPN&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;   4) Exit&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="nb">read</span> -p <span class="s2">&#34;Select an option [1-4]: &#34;</span> option
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">"What do you want to do?"</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">"   1) Add a new user"</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">"   2) Revoke an existing user"</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">"   3) Remove OpenVPN"</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">"   4) Exit"</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">read</span> -p <span class="s2">"Select an option [1-4]: "</span> option
 </span></span><span class="line"><span class="cl">		<span class="k">case</span> <span class="nv">$option</span> in
 </span></span><span class="line"><span class="cl">			1<span class="o">)</span>
 </span></span><span class="line"><span class="cl">			<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">			<span class="nb">echo</span> <span class="s2">&#34;Tell me a name for the client certificate.&#34;</span>
-</span></span><span class="line"><span class="cl">			<span class="nb">echo</span> <span class="s2">&#34;Please, use one word only, no special characters.&#34;</span>
-</span></span><span class="line"><span class="cl">			<span class="nb">read</span> -p <span class="s2">&#34;Client name: &#34;</span> -e CLIENT
+</span></span><span class="line"><span class="cl">			<span class="nb">echo</span> <span class="s2">"Tell me a name for the client certificate."</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">echo</span> <span class="s2">"Please, use one word only, no special characters."</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">read</span> -p <span class="s2">"Client name: "</span> -e CLIENT
 </span></span><span class="line"><span class="cl">			<span class="nb">cd</span> /etc/openvpn/easy-rsa/
 </span></span><span class="line"><span class="cl">			<span class="nv">EASYRSA_CERT_EXPIRE</span><span class="o">=</span><span class="m">3650</span> ./easyrsa build-client-full <span class="nv">$CLIENT</span> nopass
 </span></span><span class="line"><span class="cl">			<span class="c1"># Generates the custom client.ovpn</span>
-</span></span><span class="line"><span class="cl">			newclient <span class="s2">&#34;</span><span class="nv">$CLIENT</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">			newclient <span class="s2">"</span><span class="nv">$CLIENT</span><span class="s2">"</span>
 </span></span><span class="line"><span class="cl">			<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">			<span class="nb">echo</span> <span class="s2">&#34;Client </span><span class="nv">$CLIENT</span><span class="s2"> added, configuration is available at:&#34;</span> ~/<span class="s2">&#34;</span><span class="nv">$CLIENT</span><span class="s2">.ovpn&#34;</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">echo</span> <span class="s2">"Client </span><span class="nv">$CLIENT</span><span class="s2"> added, configuration is available at:"</span> ~/<span class="s2">"</span><span class="nv">$CLIENT</span><span class="s2">.ovpn"</span>
 </span></span><span class="line"><span class="cl">			<span class="nb">exit</span>
 </span></span><span class="line"><span class="cl">			<span class="p">;;</span>
 </span></span><span class="line"><span class="cl">			2<span class="o">)</span>
 </span></span><span class="line"><span class="cl">			<span class="c1"># This option could be documented a bit better and maybe even be simplified</span>
 </span></span><span class="line"><span class="cl">			<span class="c1"># ...but what can I say, I want some sleep too</span>
-</span></span><span class="line"><span class="cl">			<span class="nv">NUMBEROFCLIENTS</span><span class="o">=</span><span class="k">$(</span>tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt <span class="p">|</span> grep -c <span class="s2">&#34;^V&#34;</span><span class="k">)</span>
-</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$NUMBEROFCLIENTS</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">			<span class="nv">NUMBEROFCLIENTS</span><span class="o">=</span><span class="k">$(</span>tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt <span class="p">|</span> grep -c <span class="s2">"^V"</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$NUMBEROFCLIENTS</span><span class="s2">"</span> <span class="o">=</span> <span class="s1">'0'</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">				<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">				<span class="nb">echo</span> <span class="s2">&#34;You have no existing clients!&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">echo</span> <span class="s2">"You have no existing clients!"</span>
 </span></span><span class="line"><span class="cl">				<span class="nb">exit</span>
 </span></span><span class="line"><span class="cl">			<span class="k">fi</span>
 </span></span><span class="line"><span class="cl">			<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">			<span class="nb">echo</span> <span class="s2">&#34;Select the existing client certificate you want to revoke:&#34;</span>
-</span></span><span class="line"><span class="cl">			tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt <span class="p">|</span> grep <span class="s2">&#34;^V&#34;</span> <span class="p">|</span> cut -d <span class="s1">&#39;=&#39;</span> -f <span class="m">2</span> <span class="p">|</span> nl -s <span class="s1">&#39;) &#39;</span>
-</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$NUMBEROFCLIENTS</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="cl">				<span class="nb">read</span> -p <span class="s2">&#34;Select one client [1]: &#34;</span> CLIENTNUMBER
+</span></span><span class="line"><span class="cl">			<span class="nb">echo</span> <span class="s2">"Select the existing client certificate you want to revoke:"</span>
+</span></span><span class="line"><span class="cl">			tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt <span class="p">|</span> grep <span class="s2">"^V"</span> <span class="p">|</span> cut -d <span class="s1">'='</span> -f <span class="m">2</span> <span class="p">|</span> nl -s <span class="s1">') '</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$NUMBEROFCLIENTS</span><span class="s2">"</span> <span class="o">=</span> <span class="s1">'1'</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">read</span> -p <span class="s2">"Select one client [1]: "</span> CLIENTNUMBER
 </span></span><span class="line"><span class="cl">			<span class="k">else</span>
-</span></span><span class="line"><span class="cl">				<span class="nb">read</span> -p <span class="s2">&#34;Select one client [1-</span><span class="nv">$NUMBEROFCLIENTS</span><span class="s2">]: &#34;</span> CLIENTNUMBER
+</span></span><span class="line"><span class="cl">				<span class="nb">read</span> -p <span class="s2">"Select one client [1-</span><span class="nv">$NUMBEROFCLIENTS</span><span class="s2">]: "</span> CLIENTNUMBER
 </span></span><span class="line"><span class="cl">			<span class="k">fi</span>
-</span></span><span class="line"><span class="cl">			<span class="nv">CLIENT</span><span class="o">=</span><span class="k">$(</span>tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt <span class="p">|</span> grep <span class="s2">&#34;^V&#34;</span> <span class="p">|</span> cut -d <span class="s1">&#39;=&#39;</span> -f <span class="m">2</span> <span class="p">|</span> sed -n <span class="s2">&#34;</span><span class="nv">$CLIENTNUMBER</span><span class="s2">&#34;</span>p<span class="k">)</span>
+</span></span><span class="line"><span class="cl">			<span class="nv">CLIENT</span><span class="o">=</span><span class="k">$(</span>tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt <span class="p">|</span> grep <span class="s2">"^V"</span> <span class="p">|</span> cut -d <span class="s1">'='</span> -f <span class="m">2</span> <span class="p">|</span> sed -n <span class="s2">"</span><span class="nv">$CLIENTNUMBER</span><span class="s2">"</span>p<span class="k">)</span>
 </span></span><span class="line"><span class="cl">			<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">			<span class="nb">read</span> -p <span class="s2">&#34;Do you really want to revoke access for client </span><span class="nv">$CLIENT</span><span class="s2">? [y/N]: &#34;</span> -e REVOKE
-</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$REVOKE</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span> <span class="o">||</span> <span class="s2">&#34;</span><span class="nv">$REVOKE</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s1">&#39;Y&#39;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">read</span> -p <span class="s2">"Do you really want to revoke access for client </span><span class="nv">$CLIENT</span><span class="s2">? [y/N]: "</span> -e REVOKE
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$REVOKE</span><span class="s2">"</span> <span class="o">=</span> <span class="s1">'y'</span> <span class="o">||</span> <span class="s2">"</span><span class="nv">$REVOKE</span><span class="s2">"</span> <span class="o">=</span> <span class="s1">'Y'</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">				<span class="nb">cd</span> /etc/openvpn/easy-rsa/
 </span></span><span class="line"><span class="cl">				./easyrsa --batch revoke <span class="nv">$CLIENT</span>
 </span></span><span class="line"><span class="cl">				<span class="nv">EASYRSA_CRL_DAYS</span><span class="o">=</span><span class="m">3650</span> ./easyrsa gen-crl
@@ -1767,21 +1776,21 @@ sh openvpn-install.sh &gt;IP address: #脚本自动捕获 &gt;Protocol [1-2]:1 #
 </span></span><span class="line"><span class="cl">				<span class="c1"># CRL is read with each client connection, when OpenVPN is dropped to nobody</span>
 </span></span><span class="line"><span class="cl">				chown nobody:<span class="nv">$GROUPNAME</span> /etc/openvpn/crl.pem
 </span></span><span class="line"><span class="cl">				<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">				<span class="nb">echo</span> <span class="s2">&#34;Certificate for client </span><span class="nv">$CLIENT</span><span class="s2"> revoked!&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">echo</span> <span class="s2">"Certificate for client </span><span class="nv">$CLIENT</span><span class="s2"> revoked!"</span>
 </span></span><span class="line"><span class="cl">			<span class="k">else</span>
 </span></span><span class="line"><span class="cl">				<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">				<span class="nb">echo</span> <span class="s2">&#34;Certificate revocation for client </span><span class="nv">$CLIENT</span><span class="s2"> aborted!&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">echo</span> <span class="s2">"Certificate revocation for client </span><span class="nv">$CLIENT</span><span class="s2"> aborted!"</span>
 </span></span><span class="line"><span class="cl">			<span class="k">fi</span>
 </span></span><span class="line"><span class="cl">			<span class="nb">exit</span>
 </span></span><span class="line"><span class="cl">			<span class="p">;;</span>
 </span></span><span class="line"><span class="cl">			3<span class="o">)</span>
 </span></span><span class="line"><span class="cl">			<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">			<span class="nb">read</span> -p <span class="s2">&#34;Do you really want to remove OpenVPN? [y/N]: &#34;</span> -e REMOVE
-</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$REMOVE</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span> <span class="o">||</span> <span class="s2">&#34;</span><span class="nv">$REMOVE</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s1">&#39;Y&#39;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="cl">				<span class="nv">PORT</span><span class="o">=</span><span class="k">$(</span>grep <span class="s1">&#39;^port &#39;</span> /etc/openvpn/server.conf <span class="p">|</span> cut -d <span class="s2">&#34; &#34;</span> -f 2<span class="k">)</span>
-</span></span><span class="line"><span class="cl">				<span class="nv">PROTOCOL</span><span class="o">=</span><span class="k">$(</span>grep <span class="s1">&#39;^proto &#39;</span> /etc/openvpn/server.conf <span class="p">|</span> cut -d <span class="s2">&#34; &#34;</span> -f 2<span class="k">)</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">read</span> -p <span class="s2">"Do you really want to remove OpenVPN? [y/N]: "</span> -e REMOVE
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$REMOVE</span><span class="s2">"</span> <span class="o">=</span> <span class="s1">'y'</span> <span class="o">||</span> <span class="s2">"</span><span class="nv">$REMOVE</span><span class="s2">"</span> <span class="o">=</span> <span class="s1">'Y'</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">				<span class="nv">PORT</span><span class="o">=</span><span class="k">$(</span>grep <span class="s1">'^port '</span> /etc/openvpn/server.conf <span class="p">|</span> cut -d <span class="s2">" "</span> -f 2<span class="k">)</span>
+</span></span><span class="line"><span class="cl">				<span class="nv">PROTOCOL</span><span class="o">=</span><span class="k">$(</span>grep <span class="s1">'^proto '</span> /etc/openvpn/server.conf <span class="p">|</span> cut -d <span class="s2">" "</span> -f 2<span class="k">)</span>
 </span></span><span class="line"><span class="cl">				<span class="k">if</span> pgrep firewalld<span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="cl">					<span class="nv">IP</span><span class="o">=</span><span class="k">$(</span>firewall-cmd --direct --get-rules ipv4 nat POSTROUTING <span class="p">|</span> grep <span class="s1">&#39;\-s 10.8.0.0/24 &#39;</span><span class="s2">&#34;&#39;&#34;</span><span class="s1">&#39;!&#39;</span><span class="s2">&#34;&#39;&#34;</span><span class="s1">&#39; -d 10.8.0.0/24 -j SNAT --to &#39;</span> <span class="p">|</span> cut -d <span class="s2">&#34; &#34;</span> -f 10<span class="k">)</span>
+</span></span><span class="line"><span class="cl">					<span class="nv">IP</span><span class="o">=</span><span class="k">$(</span>firewall-cmd --direct --get-rules ipv4 nat POSTROUTING <span class="p">|</span> grep <span class="s1">'\-s 10.8.0.0/24 '</span><span class="s2">"'"</span><span class="s1">'!'</span><span class="s2">"'"</span><span class="s1">' -d 10.8.0.0/24 -j SNAT --to '</span> <span class="p">|</span> cut -d <span class="s2">" "</span> -f 10<span class="k">)</span>
 </span></span><span class="line"><span class="cl">					<span class="c1"># Using both permanent and not permanent rules to avoid a firewalld reload.</span>
 </span></span><span class="line"><span class="cl">					firewall-cmd --zone<span class="o">=</span>public --remove-port<span class="o">=</span><span class="nv">$PORT</span>/<span class="nv">$PROTOCOL</span>
 </span></span><span class="line"><span class="cl">					firewall-cmd --zone<span class="o">=</span>trusted --remove-source<span class="o">=</span>10.8.0.0/24
@@ -1790,22 +1799,22 @@ sh openvpn-install.sh &gt;IP address: #脚本自动捕获 &gt;Protocol [1-2]:1 #
 </span></span><span class="line"><span class="cl">					firewall-cmd --direct --remove-rule ipv4 nat POSTROUTING <span class="m">0</span> -s 10.8.0.0/24 ! -d 10.8.0.0/24 -j SNAT --to <span class="nv">$IP</span>
 </span></span><span class="line"><span class="cl">					firewall-cmd --permanent --direct --remove-rule ipv4 nat POSTROUTING <span class="m">0</span> -s 10.8.0.0/24 ! -d 10.8.0.0/24 -j SNAT --to <span class="nv">$IP</span>
 </span></span><span class="line"><span class="cl">				<span class="k">else</span>
-</span></span><span class="line"><span class="cl">					<span class="nv">IP</span><span class="o">=</span><span class="k">$(</span>grep <span class="s1">&#39;iptables -t nat -A POSTROUTING -s 10.8.0.0/24 ! -d 10.8.0.0/24 -j SNAT --to &#39;</span> <span class="nv">$RCLOCAL</span> <span class="p">|</span> cut -d <span class="s2">&#34; &#34;</span> -f 14<span class="k">)</span>
+</span></span><span class="line"><span class="cl">					<span class="nv">IP</span><span class="o">=</span><span class="k">$(</span>grep <span class="s1">'iptables -t nat -A POSTROUTING -s 10.8.0.0/24 ! -d 10.8.0.0/24 -j SNAT --to '</span> <span class="nv">$RCLOCAL</span> <span class="p">|</span> cut -d <span class="s2">" "</span> -f 14<span class="k">)</span>
 </span></span><span class="line"><span class="cl">					iptables -t nat -D POSTROUTING -s 10.8.0.0/24 ! -d 10.8.0.0/24 -j SNAT --to <span class="nv">$IP</span>
-</span></span><span class="line"><span class="cl">					sed -i <span class="s1">&#39;/iptables -t nat -A POSTROUTING -s 10.8.0.0\/24 ! -d 10.8.0.0\/24 -j SNAT --to /d&#39;</span> <span class="nv">$RCLOCAL</span>
-</span></span><span class="line"><span class="cl">					<span class="k">if</span> iptables -L -n <span class="p">|</span> grep -qE <span class="s1">&#39;^ACCEPT&#39;</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">					sed -i <span class="s1">'/iptables -t nat -A POSTROUTING -s 10.8.0.0\/24 ! -d 10.8.0.0\/24 -j SNAT --to /d'</span> <span class="nv">$RCLOCAL</span>
+</span></span><span class="line"><span class="cl">					<span class="k">if</span> iptables -L -n <span class="p">|</span> grep -qE <span class="s1">'^ACCEPT'</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">						iptables -D INPUT -p <span class="nv">$PROTOCOL</span> --dport <span class="nv">$PORT</span> -j ACCEPT
 </span></span><span class="line"><span class="cl">						iptables -D FORWARD -s 10.8.0.0/24 -j ACCEPT
 </span></span><span class="line"><span class="cl">						iptables -D FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
-</span></span><span class="line"><span class="cl">						sed -i <span class="s2">&#34;/iptables -I INPUT -p </span><span class="nv">$PROTOCOL</span><span class="s2"> --dport </span><span class="nv">$PORT</span><span class="s2"> -j ACCEPT/d&#34;</span> <span class="nv">$RCLOCAL</span>
-</span></span><span class="line"><span class="cl">						sed -i <span class="s2">&#34;/iptables -I FORWARD -s 10.8.0.0\/24 -j ACCEPT/d&#34;</span> <span class="nv">$RCLOCAL</span>
-</span></span><span class="line"><span class="cl">						sed -i <span class="s2">&#34;/iptables -I FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT/d&#34;</span> <span class="nv">$RCLOCAL</span>
+</span></span><span class="line"><span class="cl">						sed -i <span class="s2">"/iptables -I INPUT -p </span><span class="nv">$PROTOCOL</span><span class="s2"> --dport </span><span class="nv">$PORT</span><span class="s2"> -j ACCEPT/d"</span> <span class="nv">$RCLOCAL</span>
+</span></span><span class="line"><span class="cl">						sed -i <span class="s2">"/iptables -I FORWARD -s 10.8.0.0\/24 -j ACCEPT/d"</span> <span class="nv">$RCLOCAL</span>
+</span></span><span class="line"><span class="cl">						sed -i <span class="s2">"/iptables -I FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT/d"</span> <span class="nv">$RCLOCAL</span>
 </span></span><span class="line"><span class="cl">					<span class="k">fi</span>
 </span></span><span class="line"><span class="cl">				<span class="k">fi</span>
-</span></span><span class="line"><span class="cl">				<span class="k">if</span> sestatus 2&gt;/dev/null <span class="p">|</span> grep <span class="s2">&#34;Current mode&#34;</span> <span class="p">|</span> grep -q <span class="s2">&#34;enforcing&#34;</span> <span class="o">&amp;&amp;</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$PORT</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s1">&#39;1194&#39;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">				<span class="k">if</span> sestatus 2>/dev/null <span class="p">|</span> grep <span class="s2">"Current mode"</span> <span class="p">|</span> grep -q <span class="s2">"enforcing"</span> <span class="o">&&</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$PORT</span><span class="s2">"</span> !<span class="o">=</span> <span class="s1">'1194'</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">					semanage port -d -t openvpn_port_t -p <span class="nv">$PROTOCOL</span> <span class="nv">$PORT</span>
 </span></span><span class="line"><span class="cl">				<span class="k">fi</span>
-</span></span><span class="line"><span class="cl">				<span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$OS</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s1">&#39;debian&#39;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">				<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$OS</span><span class="s2">"</span> <span class="o">=</span> <span class="s1">'debian'</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">					apt-get remove --purge -y openvpn
 </span></span><span class="line"><span class="cl">				<span class="k">else</span>
 </span></span><span class="line"><span class="cl">					yum remove openvpn -y
@@ -1813,10 +1822,10 @@ sh openvpn-install.sh &gt;IP address: #脚本自动捕获 &gt;Protocol [1-2]:1 #
 </span></span><span class="line"><span class="cl">				rm -rf /etc/openvpn
 </span></span><span class="line"><span class="cl">				rm -f /etc/sysctl.d/30-openvpn-forward.conf
 </span></span><span class="line"><span class="cl">				<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">				<span class="nb">echo</span> <span class="s2">&#34;OpenVPN removed!&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">echo</span> <span class="s2">"OpenVPN removed!"</span>
 </span></span><span class="line"><span class="cl">			<span class="k">else</span>
 </span></span><span class="line"><span class="cl">				<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">				<span class="nb">echo</span> <span class="s2">&#34;Removal aborted!&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">echo</span> <span class="s2">"Removal aborted!"</span>
 </span></span><span class="line"><span class="cl">			<span class="k">fi</span>
 </span></span><span class="line"><span class="cl">			<span class="nb">exit</span>
 </span></span><span class="line"><span class="cl">			<span class="p">;;</span>
@@ -1825,28 +1834,28 @@ sh openvpn-install.sh &gt;IP address: #脚本自动捕获 &gt;Protocol [1-2]:1 #
 </span></span><span class="line"><span class="cl">	<span class="k">done</span>
 </span></span><span class="line"><span class="cl"><span class="k">else</span>
 </span></span><span class="line"><span class="cl">	clear
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s1">&#39;Welcome to this OpenVPN &#34;road warrior&#34; installer!&#39;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s1">'Welcome to this OpenVPN "road warrior" installer!'</span>
 </span></span><span class="line"><span class="cl">	<span class="nb">echo</span>
 </span></span><span class="line"><span class="cl">	<span class="c1"># OpenVPN setup and first user creation</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;I need to ask you a few questions before starting the setup.&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;You can leave the default options and just press enter if you are ok with them.&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"I need to ask you a few questions before starting the setup."</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"You can leave the default options and just press enter if you are ok with them."</span>
 </span></span><span class="line"><span class="cl">	<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;First, provide the IPv4 address of the network interface you want OpenVPN&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;listening to.&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"First, provide the IPv4 address of the network interface you want OpenVPN"</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"listening to."</span>
 </span></span><span class="line"><span class="cl">	<span class="c1"># Autodetect IP address and pre-fill for the user</span>
-</span></span><span class="line"><span class="cl">	<span class="nv">IP</span><span class="o">=</span><span class="k">$(</span>ip addr <span class="p">|</span> grep <span class="s1">&#39;inet&#39;</span> <span class="p">|</span> grep -v inet6 <span class="p">|</span> grep -vE <span class="s1">&#39;127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}&#39;</span> <span class="p">|</span> grep -oE <span class="s1">&#39;[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}&#39;</span> <span class="p">|</span> head -1<span class="k">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">read</span> -p <span class="s2">&#34;IP address: &#34;</span> -e -i <span class="nv">$IP</span> IP
+</span></span><span class="line"><span class="cl">	<span class="nv">IP</span><span class="o">=</span><span class="k">$(</span>ip addr <span class="p">|</span> grep <span class="s1">'inet'</span> <span class="p">|</span> grep -v inet6 <span class="p">|</span> grep -vE <span class="s1">'127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'</span> <span class="p">|</span> grep -oE <span class="s1">'[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'</span> <span class="p">|</span> head -1<span class="k">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">read</span> -p <span class="s2">"IP address: "</span> -e -i <span class="nv">$IP</span> IP
 </span></span><span class="line"><span class="cl">	<span class="c1"># If $IP is a private IP address, the server must be behind NAT</span>
-</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$IP</span><span class="s2">&#34;</span> <span class="p">|</span> grep -qE <span class="s1">&#39;^(10\.|172\.1[6789]\.|172\.2[0-9]\.|172\.3[01]\.|192\.168)&#39;</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$IP</span><span class="s2">"</span> <span class="p">|</span> grep -qE <span class="s1">'^(10\.|172\.1[6789]\.|172\.2[0-9]\.|172\.3[01]\.|192\.168)'</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">		<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;This server is behind NAT. What is the public IPv4 address or hostname?&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="nb">read</span> -p <span class="s2">&#34;Public IP address / hostname: &#34;</span> -e PUBLICIP
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s2">"This server is behind NAT. What is the public IPv4 address or hostname?"</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">read</span> -p <span class="s2">"Public IP address / hostname: "</span> -e PUBLICIP
 </span></span><span class="line"><span class="cl">	<span class="k">fi</span>
 </span></span><span class="line"><span class="cl">	<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;Which protocol do you want for OpenVPN connections?&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;   1) UDP (recommended)&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;   2) TCP&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">read</span> -p <span class="s2">&#34;Protocol [1-2]: &#34;</span> -e -i <span class="m">1</span> PROTOCOL
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"Which protocol do you want for OpenVPN connections?"</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"   1) UDP (recommended)"</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"   2) TCP"</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">read</span> -p <span class="s2">"Protocol [1-2]: "</span> -e -i <span class="m">1</span> PROTOCOL
 </span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="nv">$PROTOCOL</span> in
 </span></span><span class="line"><span class="cl">		1<span class="o">)</span>
 </span></span><span class="line"><span class="cl">		<span class="nv">PROTOCOL</span><span class="o">=</span>udp
@@ -1856,24 +1865,24 @@ sh openvpn-install.sh &gt;IP address: #脚本自动捕获 &gt;Protocol [1-2]:1 #
 </span></span><span class="line"><span class="cl">		<span class="p">;;</span>
 </span></span><span class="line"><span class="cl">	<span class="k">esac</span>
 </span></span><span class="line"><span class="cl">	<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;What port do you want OpenVPN listening to?&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">read</span> -p <span class="s2">&#34;Port: &#34;</span> -e -i <span class="m">1194</span> PORT
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"What port do you want OpenVPN listening to?"</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">read</span> -p <span class="s2">"Port: "</span> -e -i <span class="m">1194</span> PORT
 </span></span><span class="line"><span class="cl">	<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;Which DNS do you want to use with the VPN?&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;   1) Current system resolvers&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;   2) 1.1.1.1&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;   3) Google&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;   4) OpenDNS&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;   5) Verisign&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">read</span> -p <span class="s2">&#34;DNS [1-5]: &#34;</span> -e -i <span class="m">1</span> DNS
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"Which DNS do you want to use with the VPN?"</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"   1) Current system resolvers"</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"   2) 1.1.1.1"</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"   3) Google"</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"   4) OpenDNS"</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"   5) Verisign"</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">read</span> -p <span class="s2">"DNS [1-5]: "</span> -e -i <span class="m">1</span> DNS
 </span></span><span class="line"><span class="cl">	<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;Finally, tell me your name for the client certificate.&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;Please, use one word only, no special characters.&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">read</span> -p <span class="s2">&#34;Client name: &#34;</span> -e -i client CLIENT
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"Finally, tell me your name for the client certificate."</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"Please, use one word only, no special characters."</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">read</span> -p <span class="s2">"Client name: "</span> -e -i client CLIENT
 </span></span><span class="line"><span class="cl">	<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;Okay, that was all I needed. We are ready to set up your OpenVPN server now.&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">read</span> -n1 -r -p <span class="s2">&#34;Press any key to continue...&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$OS</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s1">&#39;debian&#39;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"Okay, that was all I needed. We are ready to set up your OpenVPN server now."</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">read</span> -n1 -r -p <span class="s2">"Press any key to continue..."</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$OS</span><span class="s2">"</span> <span class="o">=</span> <span class="s1">'debian'</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">		apt-get update
 </span></span><span class="line"><span class="cl">		apt-get install openvpn iptables openssl ca-certificates -y
 </span></span><span class="line"><span class="cl">	<span class="k">else</span>
@@ -1882,8 +1891,8 @@ sh openvpn-install.sh &gt;IP address: #脚本自动捕获 &gt;Protocol [1-2]:1 #
 </span></span><span class="line"><span class="cl">		yum install openvpn iptables openssl ca-certificates -y
 </span></span><span class="line"><span class="cl">	<span class="k">fi</span>
 </span></span><span class="line"><span class="cl">	<span class="c1"># Get easy-rsa</span>
-</span></span><span class="line"><span class="cl">	<span class="nv">EASYRSAURL</span><span class="o">=</span><span class="s1">&#39;https://github.com/OpenVPN/easy-rsa/releases/download/v3.0.5/EasyRSA-nix-3.0.5.tgz&#39;</span>
-</span></span><span class="line"><span class="cl">	wget -O ~/easyrsa.tgz <span class="s2">&#34;</span><span class="nv">$EASYRSAURL</span><span class="s2">&#34;</span> 2&gt;/dev/null <span class="o">||</span> curl -Lo ~/easyrsa.tgz <span class="s2">&#34;</span><span class="nv">$EASYRSAURL</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">EASYRSAURL</span><span class="o">=</span><span class="s1">'https://github.com/OpenVPN/easy-rsa/releases/download/v3.0.5/EasyRSA-nix-3.0.5.tgz'</span>
+</span></span><span class="line"><span class="cl">	wget -O ~/easyrsa.tgz <span class="s2">"</span><span class="nv">$EASYRSAURL</span><span class="s2">"</span> 2>/dev/null <span class="o">||</span> curl -Lo ~/easyrsa.tgz <span class="s2">"</span><span class="nv">$EASYRSAURL</span><span class="s2">"</span>
 </span></span><span class="line"><span class="cl">	tar xzf ~/easyrsa.tgz -C ~/
 </span></span><span class="line"><span class="cl">	mv ~/EasyRSA-3.0.5/ /etc/openvpn/
 </span></span><span class="line"><span class="cl">	mv /etc/openvpn/EasyRSA-3.0.5/ /etc/openvpn/easy-rsa/
@@ -1903,16 +1912,16 @@ sh openvpn-install.sh &gt;IP address: #脚本自动捕获 &gt;Protocol [1-2]:1 #
 </span></span><span class="line"><span class="cl">	<span class="c1"># Generate key for tls-auth</span>
 </span></span><span class="line"><span class="cl">	openvpn --genkey --secret /etc/openvpn/ta.key
 </span></span><span class="line"><span class="cl">	<span class="c1"># Create the DH parameters file using the predefined ffdhe2048 group</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s1">&#39;-----BEGIN DH PARAMETERS-----
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s1">'-----BEGIN DH PARAMETERS-----
 </span></span></span><span class="line"><span class="cl"><span class="s1">MIIBCAKCAQEA//////////+t+FRYortKmq/cViAnPTzx2LnFg84tNpWp4TZBFGQz
 </span></span></span><span class="line"><span class="cl"><span class="s1">+8yTnc4kmz75fS/jY2MMddj2gbICrsRhetPfHtXV/WVhJDP1H18GbtCFY2VVPe0a
 </span></span></span><span class="line"><span class="cl"><span class="s1">87VXE15/V8k1mE8McODmi3fipona8+/och3xWKE2rec1MKzKT0g6eXq8CrGCsyT7
 </span></span></span><span class="line"><span class="cl"><span class="s1">YdEIqUuyyOP7uWrat2DX9GgdT0Kj3jlN9K5W7edjcrsZCwenyO4KbXCeAvzhzffi
 </span></span></span><span class="line"><span class="cl"><span class="s1">7MA0BM0oNC9hkXL+nOmFg/+OTxIy7vKBg8P+OxtMb61zO7X8vC7CIAXFjvGDfRaD
 </span></span></span><span class="line"><span class="cl"><span class="s1">ssbzSibBsu/6iGtCOGEoXJf//////////wIBAg==
-</span></span></span><span class="line"><span class="cl"><span class="s1">-----END DH PARAMETERS-----&#39;</span> &gt; /etc/openvpn/dh.pem
+</span></span></span><span class="line"><span class="cl"><span class="s1">-----END DH PARAMETERS-----'</span> > /etc/openvpn/dh.pem
 </span></span><span class="line"><span class="cl">	<span class="c1"># Generate server.conf</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;port </span><span class="nv">$PORT</span><span class="s2">
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"port </span><span class="nv">$PORT</span><span class="s2">
 </span></span></span><span class="line"><span class="cl"><span class="s2">proto </span><span class="nv">$PROTOCOL</span><span class="s2">
 </span></span></span><span class="line"><span class="cl"><span class="s2">dev tun
 </span></span></span><span class="line"><span class="cl"><span class="s2">sndbuf 0
@@ -1925,41 +1934,41 @@ sh openvpn-install.sh &gt;IP address: #脚本自动捕获 &gt;Protocol [1-2]:1 #
 </span></span></span><span class="line"><span class="cl"><span class="s2">tls-auth ta.key 0
 </span></span></span><span class="line"><span class="cl"><span class="s2">topology subnet
 </span></span></span><span class="line"><span class="cl"><span class="s2">server 10.8.0.0 255.255.255.0
-</span></span></span><span class="line"><span class="cl"><span class="s2">ifconfig-pool-persist ipp.txt&#34;</span> &gt; /etc/openvpn/server.conf
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s1">&#39;push &#34;redirect-gateway def1 bypass-dhcp&#34;&#39;</span> &gt;&gt; /etc/openvpn/server.conf
+</span></span></span><span class="line"><span class="cl"><span class="s2">ifconfig-pool-persist ipp.txt"</span> > /etc/openvpn/server.conf
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s1">'push "redirect-gateway def1 bypass-dhcp"'</span> >> /etc/openvpn/server.conf
 </span></span><span class="line"><span class="cl">	<span class="c1"># DNS</span>
 </span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="nv">$DNS</span> in
 </span></span><span class="line"><span class="cl">		1<span class="o">)</span>
 </span></span><span class="line"><span class="cl">		<span class="c1"># Locate the proper resolv.conf</span>
 </span></span><span class="line"><span class="cl">		<span class="c1"># Needed for systems running systemd-resolved</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> grep -q <span class="s2">&#34;127.0.0.53&#34;</span> <span class="s2">&#34;/etc/resolv.conf&#34;</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="cl">			<span class="nv">RESOLVCONF</span><span class="o">=</span><span class="s1">&#39;/run/systemd/resolve/resolv.conf&#39;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> grep -q <span class="s2">"127.0.0.53"</span> <span class="s2">"/etc/resolv.conf"</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">			<span class="nv">RESOLVCONF</span><span class="o">=</span><span class="s1">'/run/systemd/resolve/resolv.conf'</span>
 </span></span><span class="line"><span class="cl">		<span class="k">else</span>
-</span></span><span class="line"><span class="cl">			<span class="nv">RESOLVCONF</span><span class="o">=</span><span class="s1">&#39;/etc/resolv.conf&#39;</span>
+</span></span><span class="line"><span class="cl">			<span class="nv">RESOLVCONF</span><span class="o">=</span><span class="s1">'/etc/resolv.conf'</span>
 </span></span><span class="line"><span class="cl">		<span class="k">fi</span>
 </span></span><span class="line"><span class="cl">		<span class="c1"># Obtain the resolvers from resolv.conf and use them for OpenVPN</span>
-</span></span><span class="line"><span class="cl">		grep -v <span class="s1">&#39;#&#39;</span> <span class="nv">$RESOLVCONF</span> <span class="p">|</span> grep <span class="s1">&#39;nameserver&#39;</span> <span class="p">|</span> grep -E -o <span class="s1">&#39;[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}&#39;</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> line<span class="p">;</span> <span class="k">do</span>
-</span></span><span class="line"><span class="cl">			<span class="nb">echo</span> <span class="s2">&#34;push \&#34;dhcp-option DNS </span><span class="nv">$line</span><span class="s2">\&#34;&#34;</span> &gt;&gt; /etc/openvpn/server.conf
+</span></span><span class="line"><span class="cl">		grep -v <span class="s1">'#'</span> <span class="nv">$RESOLVCONF</span> <span class="p">|</span> grep <span class="s1">'nameserver'</span> <span class="p">|</span> grep -E -o <span class="s1">'[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> line<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">echo</span> <span class="s2">"push \"dhcp-option DNS </span><span class="nv">$line</span><span class="s2">\""</span> >> /etc/openvpn/server.conf
 </span></span><span class="line"><span class="cl">		<span class="k">done</span>
 </span></span><span class="line"><span class="cl">		<span class="p">;;</span>
 </span></span><span class="line"><span class="cl">		2<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">&#39;push &#34;dhcp-option DNS 1.1.1.1&#34;&#39;</span> &gt;&gt; /etc/openvpn/server.conf
-</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">&#39;push &#34;dhcp-option DNS 1.0.0.1&#34;&#39;</span> &gt;&gt; /etc/openvpn/server.conf
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">'push "dhcp-option DNS 1.1.1.1"'</span> >> /etc/openvpn/server.conf
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">'push "dhcp-option DNS 1.0.0.1"'</span> >> /etc/openvpn/server.conf
 </span></span><span class="line"><span class="cl">		<span class="p">;;</span>
 </span></span><span class="line"><span class="cl">		3<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">&#39;push &#34;dhcp-option DNS 8.8.8.8&#34;&#39;</span> &gt;&gt; /etc/openvpn/server.conf
-</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">&#39;push &#34;dhcp-option DNS 8.8.4.4&#34;&#39;</span> &gt;&gt; /etc/openvpn/server.conf
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">'push "dhcp-option DNS 8.8.8.8"'</span> >> /etc/openvpn/server.conf
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">'push "dhcp-option DNS 8.8.4.4"'</span> >> /etc/openvpn/server.conf
 </span></span><span class="line"><span class="cl">		<span class="p">;;</span>
 </span></span><span class="line"><span class="cl">		4<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">&#39;push &#34;dhcp-option DNS 208.67.222.222&#34;&#39;</span> &gt;&gt; /etc/openvpn/server.conf
-</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">&#39;push &#34;dhcp-option DNS 208.67.220.220&#34;&#39;</span> &gt;&gt; /etc/openvpn/server.conf
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">'push "dhcp-option DNS 208.67.222.222"'</span> >> /etc/openvpn/server.conf
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">'push "dhcp-option DNS 208.67.220.220"'</span> >> /etc/openvpn/server.conf
 </span></span><span class="line"><span class="cl">		<span class="p">;;</span>
 </span></span><span class="line"><span class="cl">		5<span class="o">)</span>
-</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">&#39;push &#34;dhcp-option DNS 64.6.64.6&#34;&#39;</span> &gt;&gt; /etc/openvpn/server.conf
-</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">&#39;push &#34;dhcp-option DNS 64.6.65.6&#34;&#39;</span> &gt;&gt; /etc/openvpn/server.conf
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">'push "dhcp-option DNS 64.6.64.6"'</span> >> /etc/openvpn/server.conf
+</span></span><span class="line"><span class="cl">		<span class="nb">echo</span> <span class="s1">'push "dhcp-option DNS 64.6.65.6"'</span> >> /etc/openvpn/server.conf
 </span></span><span class="line"><span class="cl">		<span class="p">;;</span>
 </span></span><span class="line"><span class="cl">	<span class="k">esac</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;keepalive 10 120
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"keepalive 10 120
 </span></span></span><span class="line"><span class="cl"><span class="s2">cipher AES-256-CBC
 </span></span></span><span class="line"><span class="cl"><span class="s2">user nobody
 </span></span></span><span class="line"><span class="cl"><span class="s2">group </span><span class="nv">$GROUPNAME</span><span class="s2">
@@ -1967,15 +1976,15 @@ sh openvpn-install.sh &gt;IP address: #脚本自动捕获 &gt;Protocol [1-2]:1 #
 </span></span></span><span class="line"><span class="cl"><span class="s2">persist-tun
 </span></span></span><span class="line"><span class="cl"><span class="s2">status openvpn-status.log
 </span></span></span><span class="line"><span class="cl"><span class="s2">verb 3
-</span></span></span><span class="line"><span class="cl"><span class="s2">crl-verify crl.pem&#34;</span> &gt;&gt; /etc/openvpn/server.conf
+</span></span></span><span class="line"><span class="cl"><span class="s2">crl-verify crl.pem"</span> >> /etc/openvpn/server.conf
 </span></span><span class="line"><span class="cl">	<span class="c1"># Enable net.ipv4.ip_forward for the system</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s1">&#39;net.ipv4.ip_forward=1&#39;</span> &gt; /etc/sysctl.d/30-openvpn-forward.conf
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s1">'net.ipv4.ip_forward=1'</span> > /etc/sysctl.d/30-openvpn-forward.conf
 </span></span><span class="line"><span class="cl">	<span class="c1"># Enable without waiting for a reboot or service restart</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/net/ipv4/ip_forward
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="m">1</span> > /proc/sys/net/ipv4/ip_forward
 </span></span><span class="line"><span class="cl">	<span class="k">if</span> pgrep firewalld<span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">		<span class="c1"># Using both permanent and not permanent rules to avoid a firewalld</span>
 </span></span><span class="line"><span class="cl">		<span class="c1"># reload.</span>
-</span></span><span class="line"><span class="cl">		<span class="c1"># We don&#39;t use --add-service=openvpn because that would only work with</span>
+</span></span><span class="line"><span class="cl">		<span class="c1"># We don't use --add-service=openvpn because that would only work with</span>
 </span></span><span class="line"><span class="cl">		<span class="c1"># the default port and protocol.</span>
 </span></span><span class="line"><span class="cl">		firewall-cmd --zone<span class="o">=</span>public --add-port<span class="o">=</span><span class="nv">$PORT</span>/<span class="nv">$PROTOCOL</span>
 </span></span><span class="line"><span class="cl">		firewall-cmd --zone<span class="o">=</span>trusted --add-source<span class="o">=</span>10.8.0.0/24
@@ -1986,36 +1995,36 @@ sh openvpn-install.sh &gt;IP address: #脚本自动捕获 &gt;Protocol [1-2]:1 #
 </span></span><span class="line"><span class="cl">		firewall-cmd --permanent --direct --add-rule ipv4 nat POSTROUTING <span class="m">0</span> -s 10.8.0.0/24 ! -d 10.8.0.0/24 -j SNAT --to <span class="nv">$IP</span>
 </span></span><span class="line"><span class="cl">	<span class="k">else</span>
 </span></span><span class="line"><span class="cl">		<span class="c1"># Needed to use rc.local with some systemd distros</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$OS</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s1">&#39;debian&#39;</span> <span class="o">&amp;&amp;</span> ! -e <span class="nv">$RCLOCAL</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="cl">			<span class="nb">echo</span> <span class="s1">&#39;#!/bin/sh -e
-</span></span></span><span class="line"><span class="cl"><span class="s1">exit 0&#39;</span> &gt; <span class="nv">$RCLOCAL</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$OS</span><span class="s2">"</span> <span class="o">=</span> <span class="s1">'debian'</span> <span class="o">&&</span> ! -e <span class="nv">$RCLOCAL</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">echo</span> <span class="s1">'#!/bin/sh -e
+</span></span></span><span class="line"><span class="cl"><span class="s1">exit 0'</span> > <span class="nv">$RCLOCAL</span>
 </span></span><span class="line"><span class="cl">		<span class="k">fi</span>
 </span></span><span class="line"><span class="cl">		chmod +x <span class="nv">$RCLOCAL</span>
 </span></span><span class="line"><span class="cl">		<span class="c1"># Set NAT for the VPN subnet</span>
 </span></span><span class="line"><span class="cl">		iptables -t nat -A POSTROUTING -s 10.8.0.0/24 ! -d 10.8.0.0/24 -j SNAT --to <span class="nv">$IP</span>
-</span></span><span class="line"><span class="cl">		sed -i <span class="s2">&#34;1 a\iptables -t nat -A POSTROUTING -s 10.8.0.0/24 ! -d 10.8.0.0/24 -j SNAT --to </span><span class="nv">$IP</span><span class="s2">&#34;</span> <span class="nv">$RCLOCAL</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> iptables -L -n <span class="p">|</span> grep -qE <span class="s1">&#39;^(REJECT|DROP)&#39;</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">		sed -i <span class="s2">"1 a\iptables -t nat -A POSTROUTING -s 10.8.0.0/24 ! -d 10.8.0.0/24 -j SNAT --to </span><span class="nv">$IP</span><span class="s2">"</span> <span class="nv">$RCLOCAL</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> iptables -L -n <span class="p">|</span> grep -qE <span class="s1">'^(REJECT|DROP)'</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">			<span class="c1"># If iptables has at least one REJECT rule, we asume this is needed.</span>
-</span></span><span class="line"><span class="cl">			<span class="c1"># Not the best approach but I can&#39;t think of other and this shouldn&#39;t</span>
+</span></span><span class="line"><span class="cl">			<span class="c1"># Not the best approach but I can't think of other and this shouldn't</span>
 </span></span><span class="line"><span class="cl">			<span class="c1"># cause problems.</span>
 </span></span><span class="line"><span class="cl">			iptables -I INPUT -p <span class="nv">$PROTOCOL</span> --dport <span class="nv">$PORT</span> -j ACCEPT
 </span></span><span class="line"><span class="cl">			iptables -I FORWARD -s 10.8.0.0/24 -j ACCEPT
 </span></span><span class="line"><span class="cl">			iptables -I FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
-</span></span><span class="line"><span class="cl">			sed -i <span class="s2">&#34;1 a\iptables -I INPUT -p </span><span class="nv">$PROTOCOL</span><span class="s2"> --dport </span><span class="nv">$PORT</span><span class="s2"> -j ACCEPT&#34;</span> <span class="nv">$RCLOCAL</span>
-</span></span><span class="line"><span class="cl">			sed -i <span class="s2">&#34;1 a\iptables -I FORWARD -s 10.8.0.0/24 -j ACCEPT&#34;</span> <span class="nv">$RCLOCAL</span>
-</span></span><span class="line"><span class="cl">			sed -i <span class="s2">&#34;1 a\iptables -I FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT&#34;</span> <span class="nv">$RCLOCAL</span>
+</span></span><span class="line"><span class="cl">			sed -i <span class="s2">"1 a\iptables -I INPUT -p </span><span class="nv">$PROTOCOL</span><span class="s2"> --dport </span><span class="nv">$PORT</span><span class="s2"> -j ACCEPT"</span> <span class="nv">$RCLOCAL</span>
+</span></span><span class="line"><span class="cl">			sed -i <span class="s2">"1 a\iptables -I FORWARD -s 10.8.0.0/24 -j ACCEPT"</span> <span class="nv">$RCLOCAL</span>
+</span></span><span class="line"><span class="cl">			sed -i <span class="s2">"1 a\iptables -I FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT"</span> <span class="nv">$RCLOCAL</span>
 </span></span><span class="line"><span class="cl">		<span class="k">fi</span>
 </span></span><span class="line"><span class="cl">	<span class="k">fi</span>
 </span></span><span class="line"><span class="cl">	<span class="c1"># If SELinux is enabled and a custom port was selected, we need this</span>
-</span></span><span class="line"><span class="cl">	<span class="k">if</span> sestatus 2&gt;/dev/null <span class="p">|</span> grep <span class="s2">&#34;Current mode&#34;</span> <span class="p">|</span> grep -q <span class="s2">&#34;enforcing&#34;</span> <span class="o">&amp;&amp;</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$PORT</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s1">&#39;1194&#39;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> sestatus 2>/dev/null <span class="p">|</span> grep <span class="s2">"Current mode"</span> <span class="p">|</span> grep -q <span class="s2">"enforcing"</span> <span class="o">&&</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$PORT</span><span class="s2">"</span> !<span class="o">=</span> <span class="s1">'1194'</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">		<span class="c1"># Install semanage if not already present</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> ! <span class="nb">hash</span> semanage 2&gt;/dev/null<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> ! <span class="nb">hash</span> semanage 2>/dev/null<span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">			yum install policycoreutils-python -y
 </span></span><span class="line"><span class="cl">		<span class="k">fi</span>
 </span></span><span class="line"><span class="cl">		semanage port -a -t openvpn_port_t -p <span class="nv">$PROTOCOL</span> <span class="nv">$PORT</span>
 </span></span><span class="line"><span class="cl">	<span class="k">fi</span>
 </span></span><span class="line"><span class="cl">	<span class="c1"># And finally, restart OpenVPN</span>
-</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$OS</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s1">&#39;debian&#39;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$OS</span><span class="s2">"</span> <span class="o">=</span> <span class="s1">'debian'</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">		<span class="c1"># Little hack to check for systemd</span>
 </span></span><span class="line"><span class="cl">		<span class="k">if</span> pgrep systemd-journal<span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">			systemctl restart openvpn@server.service
@@ -2032,11 +2041,11 @@ sh openvpn-install.sh &gt;IP address: #脚本自动捕获 &gt;Protocol [1-2]:1 #
 </span></span><span class="line"><span class="cl">		<span class="k">fi</span>
 </span></span><span class="line"><span class="cl">	<span class="k">fi</span>
 </span></span><span class="line"><span class="cl">	<span class="c1"># If the server is behind a NAT, use the correct IP address</span>
-</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$PUBLICIP</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$PUBLICIP</span><span class="s2">"</span> !<span class="o">=</span> <span class="s2">""</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">		<span class="nv">IP</span><span class="o">=</span><span class="nv">$PUBLICIP</span>
 </span></span><span class="line"><span class="cl">	<span class="k">fi</span>
 </span></span><span class="line"><span class="cl">	<span class="c1"># client-common.txt is created so we have a template to add further users later</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;client
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"client
 </span></span></span><span class="line"><span class="cl"><span class="s2">dev tun
 </span></span></span><span class="line"><span class="cl"><span class="s2">proto </span><span class="nv">$PROTOCOL</span><span class="s2">
 </span></span></span><span class="line"><span class="cl"><span class="s2">sndbuf 0
@@ -2051,16 +2060,20 @@ sh openvpn-install.sh &gt;IP address: #脚本自动捕获 &gt;Protocol [1-2]:1 #
 </span></span></span><span class="line"><span class="cl"><span class="s2">cipher AES-256-CBC
 </span></span></span><span class="line"><span class="cl"><span class="s2">setenv opt block-outside-dns
 </span></span></span><span class="line"><span class="cl"><span class="s2">key-direction 1
-</span></span></span><span class="line"><span class="cl"><span class="s2">verb 3&#34;</span> &gt; /etc/openvpn/client-common.txt
+</span></span></span><span class="line"><span class="cl"><span class="s2">verb 3"</span> > /etc/openvpn/client-common.txt
 </span></span><span class="line"><span class="cl">	<span class="c1"># Generates the custom client.ovpn</span>
-</span></span><span class="line"><span class="cl">	newclient <span class="s2">&#34;</span><span class="nv">$CLIENT</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">	newclient <span class="s2">"</span><span class="nv">$CLIENT</span><span class="s2">"</span>
 </span></span><span class="line"><span class="cl">	<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;Finished!&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"Finished!"</span>
 </span></span><span class="line"><span class="cl">	<span class="nb">echo</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;Your client configuration is available at:&#34;</span> ~/<span class="s2">&#34;</span><span class="nv">$CLIENT</span><span class="s2">.ovpn&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;If you want to add more clients, you simply need to run this script again!&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"Your client configuration is available at:"</span> ~/<span class="s2">"</span><span class="nv">$CLIENT</span><span class="s2">.ovpn"</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">"If you want to add more clients, you simply need to run this script again!"</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
-</span></span></code></pre></div><div class="gdoc-page__anchorwrap">
+</span></span></code></pre></div>
+  </div>
+</div>
+
+<div class="gdoc-page__anchorwrap">
     <h3 id="42-checkpsw认证">
         4.2 checkpsw认证
         <a data-clipboard-text="https://opsbear2.github.io/openvpn/1.quickstart/#42-checkpsw认证" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 4.2 checkpsw认证" aria-label="Anchor to: 4.2 checkpsw认证" href="#42-checkpsw%e8%ae%a4%e8%af%81">
@@ -2068,41 +2081,54 @@ sh openvpn-install.sh &gt;IP address: #脚本自动捕获 &gt;Protocol [1-2]:1 #
         </a>
     </h3>
 </div>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+<p>点击<strong>Expand</strong>查看更多</p>
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="e8ba94f0-2">
+    <span>Expand</span>
+    <span>↕</span>
+  </label>
+  <input id="e8ba94f0-2" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">###########################################################</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># checkpsw.sh (C) 2004 Mathias Sundman &lt;mathias@openvpn.se&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># checkpsw.sh (C) 2004 Mathias Sundman <mathias@openvpn.se></span>
 </span></span><span class="line"><span class="cl"><span class="c1">#</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># This script will authenticate OpenVPN users against</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># a plain text file. The passfile should simply contain</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># one row per user with the username first followed by</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># one or more space(s) or tab(s) and then the password.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">PASSFILE</span><span class="o">=</span><span class="s2">&#34;/etc/openvpn/psw-file&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">LOG_FILE</span><span class="o">=</span><span class="s2">&#34;/etc/openvpn/openvpn-password.log&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">TIME_STAMP</span><span class="o">=</span><span class="sb">`</span>date <span class="s2">&#34;+%Y-%m-%d %T&#34;</span><span class="sb">`</span>
+</span></span><span class="line"><span class="cl"><span class="nv">PASSFILE</span><span class="o">=</span><span class="s2">"/etc/openvpn/psw-file"</span>
+</span></span><span class="line"><span class="cl"><span class="nv">LOG_FILE</span><span class="o">=</span><span class="s2">"/etc/openvpn/openvpn-password.log"</span>
+</span></span><span class="line"><span class="cl"><span class="nv">TIME_STAMP</span><span class="o">=</span><span class="sb">`</span>date <span class="s2">"+%Y-%m-%d %T"</span><span class="sb">`</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">###########################################################</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> ! -r <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PASSFILE</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: Could not open password file \&#34;</span><span class="si">${</span><span class="nv">PASSFILE</span><span class="si">}</span><span class="s2">\&#34; for reading.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> ! -r <span class="s2">"</span><span class="si">${</span><span class="nv">PASSFILE</span><span class="si">}</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">"</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: Could not open password file \"</span><span class="si">${</span><span class="nv">PASSFILE</span><span class="si">}</span><span class="s2">\" for reading."</span> >> <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">exit</span> <span class="m">1</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">CORRECT_PASSWORD</span><span class="o">=</span><span class="sb">`</span>awk <span class="s1">&#39;!/^;/&amp;&amp;!/^#/&amp;&amp;$1==&#34;&#39;</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s1">&#39;&#34;{print $2;exit}&#39;</span> <span class="si">${</span><span class="nv">PASSFILE</span><span class="si">}</span><span class="sb">`</span>
+</span></span><span class="line"><span class="cl"><span class="nv">CORRECT_PASSWORD</span><span class="o">=</span><span class="sb">`</span>awk <span class="s1">'!/^;/&&!/^#/&&$1=="'</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s1">'"{print $2;exit}'</span> <span class="si">${</span><span class="nv">PASSFILE</span><span class="si">}</span><span class="sb">`</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">CORRECT_PASSWORD</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: User does not exist: username=\&#34;</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">\&#34;, password=\&#34;</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">\&#34;.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="si">${</span><span class="nv">CORRECT_PASSWORD</span><span class="si">}</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">""</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">"</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: User does not exist: username=\"</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">\", password=\"</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">\"."</span> >> <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">exit</span> <span class="m">1</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">CORRECT_PASSWORD</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: Successful authentication: username=\&#34;</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">\&#34;.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"</span><span class="si">${</span><span class="nv">CORRECT_PASSWORD</span><span class="si">}</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">"</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: Successful authentication: username=\"</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">\"."</span> >> <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">exit</span> <span class="m">0</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: Incorrect password: username=\&#34;</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">\&#34;, password=\&#34;</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">\&#34;.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">"</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: Incorrect password: username=\"</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">\", password=\"</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">\"."</span> >> <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>
 </span></span><span class="line"><span class="cl"><span class="nb">exit</span> <span class="m">1</span>
 </span></span></code></pre></div>
+  </div>
+</div>
+
+
   </article>
 
 
