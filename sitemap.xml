@@ -2,10 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://opsbear2.github.io/windows/1.foreword/</loc>
-    <lastmod>2022-08-02T11:02:43+08:00</lastmod>
+    <loc>https://opsbear2.github.io/kubernetes/2.containerconcept/</loc>
+    <lastmod>2022-08-03T15:56:45+08:00</lastmod>
+  </url><url>
+    <loc>https://opsbear2.github.io/kubernetes/</loc>
+    <lastmod>2022-08-03T15:56:45+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.github.io/</loc>
+    <lastmod>2022-08-03T15:56:45+08:00</lastmod>
+  </url><url>
+    <loc>https://opsbear2.github.io/windows/1.foreword/</loc>
     <lastmod>2022-08-02T11:02:43+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.github.io/windows/</loc>
@@ -57,9 +63,6 @@
     <lastmod>2022-07-29T10:39:27+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.github.io/golang/</loc>
-    <lastmod>2022-07-29T10:39:27+08:00</lastmod>
-  </url><url>
-    <loc>https://opsbear2.github.io/kubernetes/</loc>
     <lastmod>2022-07-29T10:39:27+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.github.io/python/1.foreword/</loc>
