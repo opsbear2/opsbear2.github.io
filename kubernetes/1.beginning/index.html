@@ -1710,7 +1710,7 @@ Docker Engine 则和 Docker Desktop 正好相反，完全免费，但只能在 L
 <p>命令行 docker 实际上是一个客户端 client ，它会与 Docker Engine 里的后台服务 Docker daemon 通信，而镜像则存储在远端的仓库 Registry 里，客户端并不能直接访问镜像仓库</p>
 <p>Docker client 可以通过 build、pull、run等命令向 Docker daemon 发送请求，而 Docker daemon 则是容器和镜像的“大管家”，负责从远端拉取镜像、在本地存储镜像，还有从镜像生成容器、管理容器等所有功能</p>
 <p>所以，在 Docker Engine 里，真正干活的其实是默默运行在后台的 Docker daemon，而我们实际操作的命令行工具“docker”只是个“传声筒”的角色</p>
-<p>补充内容：Kubernetes的知识地图</p>
+<p><strong>补充内容：Kubernetes的知识地图</strong></p>
 <p><img
   src="https://cdn.jsdelivr.net/gh/opsbear2/ImagesForBlog@master/default/2022-08-03/20220803-115459.jpeg"
   alt=""
