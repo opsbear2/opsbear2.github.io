@@ -5,7 +5,22 @@
     <link>https://opsbear2.github.io/</link>
     <description>Recent content on Welcome to Bear2&#39;s Secret Garden 💬🐻💬</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 03 Aug 2022 15:56:45 +0800</lastBuildDate><atom:link href="https://opsbear2.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Aug 2022 18:26:38 +0800</lastBuildDate><atom:link href="https://opsbear2.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3.个性化Favicon</title>
+      <link>https://opsbear2.github.io/mydocs/3.favicon/</link>
+      <pubDate>Wed, 03 Aug 2022 18:26:38 +0800</pubDate>
+      
+      <guid>https://opsbear2.github.io/mydocs/3.favicon/</guid>
+      <description>1 什么是favicon 2 自定义网站图标  2.1 定位网页的favicon文件 2.2 favicon的本地资源 2.3 生成你的favicon文件 2.4 推送新的网站图标        1 什么是favicon     Favicon是favorites icon的缩写，亦被称为website icon（网页图标）、page icon（页面图标）或urlicon（URL图标）。Favicon是与某个网站或网页相关联的图标
+简单点就是它们
+2 自定义网站图标     个人博客搭建好了，想拥有个性化的网站图标怎么办，你只需要替换下原有favicon的文件即可
+2.1 定位网页的favicon文件     首先你需要知道你网站的favicon文件使用的格式，打开网页，F12进入开发者工具，找到Network，检索以favicon为前缀的资源文件，刷新网页重新请求资源，可以看到我的网站favicon文件是*.SVG格式，当然大部分网站的favicon都会采用这种格式，还有其他格式，比如*.ICO *.PNG等
+2.2 favicon的本地资源     查看favicon文件的header信息，也可以看到网页图标其实就是请求这个URL
+Request URL: https://opsbear2.com/favicon/favicon.svg 那么这个文件在哪里呢？进入网站的家目录find遍历资源，可以看到public和themes目录下都有文件，在搭建Hugo+Github Page 架构的网站时，我们知道是把public目录下的静态页资源推送到Github，所以网站图标其实请求的就是./public/favicon/favicon.svg这个文件，而themes目录下的favicon.svg是Hugo构建静态页所需要的资源。如果想自定义网站图标，只需要找将themes目录下的favicon.svg替换，Hugo -D重新构静态页，将新的资源再推送Github就可以了
+bear2 ~/git/blog find . -name &amp;#34;*favicon*&amp;#34; ./public/favicon .</description>
+    </item>
+    
     <item>
       <title>2.容器的本质</title>
       <link>https://opsbear2.github.io/kubernetes/2.containerconcept/</link>
