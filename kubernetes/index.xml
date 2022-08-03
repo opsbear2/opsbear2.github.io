@@ -4,6 +4,20 @@
     <title>Kubernetes on Welcome to Bear2&#39;s Secret Garden 💬🐻💬</title>
     <link>https://opsbear2.github.io/kubernetes/</link>
     <description>Recent content in Kubernetes on Welcome to Bear2&#39;s Secret Garden 💬🐻💬</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://opsbear2.github.io/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 29 Jul 2022 10:39:27 +0800</lastBuildDate><atom:link href="https://opsbear2.github.io/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.初识容器</title>
+      <link>https://opsbear2.github.io/kubernetes/1.beginning/</link>
+      <pubDate>Fri, 29 Jul 2022 10:39:27 +0800</pubDate>
+      
+      <guid>https://opsbear2.github.io/kubernetes/1.beginning/</guid>
+      <description>1 初始容器 2 Docker的安装  2.1 手动安装 2.2 自动安装 2.3 卸载docker   3 Docker的简单使用 4 Docker的架构      1 初始容器     在学习Kubernetes之前，先从最简单、最基本的知识入手，聊聊最流行的容器技术 Docker
+Docker的形态
+目前使用 Docker 基本上有两个选择：Docker Desktop 和 Docker Engine
+Docker Desktop 是专门针对个人使用而设计的，支持 Mac 和 Windows 快速安装，具有直观的图形界面，还集成了许多周边工具，方便易用，但是太推荐使用 Docker Desktop，原因有两个。第一个，它是商业产品，难免会带有 Docker 公司的“私人气息”，有一些自己的、非通用的东西，不利于我们后续的 Kubernetes 学习。第二个，它只是对个人学习免费，受条款限制不能商用，我们在日常工作中难免会“踩到雷区”
+Docker Engine 则和 Docker Desktop 正好相反，完全免费，但只能在 Linux 上运行，只能使用命令行操作，缺乏辅助工具，需要我们自己动手 DIY 运行环境。不过要是较起真来，它才是 Docker 当初的真正形态，“血脉”最纯正，也是现在各个公司在生产环境中实际使用的 Docker 产品，毕竟机房里 99% 的服务器跑的都是 Linux</description>
+    </item>
+    
   </channel>
 </rss>
