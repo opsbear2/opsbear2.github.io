@@ -53,13 +53,7 @@
     <loc>https://opsbear2.github.io/golang/1.foreword/</loc>
     <lastmod>2022-07-29T10:39:27+08:00</lastmod>
   </url><url>
-    <loc>https://opsbear2.github.io/kubernetes/1.foreword/</loc>
-    <lastmod>2022-07-29T10:39:27+08:00</lastmod>
-  </url><url>
     <loc>https://opsbear2.github.io/golang/</loc>
-    <lastmod>2022-07-29T10:39:27+08:00</lastmod>
-  </url><url>
-    <loc>https://opsbear2.github.io/kubernetes/</loc>
     <lastmod>2022-07-29T10:39:27+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.github.io/python/1.foreword/</loc>
@@ -70,6 +64,8 @@
   </url><url>
     <loc>https://opsbear2.github.io/frontpage/1.toc/</loc>
     <lastmod>2022-07-28T23:28:30+08:00</lastmod>
+  </url><url>
+    <loc>https://opsbear2.github.io/kubernetes/</loc>
   </url><url>
     <loc>https://opsbear2.github.io/tags/</loc>
   </url>
