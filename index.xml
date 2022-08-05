@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Welcome to Bear2&#39;s Secret Garden 💬🐻💬</title>
-    <link>https://opsbear2.github.io/</link>
+    <link>https://opsbear2.com/</link>
     <description>Recent content on Welcome to Bear2&#39;s Secret Garden 💬🐻💬</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 05 Aug 2022 16:46:51 +0800</lastBuildDate><atom:link href="https://opsbear2.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Aug 2022 16:46:51 +0800</lastBuildDate><atom:link href="https://opsbear2.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1.foreword</title>
-      <link>https://opsbear2.github.io/prometheus/1.foreword/</link>
+      <link>https://opsbear2.com/prometheus/1.foreword/</link>
       <pubDate>Fri, 05 Aug 2022 16:46:51 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/prometheus/1.foreword/</guid>
+      <guid>https://opsbear2.com/prometheus/1.foreword/</guid>
       <description></description>
     </item>
     
     <item>
       <title>3.个性化Favicon</title>
-      <link>https://opsbear2.github.io/mydocs/3.favicon/</link>
+      <link>https://opsbear2.com/mydocs/3.favicon/</link>
       <pubDate>Wed, 03 Aug 2022 18:26:38 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/mydocs/3.favicon/</guid>
+      <guid>https://opsbear2.com/mydocs/3.favicon/</guid>
       <description>1 什么是favicon 2 自定义网站图标  2.1 定位网页的favicon文件 2.2 favicon的本地资源 2.3 生成你的favicon文件 2.4 推送新的网站图标        1 什么是favicon     Favicon是favorites icon的缩写，亦被称为website icon（网页图标）、page icon（页面图标）或urlicon（URL图标）。Favicon是与某个网站或网页相关联的图标
 简单点就是它们
 2 自定义网站图标     个人博客搭建好了，想拥有个性化的网站图标怎么办，你只需要替换下原有favicon的文件即可
@@ -32,10 +32,10 @@ bear2 ~/git/blog find . -name &amp;#34;*favicon*&amp;#34; ./public/favicon .</de
     
     <item>
       <title>2.容器的本质</title>
-      <link>https://opsbear2.github.io/kubernetes/2.containerconcept/</link>
+      <link>https://opsbear2.com/kubernetes/2.containerconcept/</link>
       <pubDate>Wed, 03 Aug 2022 15:56:45 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/kubernetes/2.containerconcept/</guid>
+      <guid>https://opsbear2.com/kubernetes/2.containerconcept/</guid>
       <description>1 什么是容器 2 容器的隔离性  2.1 为什么要隔离 2.2 与虚拟机的区别   3 隔离实现原理      1 什么是容器     从字面上来看，容器就是 Container，一般把它形象地比喻成现实世界里的集装箱，它也正好和 Docker 的现实含义相对应，因为码头工人（那只可爱的小鲸鱼）就是不停地在搬运集装箱
 集装箱的作用是标准化封装各种货物，一旦打包完成之后，就可以从一个地方迁移到任意的其他地方。相比散装形式而言，集装箱隔离了箱内箱外两个世界，保持了货物的原始形态，避免了内外部相互干扰，极大地简化了商品的存储、运输、管理等工作
 再回到我们的计算机世界，容器也发挥着同样的作用，不过它封装的货物是运行中的应用程序，也就是进程，同样它也会把进程与外界隔离开，让进程与外部系统互不影响
@@ -47,19 +47,19 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
     
     <item>
       <title>1.foreword</title>
-      <link>https://opsbear2.github.io/windows/1.foreword/</link>
+      <link>https://opsbear2.com/windows/1.foreword/</link>
       <pubDate>Tue, 02 Aug 2022 11:02:43 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/windows/1.foreword/</guid>
+      <guid>https://opsbear2.com/windows/1.foreword/</guid>
       <description>Hello World     </description>
     </item>
     
     <item>
       <title>2.GPT图床搭建教程</title>
-      <link>https://opsbear2.github.io/mydocs/2.imagesbed/</link>
+      <link>https://opsbear2.com/mydocs/2.imagesbed/</link>
       <pubDate>Mon, 01 Aug 2022 22:01:36 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/mydocs/2.imagesbed/</guid>
+      <guid>https://opsbear2.com/mydocs/2.imagesbed/</guid>
       <description>1 项目介绍 2 Github创建仓库 3 安装PicGo 4 集成Typora      1 项目介绍     博客中的图片该如何存储，本文将介绍基于Github+PicGo+Typora搭建的免费图床，保姆级别的搭建教程如下
  Q1：什么是Github+PicGo+Typora？
   Github 是一个静态站点托管服务，直接将个人、组织或项目的页面托管于 GitHub 库或仓库 (repository) 中 PicGo 是一个用于快速上传图片并获取图片 URL 链接的工具 Typora 是一款轻便简洁的Markdown编辑器，支持即时渲染是它最大的特色  2 Github创建仓库     Github的仓库可以作为存放博客图片的后端，比起共享存储、自建nginx站点等方式，它最大的特点是免费（白嫖
@@ -77,10 +77,10 @@ https://www.macat.vip/?cat=&amp;s=PicGo
     
     <item>
       <title>1.基于Hugo&#43;Github搭建博客</title>
-      <link>https://opsbear2.github.io/mydocs/1.blogquickstart/</link>
+      <link>https://opsbear2.com/mydocs/1.blogquickstart/</link>
       <pubDate>Mon, 01 Aug 2022 17:36:58 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/mydocs/1.blogquickstart/</guid>
+      <guid>https://opsbear2.com/mydocs/1.blogquickstart/</guid>
       <description>1 项目介绍 2 GitHub环境准备 3 安装Hugo 4 将网站推送至Github 5 添加文章 6 网站加速      1 项目介绍     本文介绍如何使用GitHub Pages+Hugo搭建个人博客
  Q1：什么是 GitHub Pages+Hugo ？
   GitHub Pages 是一个静态站点托管服务，直接将个人、组织或项目的页面托管于 GitHub 库或仓库 (repository) 中 Hugo 是一个用 Go 语言编写的静态站点生成器，它针对速度、易用性和可配置性进行了优化，快速灵活  2 GitHub环境准备     在有GitHub账号的基础上，新建一个仓库，库名为${username}.github.io
@@ -90,10 +90,10 @@ MacOS   你的Mac已安装Homebrew的情况下，在终端执行  brew install h
     
     <item>
       <title>1.openvpn部署文档</title>
-      <link>https://opsbear2.github.io/openvpn/1.quickstart/</link>
+      <link>https://opsbear2.com/openvpn/1.quickstart/</link>
       <pubDate>Sun, 31 Jul 2022 14:29:33 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/openvpn/1.quickstart/</guid>
+      <guid>https://opsbear2.com/openvpn/1.quickstart/</guid>
       <description>1 部署服务端  1.1 服务端环境准备 1.2 修改配置文件   2 部署客户端  2.1 客户端环境准备 2.2 连接服务端   3 其他配置  3.1 客户端提速 3.2 登录认证   4 脚本库  4.1 openvpn安装脚本 4.2 checkpsw认证        1 部署服务端     1.1 服务端环境准备     安装环境
 服务端 centos 7.2*1 10.17.0.10 客户端 centos 7.2*1 10.50.5.10 使用一键安装脚本，交互输入说明如下，执行过程中一直回车即可
 sh openvpn-install.sh &amp;gt;IP address: #脚本自动捕获 &amp;gt;Protocol [1-2]:1 #选择默认的udp协议 &amp;gt;Port: 1194 #默认端口 &amp;gt;DNS [1-5]: 1 #默认DNS &amp;gt;Client name: client #客户端配置文件名字,按需修改 脚本运行完，执行service iptables save查看nat转发规则</description>
@@ -101,30 +101,30 @@ sh openvpn-install.sh &amp;gt;IP address: #脚本自动捕获 &amp;gt;Protocol [
     
     <item>
       <title>8.图片</title>
-      <link>https://opsbear2.github.io/frontpage/8.images/</link>
+      <link>https://opsbear2.com/frontpage/8.images/</link>
       <pubDate>Fri, 29 Jul 2022 16:20:07 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/frontpage/8.images/</guid>
+      <guid>https://opsbear2.com/frontpage/8.images/</guid>
       <description>插入图片，可以是本地图片，也可以外部图片
 用法     ![imagesname](url) 例子     熊小二在看雪</description>
     </item>
     
     <item>
       <title>7.图标</title>
-      <link>https://opsbear2.github.io/frontpage/7.icons/</link>
+      <link>https://opsbear2.com/frontpage/7.icons/</link>
       <pubDate>Fri, 29 Jul 2022 16:11:01 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/frontpage/7.icons/</guid>
+      <guid>https://opsbear2.com/frontpage/7.icons/</guid>
       <description>引用图标，这些图标可以是geekdocs自带的，当然你也可以自定义，但必须是SVG格式
 {{&amp;lt; icon &amp;#34;thumbs-up&amp;#34; &amp;gt;}}用法        Result Usage      {{&amp;lt; icon &amp;quot;thumbs-up&amp;quot; &amp;gt;}}    {{&amp;lt; icon &amp;quot;thumbs-down&amp;quot; &amp;gt;}}    {{&amp;lt; icon &amp;quot;laugh&amp;quot; &amp;gt;}}    {{&amp;lt; icon &amp;quot;lemon&amp;quot; &amp;gt;}}    {{&amp;lt; icon &amp;quot;moon&amp;quot; &amp;gt;}}    </description>
     </item>
     
     <item>
       <title>6.按钮</title>
-      <link>https://opsbear2.github.io/frontpage/6.buttons/</link>
+      <link>https://opsbear2.com/frontpage/6.buttons/</link>
       <pubDate>Fri, 29 Jul 2022 15:58:30 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/frontpage/6.buttons/</guid>
+      <guid>https://opsbear2.com/frontpage/6.buttons/</guid>
       <description>点击按钮可以指向本地页面
 {{&amp;lt; button relref=&amp;#34;/&amp;#34; [class=&amp;#34;...&amp;#34;, size=&amp;#34;large|regular&amp;#34;] &amp;gt;}}Get Home{{&amp;lt; /button &amp;gt;}}或者外部链接
 {{&amp;lt; button href=&amp;#34;https://www.bilibili.com&amp;#34; &amp;gt;}}Contribute{{&amp;lt; /button &amp;gt;}}​
@@ -133,20 +133,20 @@ sh openvpn-install.sh &amp;gt;IP address: #脚本自动捕获 &amp;gt;Protocol [
     
     <item>
       <title>5.多列</title>
-      <link>https://opsbear2.github.io/frontpage/5.columns/</link>
+      <link>https://opsbear2.com/frontpage/5.columns/</link>
       <pubDate>Fri, 29 Jul 2022 15:52:56 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/frontpage/5.columns/</guid>
+      <guid>https://opsbear2.com/frontpage/5.columns/</guid>
       <description>并排（水平）组织内容以提高可读性
 属性        Name Description default     size (optional) size of the first column (small|regular|large) regular    用法     {{&amp;lt; columns &amp;gt;}} &amp;lt;!-- begin columns block --&amp;gt; ## Left Content 至若春和景明，波澜不惊，上下天光，一碧万顷 ... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; ## Mid Content 至若春和景明，波澜不惊，上下天光，一碧万顷 ... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; ## Right Content 至若春和景明，波澜不惊，上下天光，一碧万顷 ... {{&amp;lt; /columns &amp;gt;}} 例子     左     庆历四年春，滕子京谪守巴陵郡。越明年，政通人和，百废具兴，乃重修岳阳楼，增其旧制，刻唐贤今人诗赋于其上，属予作文以记之。</description>
     </item>
     
     <item>
       <title>4.隐藏</title>
-      <link>https://opsbear2.github.io/frontpage/4.expand/</link>
+      <link>https://opsbear2.com/frontpage/4.expand/</link>
       <pubDate>Fri, 29 Jul 2022 15:38:18 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/frontpage/4.expand/</guid>
+      <guid>https://opsbear2.com/frontpage/4.expand/</guid>
       <description>通过隐藏部分文本来帮助减少屏幕上的混乱，通过单击展开内容
 例子     默认     {{&amp;lt; expand &amp;gt;}}## 内容 嗟夫！予尝求古仁人之心，或异二者之为 ... {{&amp;lt; /expand &amp;gt;}}Expand ↕  内容     嗟夫！予尝求古仁人之心，或异二者之为，何哉？不以物喜，不以己悲，居庙堂之高则忧其民，处江湖之远则忧其君。是进亦忧，退亦忧。然则何时而乐耶？其必曰“先天下之忧而忧，后天下之乐而乐”乎！噫！微斯人，吾谁与归？   自定义标签     {{&amp;lt; expand &amp;#34;Custom Label&amp;#34; &amp;#34;...&amp;#34; &amp;gt;}}## 内容 嗟夫！予尝求古仁人之心，或异二者之为 ... {{&amp;lt; /expand &amp;gt;}}点击查看原文 ...  原文     庆历四年春，滕子京谪守巴陵郡。越明年，政通人和，百废具兴，乃重修岳阳楼，增其旧制，刻唐贤今人诗赋于其上，属予作文以记之。
 予观夫巴陵胜状，在洞庭一湖。衔远山，吞长江，浩浩汤汤，横无际涯，朝晖夕阴，气象万千，此则岳阳楼之大观也，前人之述备矣。然则北通巫峡，南极潇湘，迁客骚人，多会于此，览物之情，得无异乎？
@@ -159,20 +159,20 @@ sh openvpn-install.sh &amp;gt;IP address: #脚本自动捕获 &amp;gt;Protocol [
     
     <item>
       <title>3.提示</title>
-      <link>https://opsbear2.github.io/frontpage/3.hints/</link>
+      <link>https://opsbear2.com/frontpage/3.hints/</link>
       <pubDate>Fri, 29 Jul 2022 15:22:07 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/frontpage/3.hints/</guid>
+      <guid>https://opsbear2.com/frontpage/3.hints/</guid>
       <description>设定不同的提示，种类包括提示/警报/通知
 属性        Name Description default     type hint type note   icon (optional) custom icon to use,need to be an icon from an SVG sprite undefined   title (optional) hint title undefined    用法     {{&amp;lt; hint type=tip &amp;gt;}}content {{&amp;lt; /hint &amp;gt;}}例子     {{&amp;lt; hint type=[note|tip|important|caution|warning] (icon=gdoc_github) (title=GitHub) &amp;gt;}}先天下之忧而忧，后天下之乐而乐 {{&amp;lt; /hint &amp;gt;}} 内容</description>
     </item>
     
     <item>
       <title>2.标签</title>
-      <link>https://opsbear2.github.io/frontpage/2.tags/</link>
+      <link>https://opsbear2.com/frontpage/2.tags/</link>
       <pubDate>Fri, 29 Jul 2022 15:12:02 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/frontpage/2.tags/</guid>
+      <guid>https://opsbear2.com/frontpage/2.tags/</guid>
       <description>选项卡可让您按上下文组织内容，例如不同语言版本的《岳阳楼记》
 {{&amp;lt; tabs &amp;#34;uniqueid&amp;#34; &amp;gt;}}{{&amp;lt; tab &amp;#34;tag&amp;#34; &amp;gt;}}content {{&amp;lt; /tab &amp;gt;}}{{&amp;lt; /tabs &amp;gt;}}例子     {{&amp;lt; tabs &amp;#34;uniqueid&amp;#34; &amp;gt;}}{{&amp;lt; tab &amp;#34;简体中文&amp;#34; &amp;gt;}}# 《岳阳楼记》 {{&amp;lt; /tab &amp;gt;}}{{&amp;lt; tab &amp;#34;英语&amp;#34; &amp;gt;}}# 《The Story of Yueyang Tower》 {{&amp;lt; /tab &amp;gt;}}{{&amp;lt; tab &amp;#34;法语&amp;#34; &amp;gt;}}# 《L&amp;#39;histoire de la tour Yueyang》 {{&amp;lt; /tab &amp;gt;}}{{&amp;lt; /tabs &amp;gt;}}简体中文  《岳阳楼记》     庆历四年春，滕子京谪守巴陵郡。越明年，政通人和，百废具兴，乃重修岳阳楼，增其旧制，刻唐贤今人诗赋于其上，属予作文以记之。
 予观夫巴陵胜状，在洞庭一湖。衔远山，吞长江，浩浩汤汤，横无际涯，朝晖夕阴，气象万千，此则岳阳楼之大观也，前人之述备矣。然则北通巫峡，南极潇湘，迁客骚人，多会于此，览物之情，得无异乎？
@@ -185,19 +185,19 @@ sh openvpn-install.sh &amp;gt;IP address: #脚本自动捕获 &amp;gt;Protocol [
     
     <item>
       <title>1.foreword</title>
-      <link>https://opsbear2.github.io/golang/1.foreword/</link>
+      <link>https://opsbear2.com/golang/1.foreword/</link>
       <pubDate>Fri, 29 Jul 2022 10:39:27 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/golang/1.foreword/</guid>
+      <guid>https://opsbear2.com/golang/1.foreword/</guid>
       <description></description>
     </item>
     
     <item>
       <title>1.初识容器</title>
-      <link>https://opsbear2.github.io/kubernetes/1.beginning/</link>
+      <link>https://opsbear2.com/kubernetes/1.beginning/</link>
       <pubDate>Fri, 29 Jul 2022 10:39:27 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/kubernetes/1.beginning/</guid>
+      <guid>https://opsbear2.com/kubernetes/1.beginning/</guid>
       <description>1 初始容器 2 Docker的安装  2.1 手动安装 2.2 自动安装 2.3 卸载docker   3 Docker的简单使用 4 Docker的架构      1 初始容器     在学习Kubernetes之前，先从最简单、最基本的知识入手，聊聊最流行的容器技术 Docker
 Docker的形态
 目前使用 Docker 基本上有两个选择：Docker Desktop 和 Docker Engine
@@ -207,19 +207,19 @@ Docker Engine 则和 Docker Desktop 正好相反，完全免费，但只能在 L
     
     <item>
       <title>1.foreword</title>
-      <link>https://opsbear2.github.io/python/1.foreword/</link>
+      <link>https://opsbear2.com/python/1.foreword/</link>
       <pubDate>Fri, 29 Jul 2022 10:39:26 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/python/1.foreword/</guid>
+      <guid>https://opsbear2.com/python/1.foreword/</guid>
       <description></description>
     </item>
     
     <item>
       <title>1.目录</title>
-      <link>https://opsbear2.github.io/frontpage/1.toc/</link>
+      <link>https://opsbear2.com/frontpage/1.toc/</link>
       <pubDate>Thu, 28 Jul 2022 23:28:30 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/frontpage/1.toc/</guid>
+      <guid>https://opsbear2.com/frontpage/1.toc/</guid>
       <description>生成页面目录toc
 用法:
 {{&amp;lt; toc &amp;gt;}}例子:

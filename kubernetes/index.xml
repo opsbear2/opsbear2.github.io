@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubernetes on Welcome to Bear2&#39;s Secret Garden 💬🐻💬</title>
-    <link>https://opsbear2.github.io/kubernetes/</link>
+    <link>https://opsbear2.com/kubernetes/</link>
     <description>Recent content in Kubernetes on Welcome to Bear2&#39;s Secret Garden 💬🐻💬</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 03 Aug 2022 15:56:45 +0800</lastBuildDate><atom:link href="https://opsbear2.github.io/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Aug 2022 15:56:45 +0800</lastBuildDate><atom:link href="https://opsbear2.com/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2.容器的本质</title>
-      <link>https://opsbear2.github.io/kubernetes/2.containerconcept/</link>
+      <link>https://opsbear2.com/kubernetes/2.containerconcept/</link>
       <pubDate>Wed, 03 Aug 2022 15:56:45 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/kubernetes/2.containerconcept/</guid>
+      <guid>https://opsbear2.com/kubernetes/2.containerconcept/</guid>
       <description>1 什么是容器 2 容器的隔离性  2.1 为什么要隔离 2.2 与虚拟机的区别   3 隔离实现原理      1 什么是容器     从字面上来看，容器就是 Container，一般把它形象地比喻成现实世界里的集装箱，它也正好和 Docker 的现实含义相对应，因为码头工人（那只可爱的小鲸鱼）就是不停地在搬运集装箱
 集装箱的作用是标准化封装各种货物，一旦打包完成之后，就可以从一个地方迁移到任意的其他地方。相比散装形式而言，集装箱隔离了箱内箱外两个世界，保持了货物的原始形态，避免了内外部相互干扰，极大地简化了商品的存储、运输、管理等工作
 再回到我们的计算机世界，容器也发挥着同样的作用，不过它封装的货物是运行中的应用程序，也就是进程，同样它也会把进程与外界隔离开，让进程与外部系统互不影响
@@ -23,10 +23,10 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
     
     <item>
       <title>1.初识容器</title>
-      <link>https://opsbear2.github.io/kubernetes/1.beginning/</link>
+      <link>https://opsbear2.com/kubernetes/1.beginning/</link>
       <pubDate>Fri, 29 Jul 2022 10:39:27 +0800</pubDate>
       
-      <guid>https://opsbear2.github.io/kubernetes/1.beginning/</guid>
+      <guid>https://opsbear2.com/kubernetes/1.beginning/</guid>
       <description>1 初始容器 2 Docker的安装  2.1 手动安装 2.2 自动安装 2.3 卸载docker   3 Docker的简单使用 4 Docker的架构      1 初始容器     在学习Kubernetes之前，先从最简单、最基本的知识入手，聊聊最流行的容器技术 Docker
 Docker的形态
 目前使用 Docker 基本上有两个选择：Docker Desktop 和 Docker Engine

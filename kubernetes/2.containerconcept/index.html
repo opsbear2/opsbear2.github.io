@@ -52,7 +52,7 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
 $ docker pull alpine 使用 docker run 命令运行它的 Shell 程序
 $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入容器内部 在容器里查看系统信息，会发现已经不再是外面的 Centos 系统了，而是变成了 Alpine Linux 3.15，使用 ps 命令也只会看到一个完全“干净”的运行环境，除了 Shell（即 sh）没有其他的进程存在，也就是说，在容器内部是一个全新的 Alpine 操作系统，在这里运行的应用程序完全看不到外面的 Ubuntu 系统，两个系统被互相“隔离”了，就像是一个“世外桃源”" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://opsbear2.github.io/kubernetes/2.containerconcept/" />
+<meta property="og:url" content="https://opsbear2.com/kubernetes/2.containerconcept/" />
 
 <meta property="article:section" content="Kubernetes" />
     <meta
@@ -82,7 +82,7 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
       "@type": "TechArticle",
       "articleSection": "Kubernetes",
       "name": "2.容器的本质",
-      "url" : "https://opsbear2.github.io/kubernetes/2.containerconcept/",
+      "url" : "https://opsbear2.com/kubernetes/2.containerconcept/",
       "headline": "2.容器的本质",
       "description": "1 什么是容器 2 容器的隔离性  2.1 为什么要隔离 2.2 与虚拟机的区别   3 隔离实现原理      1 什么是容器     从字面上来看，容器就是 Container，一般把它形象地比喻成现实世界里的集装箱，它也正好和 Docker 的现实含义相对应，因为码头工人（那只可爱的小鲸鱼）就是不停地在搬运集装箱\n集装箱的作用是标准化封装各种货物，一旦打包完成之后，就可以从一个地方迁移到任意的其他地方。相比散装形式而言，集装箱隔离了箱内箱外两个世界，保持了货物的原始形态，避免了内外部相互干扰，极大地简化了商品的存储、运输、管理等工作\n再回到我们的计算机世界，容器也发挥着同样的作用，不过它封装的货物是运行中的应用程序，也就是进程，同样它也会把进程与外界隔离开，让进程与外部系统互不影响\n实际看一下在容器里运行的进程\n使用 docker pull 命令，拉取一个新的镜像——操作系统 Alpine\n$ docker pull alpine 使用 docker run 命令运行它的 Shell 程序\n$ docker run -it alpine sh\t# -it参数，临时离开当前操作系统，进入容器内部 在容器里查看系统信息，会发现已经不再是外面的 Centos 系统了，而是变成了 Alpine Linux 3.15，使用 ps 命令也只会看到一个完全“干净”的运行环境，除了 Shell（即 sh）没有其他的进程存在，也就是说，在容器内部是一个全新的 Alpine 操作系统，在这里运行的应用程序完全看不到外面的 Ubuntu 系统，两个系统被互相“隔离”了，就像是一个“世外桃源”",
       "wordCount" : "176",
@@ -90,7 +90,7 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://opsbear2.github.io/kubernetes/2.containerconcept/"
+          "@id": "https://opsbear2.com/kubernetes/2.containerconcept/"
       },
       "copyrightHolder" : "Welcome to Bear2\u0027s Secret Garden 💬🐻💬",
       "copyrightYear" : "2022",
@@ -100,10 +100,10 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
       "publisher":{
           "@type":"Organization",
           "name": "Welcome to Bear2's Secret Garden 💬🐻💬",
-          "url": "https://opsbear2.github.io",
+          "url": "https://opsbear2.com",
           "logo": {
               "@type": "ImageObject",
-              "url": "https://opsbear2.github.io/brand.svg",
+              "url": "https://opsbear2.com/brand.svg",
               "width":"32",
               "height":"32"
           }
@@ -172,7 +172,7 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
   href="/custom.css"
   media="all"
 />
-  <link href="https://opsbear2.github.io/kubernetes/2.containerconcept/" rel="canonical" type="text/html" />
+  <link href="https://opsbear2.com/kubernetes/2.containerconcept/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -209,7 +209,7 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
       </label>
     
     <div>
-      <a class="gdoc-brand gdoc-header__link" href="https://opsbear2.github.io">
+      <a class="gdoc-brand gdoc-header__link" href="https://opsbear2.com">
         <span class="flex align-center">
           <img
             class="gdoc-brand__img"
@@ -241,7 +241,7 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
         </span>
 
         <span class="gdoc-menu-header__home">
-          <a href="https://opsbear2.github.io" class="gdoc-header__link">
+          <a href="https://opsbear2.com" class="gdoc-header__link">
             <svg class="gdoc-icon gdoc_home">
               <title>Back to homepage</title>
               <use xlink:href="#gdoc_home"></use>
@@ -288,7 +288,7 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
       placeholder="Search"
       aria-label="Search"
       maxlength="64"
-      data-site-base-url="https://opsbear2.github.io"
+      data-site-base-url="https://opsbear2.com"
       data-site-lang="en"
     />
     <div class="gdoc-search__spinner spinner hidden"></div>
@@ -329,13 +329,13 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-76c4a930"
+                class="gdoc-nav__toggle" id="navtree-1653c985"
                 
               
             />
             <label
               
-                for="navtree-76c4a930" class="flex justify-between align-center"
+                for="navtree-1653c985" class="flex justify-between align-center"
               
             >
               
@@ -681,13 +681,13 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-a58b0c8a"
+                class="gdoc-nav__toggle" id="navtree-f428613a"
                 
               
             />
             <label
               
-                for="navtree-a58b0c8a" class="flex justify-between align-center"
+                for="navtree-f428613a" class="flex justify-between align-center"
               
             >
               
@@ -774,13 +774,13 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-f245f1f0"
+                class="gdoc-nav__toggle" id="navtree-8ba17b06"
                 checked
               
             />
             <label
               
-                for="navtree-f245f1f0" class="flex justify-between align-center"
+                for="navtree-8ba17b06" class="flex justify-between align-center"
               
             >
               
@@ -910,13 +910,13 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-84252e46"
+                class="gdoc-nav__toggle" id="navtree-21116eab"
                 
               
             />
             <label
               
-                for="navtree-84252e46" class="flex justify-between align-center"
+                for="navtree-21116eab" class="flex justify-between align-center"
               
             >
               
@@ -1082,13 +1082,13 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-7f271519"
+                class="gdoc-nav__toggle" id="navtree-d01e0286"
                 
               
             />
             <label
               
-                for="navtree-7f271519" class="flex justify-between align-center"
+                for="navtree-d01e0286" class="flex justify-between align-center"
               
             >
               
@@ -1182,13 +1182,13 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-6d9a4625"
+                class="gdoc-nav__toggle" id="navtree-aebcf0b4"
                 
               
             />
             <label
               
-                for="navtree-6d9a4625" class="flex justify-between align-center"
+                for="navtree-aebcf0b4" class="flex justify-between align-center"
               
             >
               
@@ -1275,13 +1275,13 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-0327a4a0"
+                class="gdoc-nav__toggle" id="navtree-aa927ad2"
                 
               
             />
             <label
               
-                for="navtree-0327a4a0" class="flex justify-between align-center"
+                for="navtree-aa927ad2" class="flex justify-between align-center"
               
             >
               
@@ -1368,13 +1368,13 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-7433831c"
+                class="gdoc-nav__toggle" id="navtree-ed45ba31"
                 
               
             />
             <label
               
-                for="navtree-7433831c" class="flex justify-between align-center"
+                for="navtree-ed45ba31" class="flex justify-between align-center"
               
             >
               
@@ -1684,7 +1684,7 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
 <div class="gdoc-page__anchorwrap">
     <h2 id="1-什么是容器">
         1 什么是容器
-        <a data-clipboard-text="https://opsbear2.github.io/kubernetes/2.containerconcept/#1-什么是容器" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 1 什么是容器" aria-label="Anchor to: 1 什么是容器" href="#1-%e4%bb%80%e4%b9%88%e6%98%af%e5%ae%b9%e5%99%a8">
+        <a data-clipboard-text="https://opsbear2.com/kubernetes/2.containerconcept/#1-什么是容器" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 1 什么是容器" aria-label="Anchor to: 1 什么是容器" href="#1-%e4%bb%80%e4%b9%88%e6%98%af%e5%ae%b9%e5%99%a8">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
@@ -1720,7 +1720,7 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
 <div class="gdoc-page__anchorwrap">
     <h2 id="2-容器的隔离性">
         2 容器的隔离性
-        <a data-clipboard-text="https://opsbear2.github.io/kubernetes/2.containerconcept/#2-容器的隔离性" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2 容器的隔离性" aria-label="Anchor to: 2 容器的隔离性" href="#2-%e5%ae%b9%e5%99%a8%e7%9a%84%e9%9a%94%e7%a6%bb%e6%80%a7">
+        <a data-clipboard-text="https://opsbear2.com/kubernetes/2.containerconcept/#2-容器的隔离性" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2 容器的隔离性" aria-label="Anchor to: 2 容器的隔离性" href="#2-%e5%ae%b9%e5%99%a8%e7%9a%84%e9%9a%94%e7%a6%bb%e6%80%a7">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
@@ -1728,7 +1728,7 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
 <div class="gdoc-page__anchorwrap">
     <h3 id="21-为什么要隔离">
         2.1 为什么要隔离
-        <a data-clipboard-text="https://opsbear2.github.io/kubernetes/2.containerconcept/#21-为什么要隔离" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2.1 为什么要隔离" aria-label="Anchor to: 2.1 为什么要隔离" href="#21-%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%9a%94%e7%a6%bb">
+        <a data-clipboard-text="https://opsbear2.com/kubernetes/2.containerconcept/#21-为什么要隔离" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2.1 为什么要隔离" aria-label="Anchor to: 2.1 为什么要隔离" href="#21-%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%9a%94%e7%a6%bb">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h3>
@@ -1741,7 +1741,7 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
 <div class="gdoc-page__anchorwrap">
     <h3 id="22-与虚拟机的区别">
         2.2 与虚拟机的区别
-        <a data-clipboard-text="https://opsbear2.github.io/kubernetes/2.containerconcept/#22-与虚拟机的区别" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2.2 与虚拟机的区别" aria-label="Anchor to: 2.2 与虚拟机的区别" href="#22-%e4%b8%8e%e8%99%9a%e6%8b%9f%e6%9c%ba%e7%9a%84%e5%8c%ba%e5%88%ab">
+        <a data-clipboard-text="https://opsbear2.com/kubernetes/2.containerconcept/#22-与虚拟机的区别" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2.2 与虚拟机的区别" aria-label="Anchor to: 2.2 与虚拟机的区别" href="#22-%e4%b8%8e%e8%99%9a%e6%8b%9f%e6%9c%ba%e7%9a%84%e5%8c%ba%e5%88%ab">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h3>
@@ -1772,7 +1772,7 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
 <div class="gdoc-page__anchorwrap">
     <h2 id="3-隔离实现原理">
         3 隔离实现原理
-        <a data-clipboard-text="https://opsbear2.github.io/kubernetes/2.containerconcept/#3-隔离实现原理" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 3 隔离实现原理" aria-label="Anchor to: 3 隔离实现原理" href="#3-%e9%9a%94%e7%a6%bb%e5%ae%9e%e7%8e%b0%e5%8e%9f%e7%90%86">
+        <a data-clipboard-text="https://opsbear2.com/kubernetes/2.containerconcept/#3-隔离实现原理" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 3 隔离实现原理" aria-label="Anchor to: 3 隔离实现原理" href="#3-%e9%9a%94%e7%a6%bb%e5%ae%9e%e7%8e%b0%e5%8e%9f%e7%90%86">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>

@@ -52,7 +52,7 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
 Request URL: https://opsbear2.com/favicon/favicon.svg 那么这个文件在哪里呢？进入网站的家目录find遍历资源，可以看到public和themes目录下都有文件，在搭建Hugo&#43;Github Page 架构的网站时，我们知道是把public目录下的静态页资源推送到Github，所以网站图标其实请求的就是./public/favicon/favicon.svg这个文件，而themes目录下的favicon.svg是Hugo构建静态页所需要的资源。如果想自定义网站图标，只需要将themes目录下的favicon.svg替换，Hugo -D重新构静态页，将新的资源再推送Github就可以了
 bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://opsbear2.github.io/mydocs/3.favicon/" />
+<meta property="og:url" content="https://opsbear2.com/mydocs/3.favicon/" />
 
 <meta property="article:section" content="Mydocs" />
     <meta
@@ -82,7 +82,7 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
       "@type": "TechArticle",
       "articleSection": "Mydocs",
       "name": "3.个性化Favicon",
-      "url" : "https://opsbear2.github.io/mydocs/3.favicon/",
+      "url" : "https://opsbear2.com/mydocs/3.favicon/",
       "headline": "3.个性化Favicon",
       "description": "1 什么是favicon 2 自定义网站图标  2.1 定位网页的favicon文件 2.2 favicon的本地资源 2.3 生成你的favicon文件 2.4 推送新的网站图标        1 什么是favicon     Favicon是favorites icon的缩写，亦被称为website icon（网页图标）、page icon（页面图标）或urlicon（URL图标）。Favicon是与某个网站或网页相关联的图标\n简单点就是它们\n2 自定义网站图标     个人博客搭建好了，想拥有个性化的网站图标怎么办，你只需要替换下原有favicon的文件即可\n2.1 定位网页的favicon文件     首先你需要知道你网站的favicon文件使用的格式，打开网页，F12进入开发者工具，找到Network，检索以favicon为前缀的资源文件，刷新网页重新请求资源，可以看到我的网站favicon文件是*.SVG格式，当然大部分网站的favicon都会采用这种格式，还有其他格式，比如*.ICO *.PNG等\n2.2 favicon的本地资源     查看favicon文件的header信息，也可以看到网页图标其实就是请求这个URL\nRequest URL: https:\/\/opsbear2.com\/favicon\/favicon.svg 那么这个文件在哪里呢？进入网站的家目录find遍历资源，可以看到public和themes目录下都有文件，在搭建Hugo\u002bGithub Page 架构的网站时，我们知道是把public目录下的静态页资源推送到Github，所以网站图标其实请求的就是.\/public\/favicon\/favicon.svg这个文件，而themes目录下的favicon.svg是Hugo构建静态页所需要的资源。如果想自定义网站图标，只需要将themes目录下的favicon.svg替换，Hugo -D重新构静态页，将新的资源再推送Github就可以了\nbear2 ~\/git\/blog find . -name \u0022*favicon*\u0022 .\/public\/favicon .",
       "wordCount" : "80",
@@ -90,7 +90,7 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://opsbear2.github.io/mydocs/3.favicon/"
+          "@id": "https://opsbear2.com/mydocs/3.favicon/"
       },
       "copyrightHolder" : "Welcome to Bear2\u0027s Secret Garden 💬🐻💬",
       "copyrightYear" : "2022",
@@ -100,10 +100,10 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
       "publisher":{
           "@type":"Organization",
           "name": "Welcome to Bear2's Secret Garden 💬🐻💬",
-          "url": "https://opsbear2.github.io",
+          "url": "https://opsbear2.com",
           "logo": {
               "@type": "ImageObject",
-              "url": "https://opsbear2.github.io/brand.svg",
+              "url": "https://opsbear2.com/brand.svg",
               "width":"32",
               "height":"32"
           }
@@ -172,7 +172,7 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
   href="/custom.css"
   media="all"
 />
-  <link href="https://opsbear2.github.io/mydocs/3.favicon/" rel="canonical" type="text/html" />
+  <link href="https://opsbear2.com/mydocs/3.favicon/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -209,7 +209,7 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
       </label>
     
     <div>
-      <a class="gdoc-brand gdoc-header__link" href="https://opsbear2.github.io">
+      <a class="gdoc-brand gdoc-header__link" href="https://opsbear2.com">
         <span class="flex align-center">
           <img
             class="gdoc-brand__img"
@@ -241,7 +241,7 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
         </span>
 
         <span class="gdoc-menu-header__home">
-          <a href="https://opsbear2.github.io" class="gdoc-header__link">
+          <a href="https://opsbear2.com" class="gdoc-header__link">
             <svg class="gdoc-icon gdoc_home">
               <title>Back to homepage</title>
               <use xlink:href="#gdoc_home"></use>
@@ -288,7 +288,7 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
       placeholder="Search"
       aria-label="Search"
       maxlength="64"
-      data-site-base-url="https://opsbear2.github.io"
+      data-site-base-url="https://opsbear2.com"
       data-site-lang="en"
     />
     <div class="gdoc-search__spinner spinner hidden"></div>
@@ -329,13 +329,13 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-76c4a930"
+                class="gdoc-nav__toggle" id="navtree-1653c985"
                 
               
             />
             <label
               
-                for="navtree-76c4a930" class="flex justify-between align-center"
+                for="navtree-1653c985" class="flex justify-between align-center"
               
             >
               
@@ -681,13 +681,13 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-a58b0c8a"
+                class="gdoc-nav__toggle" id="navtree-f428613a"
                 
               
             />
             <label
               
-                for="navtree-a58b0c8a" class="flex justify-between align-center"
+                for="navtree-f428613a" class="flex justify-between align-center"
               
             >
               
@@ -774,13 +774,13 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-f245f1f0"
+                class="gdoc-nav__toggle" id="navtree-8ba17b06"
                 
               
             />
             <label
               
-                for="navtree-f245f1f0" class="flex justify-between align-center"
+                for="navtree-8ba17b06" class="flex justify-between align-center"
               
             >
               
@@ -910,13 +910,13 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-84252e46"
+                class="gdoc-nav__toggle" id="navtree-21116eab"
                 checked
               
             />
             <label
               
-                for="navtree-84252e46" class="flex justify-between align-center"
+                for="navtree-21116eab" class="flex justify-between align-center"
               
             >
               
@@ -1082,13 +1082,13 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-7f271519"
+                class="gdoc-nav__toggle" id="navtree-d01e0286"
                 
               
             />
             <label
               
-                for="navtree-7f271519" class="flex justify-between align-center"
+                for="navtree-d01e0286" class="flex justify-between align-center"
               
             >
               
@@ -1182,13 +1182,13 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-6d9a4625"
+                class="gdoc-nav__toggle" id="navtree-aebcf0b4"
                 
               
             />
             <label
               
-                for="navtree-6d9a4625" class="flex justify-between align-center"
+                for="navtree-aebcf0b4" class="flex justify-between align-center"
               
             >
               
@@ -1275,13 +1275,13 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-0327a4a0"
+                class="gdoc-nav__toggle" id="navtree-aa927ad2"
                 
               
             />
             <label
               
-                for="navtree-0327a4a0" class="flex justify-between align-center"
+                for="navtree-aa927ad2" class="flex justify-between align-center"
               
             >
               
@@ -1368,13 +1368,13 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
             <input
               type="checkbox"
               
-                class="gdoc-nav__toggle" id="navtree-7433831c"
+                class="gdoc-nav__toggle" id="navtree-ed45ba31"
                 
               
             />
             <label
               
-                for="navtree-7433831c" class="flex justify-between align-center"
+                for="navtree-ed45ba31" class="flex justify-between align-center"
               
             >
               
@@ -1685,7 +1685,7 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
 <div class="gdoc-page__anchorwrap">
     <h2 id="1-什么是favicon">
         1 什么是favicon
-        <a data-clipboard-text="https://opsbear2.github.io/mydocs/3.favicon/#1-什么是favicon" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 1 什么是favicon" aria-label="Anchor to: 1 什么是favicon" href="#1-%e4%bb%80%e4%b9%88%e6%98%affavicon">
+        <a data-clipboard-text="https://opsbear2.com/mydocs/3.favicon/#1-什么是favicon" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 1 什么是favicon" aria-label="Anchor to: 1 什么是favicon" href="#1-%e4%bb%80%e4%b9%88%e6%98%affavicon">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
@@ -1712,7 +1712,7 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
 <div class="gdoc-page__anchorwrap">
     <h2 id="2-自定义网站图标">
         2 自定义网站图标
-        <a data-clipboard-text="https://opsbear2.github.io/mydocs/3.favicon/#2-自定义网站图标" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2 自定义网站图标" aria-label="Anchor to: 2 自定义网站图标" href="#2-%e8%87%aa%e5%ae%9a%e4%b9%89%e7%bd%91%e7%ab%99%e5%9b%be%e6%a0%87">
+        <a data-clipboard-text="https://opsbear2.com/mydocs/3.favicon/#2-自定义网站图标" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2 自定义网站图标" aria-label="Anchor to: 2 自定义网站图标" href="#2-%e8%87%aa%e5%ae%9a%e4%b9%89%e7%bd%91%e7%ab%99%e5%9b%be%e6%a0%87">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
@@ -1721,7 +1721,7 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
 <div class="gdoc-page__anchorwrap">
     <h3 id="21-定位网页的favicon文件">
         2.1 定位网页的favicon文件
-        <a data-clipboard-text="https://opsbear2.github.io/mydocs/3.favicon/#21-定位网页的favicon文件" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2.1 定位网页的favicon文件" aria-label="Anchor to: 2.1 定位网页的favicon文件" href="#21-%e5%ae%9a%e4%bd%8d%e7%bd%91%e9%a1%b5%e7%9a%84favicon%e6%96%87%e4%bb%b6">
+        <a data-clipboard-text="https://opsbear2.com/mydocs/3.favicon/#21-定位网页的favicon文件" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2.1 定位网页的favicon文件" aria-label="Anchor to: 2.1 定位网页的favicon文件" href="#21-%e5%ae%9a%e4%bd%8d%e7%bd%91%e9%a1%b5%e7%9a%84favicon%e6%96%87%e4%bb%b6">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h3>
@@ -1735,7 +1735,7 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
 <div class="gdoc-page__anchorwrap">
     <h3 id="22-favicon的本地资源">
         2.2 favicon的本地资源
-        <a data-clipboard-text="https://opsbear2.github.io/mydocs/3.favicon/#22-favicon的本地资源" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2.2 favicon的本地资源" aria-label="Anchor to: 2.2 favicon的本地资源" href="#22-favicon%e7%9a%84%e6%9c%ac%e5%9c%b0%e8%b5%84%e6%ba%90">
+        <a data-clipboard-text="https://opsbear2.com/mydocs/3.favicon/#22-favicon的本地资源" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2.2 favicon的本地资源" aria-label="Anchor to: 2.2 favicon的本地资源" href="#22-favicon%e7%9a%84%e6%9c%ac%e5%9c%b0%e8%b5%84%e6%ba%90">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h3>
@@ -1771,7 +1771,7 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
 </span></span></code></pre></div><div class="gdoc-page__anchorwrap">
     <h3 id="23-生成你的favicon文件">
         2.3 生成你的favicon文件
-        <a data-clipboard-text="https://opsbear2.github.io/mydocs/3.favicon/#23-生成你的favicon文件" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2.3 生成你的favicon文件" aria-label="Anchor to: 2.3 生成你的favicon文件" href="#23-%e7%94%9f%e6%88%90%e4%bd%a0%e7%9a%84favicon%e6%96%87%e4%bb%b6">
+        <a data-clipboard-text="https://opsbear2.com/mydocs/3.favicon/#23-生成你的favicon文件" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2.3 生成你的favicon文件" aria-label="Anchor to: 2.3 生成你的favicon文件" href="#23-%e7%94%9f%e6%88%90%e4%bd%a0%e7%9a%84favicon%e6%96%87%e4%bb%b6">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h3>
@@ -1812,7 +1812,7 @@ bear2 ~/git/blog find . -name &#34;*favicon*&#34; ./public/favicon ." />
 <div class="gdoc-page__anchorwrap">
     <h3 id="24-推送新的网站图标">
         2.4 推送新的网站图标
-        <a data-clipboard-text="https://opsbear2.github.io/mydocs/3.favicon/#24-推送新的网站图标" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2.4 推送新的网站图标" aria-label="Anchor to: 2.4 推送新的网站图标" href="#24-%e6%8e%a8%e9%80%81%e6%96%b0%e7%9a%84%e7%bd%91%e7%ab%99%e5%9b%be%e6%a0%87">
+        <a data-clipboard-text="https://opsbear2.com/mydocs/3.favicon/#24-推送新的网站图标" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 2.4 推送新的网站图标" aria-label="Anchor to: 2.4 推送新的网站图标" href="#24-%e6%8e%a8%e9%80%81%e6%96%b0%e7%9a%84%e7%bd%91%e7%ab%99%e5%9b%be%e6%a0%87">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h3>
