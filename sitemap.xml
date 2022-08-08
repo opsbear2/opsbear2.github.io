@@ -2,19 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://opsbear2.com/mydocs/4.sitemap/</loc>
+    <lastmod>2022-08-05T18:25:13+08:00</lastmod>
+  </url><url>
+    <loc>https://opsbear2.com/mydocs/</loc>
+    <lastmod>2022-08-05T18:25:13+08:00</lastmod>
+  </url><url>
+    <loc>https://opsbear2.com/</loc>
+    <lastmod>2022-08-05T18:25:13+08:00</lastmod>
+  </url><url>
     <loc>https://opsbear2.com/prometheus/1.foreword/</loc>
     <lastmod>2022-08-05T16:46:51+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/prometheus/</loc>
     <lastmod>2022-08-05T16:46:51+08:00</lastmod>
   </url><url>
-    <loc>https://opsbear2.com/</loc>
-    <lastmod>2022-08-05T16:46:51+08:00</lastmod>
-  </url><url>
     <loc>https://opsbear2.com/mydocs/3.favicon/</loc>
-    <lastmod>2022-08-03T18:26:38+08:00</lastmod>
-  </url><url>
-    <loc>https://opsbear2.com/mydocs/</loc>
     <lastmod>2022-08-03T18:26:38+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/kubernetes/2.containerconcept/</loc>

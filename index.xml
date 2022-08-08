@@ -5,7 +5,21 @@
     <link>https://opsbear2.com/</link>
     <description>Recent content on Welcome to Bear2&#39;s Secret Garden 💬🐻💬</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 05 Aug 2022 16:46:51 +0800</lastBuildDate><atom:link href="https://opsbear2.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Aug 2022 18:25:13 +0800</lastBuildDate><atom:link href="https://opsbear2.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>4.收录你的网站</title>
+      <link>https://opsbear2.com/mydocs/4.sitemap/</link>
+      <pubDate>Fri, 05 Aug 2022 18:25:13 +0800</pubDate>
+      
+      <guid>https://opsbear2.com/mydocs/4.sitemap/</guid>
+      <description>   1 什么是Sitemap      1 什么是Sitemap     在博客上发布文章之后，怎么从搜索引擎查询到他们呢？靠它—Sitemap
+ Sitemap的定义
+ Sitemap，站点地图是一种文件，您可以在其中提供与您网站中的网页、视频或其他文件有关的信息，还可以说明这些内容之间的关系。Google 等搜索引擎会读取此文件，以便更高效地抓取您的网站。站点地图会告诉 Google 您认为网站中的哪些网页和文件比较重要，还会提供与这些文件有关的重要信息。例如，网页上次更新的时间和网页是否有任何备用的语言版本
+简而言之，Sitemap 可以将网站内容的组织结构提交给搜索引擎，告知你的网站上有哪些可供抓取的网页
+Sitemap可以支持多种格式
+ txt文本格式 xml格式 Sitemap索引格式  </description>
+    </item>
+    
     <item>
       <title>1.foreword</title>
       <link>https://opsbear2.com/prometheus/1.foreword/</link>
