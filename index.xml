@@ -8,10 +8,10 @@
     <lastBuildDate>Fri, 05 Aug 2022 18:25:13 +0800</lastBuildDate><atom:link href="https://opsbear2.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>4.收录你的网站</title>
-      <link>https://opsbear2.com/mydocs/4.sitemap/</link>
+      <link>https://opsbear2.com/mydocs/blog/4.sitemap/</link>
       <pubDate>Fri, 05 Aug 2022 18:25:13 +0800</pubDate>
       
-      <guid>https://opsbear2.com/mydocs/4.sitemap/</guid>
+      <guid>https://opsbear2.com/mydocs/blog/4.sitemap/</guid>
       <description>1 什么是Sitemap 2 收录网站      1 什么是Sitemap     在博客上发布文章之后，怎么从搜索引擎找到他们呢？
  Sitemap的定义
  Sitemap，站点地图是一种文件，您可以在其中提供与您网站中的网页、视频或其他文件有关的信息，还可以说明这些内容之间的关系。Google 等搜索引擎会读取此文件，以便更高效地抓取您的网站。站点地图会告诉 Google 您认为网站中的哪些网页和文件比较重要，还会提供与这些文件有关的重要信息。例如，网页上次更新的时间和网页是否有任何备用的语言版本
@@ -31,10 +31,10 @@ Expand ↕    xmlns=&#34;http://www.sitemaps.org/schemas/sitemap/0.9&#34; xmlns:
     
     <item>
       <title>3.个性化Favicon</title>
-      <link>https://opsbear2.com/mydocs/3.favicon/</link>
+      <link>https://opsbear2.com/mydocs/blog/3.favicon/</link>
       <pubDate>Wed, 03 Aug 2022 18:26:38 +0800</pubDate>
       
-      <guid>https://opsbear2.com/mydocs/3.favicon/</guid>
+      <guid>https://opsbear2.com/mydocs/blog/3.favicon/</guid>
       <description>1 什么是favicon 2 自定义网站图标  2.1 定位网页的favicon文件 2.2 favicon的本地资源 2.3 生成你的favicon文件 2.4 推送新的网站图标        1 什么是favicon     Favicon是favorites icon的缩写，亦被称为website icon（网页图标）、page icon（页面图标）或urlicon（URL图标）。Favicon是与某个网站或网页相关联的图标
 简单点就是它们
 2 自定义网站图标     个人博客搭建好了，想拥有个性化的网站图标怎么办，你只需要替换下原有favicon的文件即可
@@ -70,10 +70,10 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
     
     <item>
       <title>2.GPT图床搭建教程</title>
-      <link>https://opsbear2.com/mydocs/2.imagesbed/</link>
+      <link>https://opsbear2.com/mydocs/blog/2.imagesbed/</link>
       <pubDate>Mon, 01 Aug 2022 22:01:36 +0800</pubDate>
       
-      <guid>https://opsbear2.com/mydocs/2.imagesbed/</guid>
+      <guid>https://opsbear2.com/mydocs/blog/2.imagesbed/</guid>
       <description>1 项目介绍 2 Github创建仓库 3 安装PicGo 4 集成Typora      1 项目介绍     博客中的图片该如何存储，本文将介绍基于Github+PicGo+Typora搭建的免费图床，保姆级别的搭建教程如下
  Q1：什么是Github+PicGo+Typora？
   Github 是一个静态站点托管服务，直接将个人、组织或项目的页面托管于 GitHub 库或仓库 (repository) 中 PicGo 是一个用于快速上传图片并获取图片 URL 链接的工具 Typora 是一款轻便简洁的Markdown编辑器，支持即时渲染是它最大的特色  2 Github创建仓库     Github的仓库可以作为存放博客图片的后端，比起共享存储、自建nginx站点等方式，它最大的特点是免费（白嫖
@@ -91,10 +91,10 @@ https://www.macat.vip/?cat=&amp;s=PicGo
     
     <item>
       <title>1.基于Hugo&#43;Github搭建博客</title>
-      <link>https://opsbear2.com/mydocs/1.blogquickstart/</link>
+      <link>https://opsbear2.com/mydocs/blog/1.blogquickstart/</link>
       <pubDate>Mon, 01 Aug 2022 17:36:58 +0800</pubDate>
       
-      <guid>https://opsbear2.com/mydocs/1.blogquickstart/</guid>
+      <guid>https://opsbear2.com/mydocs/blog/1.blogquickstart/</guid>
       <description>1 项目介绍 2 GitHub环境准备 3 安装Hugo 4 将网站推送至Github 5 添加文章 6 网站加速      1 项目介绍     本文介绍如何使用GitHub Pages+Hugo搭建个人博客
  Q1：什么是 GitHub Pages+Hugo ？
   GitHub Pages 是一个静态站点托管服务，直接将个人、组织或项目的页面托管于 GitHub 库或仓库 (repository) 中 Hugo 是一个用 Go 语言编写的静态站点生成器，它针对速度、易用性和可配置性进行了优化，快速灵活  2 GitHub环境准备     在有GitHub账号的基础上，新建一个仓库，库名为${username}.github.io
