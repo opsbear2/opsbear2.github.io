@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Afrontpage on Welcome to Bear2&#39;s Secret Garden 💬🐻💬</title>
+    <link>https://opsbear2.com/afrontpage/</link>
+    <description>Recent content in Afrontpage on Welcome to Bear2&#39;s Secret Garden 💬🐻💬</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 29 Jul 2022 16:20:07 +0800</lastBuildDate><atom:link href="https://opsbear2.com/afrontpage/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>8.图片</title>
+      <link>https://opsbear2.com/afrontpage/8.images/</link>
+      <pubDate>Fri, 29 Jul 2022 16:20:07 +0800</pubDate>
+      
+      <guid>https://opsbear2.com/afrontpage/8.images/</guid>
+      <description>插入图片，可以是本地图片，也可以外部图片
+用法     ![imagesname](url) 例子     熊小二在看雪</description>
+    </item>
+    
+    <item>
+      <title>7.图标</title>
+      <link>https://opsbear2.com/afrontpage/7.icons/</link>
+      <pubDate>Fri, 29 Jul 2022 16:11:01 +0800</pubDate>
+      
+      <guid>https://opsbear2.com/afrontpage/7.icons/</guid>
+      <description>引用图标，这些图标可以是geekdocs自带的，当然你也可以自定义，但必须是SVG格式
+{{&amp;lt; icon &amp;#34;thumbs-up&amp;#34; &amp;gt;}}用法        Result Usage      {{&amp;lt; icon &amp;quot;thumbs-up&amp;quot; &amp;gt;}}    {{&amp;lt; icon &amp;quot;thumbs-down&amp;quot; &amp;gt;}}    {{&amp;lt; icon &amp;quot;laugh&amp;quot; &amp;gt;}}    {{&amp;lt; icon &amp;quot;lemon&amp;quot; &amp;gt;}}    {{&amp;lt; icon &amp;quot;moon&amp;quot; &amp;gt;}}    </description>
+    </item>
+    
+    <item>
+      <title>6.链接</title>
+      <link>https://opsbear2.com/afrontpage/6.buttons/</link>
+      <pubDate>Fri, 29 Jul 2022 15:58:30 +0800</pubDate>
+      
+      <guid>https://opsbear2.com/afrontpage/6.buttons/</guid>
+      <description>点击按钮可以指向本地页面
+{{&amp;lt; button relref=&amp;#34;/&amp;#34; [class=&amp;#34;...&amp;#34;, size=&amp;#34;large|regular&amp;#34;] &amp;gt;}}Get Home{{&amp;lt; /button &amp;gt;}}Get Home   或者外部链接
+{{&amp;lt; button href=&amp;#34;https://www.bilibili.com&amp;#34; &amp;gt;}}Contribute{{&amp;lt; /button &amp;gt;}}B站传送门   在新标签打开链接
+&amp;lt;a href=&amp;#34;https://www.bilibili.com&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;Contribute&amp;lt;/a&amp;gt; B站传送门</description>
+    </item>
+    
+    <item>
+      <title>5.多列</title>
+      <link>https://opsbear2.com/afrontpage/5.columns/</link>
+      <pubDate>Fri, 29 Jul 2022 15:52:56 +0800</pubDate>
+      
+      <guid>https://opsbear2.com/afrontpage/5.columns/</guid>
+      <description>并排（水平）组织内容以提高可读性
+属性        Name Description default     size (optional) size of the first column (small|regular|large) regular    用法     {{&amp;lt; columns &amp;gt;}} &amp;lt;!-- begin columns block --&amp;gt; ## Left Content 至若春和景明，波澜不惊，上下天光，一碧万顷 ... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; ## Mid Content 至若春和景明，波澜不惊，上下天光，一碧万顷 ... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; ## Right Content 至若春和景明，波澜不惊，上下天光，一碧万顷 ... {{&amp;lt; /columns &amp;gt;}} 例子     左     庆历四年春，滕子京谪守巴陵郡。越明年，政通人和，百废具兴，乃重修岳阳楼，增其旧制，刻唐贤今人诗赋于其上，属予作文以记之。</description>
+    </item>
+    
+    <item>
+      <title>4.隐藏</title>
+      <link>https://opsbear2.com/afrontpage/4.expand/</link>
+      <pubDate>Fri, 29 Jul 2022 15:38:18 +0800</pubDate>
+      
+      <guid>https://opsbear2.com/afrontpage/4.expand/</guid>
+      <description>通过隐藏部分文本来帮助减少屏幕上的混乱，通过单击展开内容
+例子     默认     {{&amp;lt; expand &amp;gt;}}## 内容 嗟夫！予尝求古仁人之心，或异二者之为 ... {{&amp;lt; /expand &amp;gt;}}Expand ↕  内容     嗟夫！予尝求古仁人之心，或异二者之为，何哉？不以物喜，不以己悲，居庙堂之高则忧其民，处江湖之远则忧其君。是进亦忧，退亦忧。然则何时而乐耶？其必曰“先天下之忧而忧，后天下之乐而乐”乎！噫！微斯人，吾谁与归？   自定义标签     {{&amp;lt; expand &amp;#34;Custom Label&amp;#34; &amp;#34;...&amp;#34; &amp;gt;}}## 内容 嗟夫！予尝求古仁人之心，或异二者之为 ... {{&amp;lt; /expand &amp;gt;}}点击查看原文 ...  原文     庆历四年春，滕子京谪守巴陵郡。越明年，政通人和，百废具兴，乃重修岳阳楼，增其旧制，刻唐贤今人诗赋于其上，属予作文以记之。
+予观夫巴陵胜状，在洞庭一湖。衔远山，吞长江，浩浩汤汤，横无际涯，朝晖夕阴，气象万千，此则岳阳楼之大观也，前人之述备矣。然则北通巫峡，南极潇湘，迁客骚人，多会于此，览物之情，得无异乎？
+若夫淫雨霏霏，连月不开，阴风怒号，浊浪排空，日星隐曜，山岳潜形，商旅不行，樯倾楫摧，薄暮冥冥，虎啸猿啼。登斯楼也，则有去国怀乡，忧谗畏讥，满目萧然，感极而悲者矣。
+至若春和景明，波澜不惊，上下天光，一碧万顷，沙鸥翔集，锦鳞游泳，岸芷汀兰，郁郁青青。而或长烟一空，皓月千里，浮光跃金，静影沉璧，渔歌互答，此乐何极！登斯楼也，则有心旷神怡，宠辱偕忘，把酒临风，其喜洋洋者矣。
+嗟夫！予尝求古仁人之心，或异二者之为，何哉？不以物喜，不以己悲，居庙堂之高则忧其民，处江湖之远则忧其君。是进亦忧，退亦忧。然则何时而乐耶？其必曰“先天下之忧而忧，后天下之乐而乐”乎！噫！微斯人，吾谁与归？
+时六年九月十五日
+  </description>
+    </item>
+    
+    <item>
+      <title>3.提示</title>
+      <link>https://opsbear2.com/afrontpage/3.hints/</link>
+      <pubDate>Fri, 29 Jul 2022 15:22:07 +0800</pubDate>
+      
+      <guid>https://opsbear2.com/afrontpage/3.hints/</guid>
+      <description>设定不同的提示，种类包括提示/警报/通知
+属性        Name Description default     type hint type note   icon (optional) custom icon to use,need to be an icon from an SVG sprite undefined   title (optional) hint title undefined    用法     {{&amp;lt; hint type=tip &amp;gt;}}content {{&amp;lt; /hint &amp;gt;}}例子     {{&amp;lt; hint type=[note|tip|important|caution|warning] (icon=gdoc_github) (title=GitHub) &amp;gt;}}先天下之忧而忧，后天下之乐而乐 {{&amp;lt; /hint &amp;gt;}} 内容</description>
+    </item>
+    
+    <item>
+      <title>2.标签</title>
+      <link>https://opsbear2.com/afrontpage/2.tags/</link>
+      <pubDate>Fri, 29 Jul 2022 15:12:02 +0800</pubDate>
+      
+      <guid>https://opsbear2.com/afrontpage/2.tags/</guid>
+      <description>选项卡可让您按上下文组织内容，例如不同语言版本的《岳阳楼记》
+{{&amp;lt; tabs &amp;#34;uniqueid&amp;#34; &amp;gt;}}{{&amp;lt; tab &amp;#34;tag&amp;#34; &amp;gt;}}content {{&amp;lt; /tab &amp;gt;}}{{&amp;lt; /tabs &amp;gt;}}例子     {{&amp;lt; tabs &amp;#34;uniqueid&amp;#34; &amp;gt;}}{{&amp;lt; tab &amp;#34;简体中文&amp;#34; &amp;gt;}}# 《岳阳楼记》 {{&amp;lt; /tab &amp;gt;}}{{&amp;lt; tab &amp;#34;英语&amp;#34; &amp;gt;}}# 《The Story of Yueyang Tower》 {{&amp;lt; /tab &amp;gt;}}{{&amp;lt; tab &amp;#34;法语&amp;#34; &amp;gt;}}# 《L&amp;#39;histoire de la tour Yueyang》 {{&amp;lt; /tab &amp;gt;}}{{&amp;lt; /tabs &amp;gt;}}简体中文  《岳阳楼记》     庆历四年春，滕子京谪守巴陵郡。越明年，政通人和，百废具兴，乃重修岳阳楼，增其旧制，刻唐贤今人诗赋于其上，属予作文以记之。
+予观夫巴陵胜状，在洞庭一湖。衔远山，吞长江，浩浩汤汤，横无际涯，朝晖夕阴，气象万千，此则岳阳楼之大观也，前人之述备矣。然则北通巫峡，南极潇湘，迁客骚人，多会于此，览物之情，得无异乎？
+若夫淫雨霏霏，连月不开，阴风怒号，浊浪排空，日星隐曜，山岳潜形，商旅不行，樯倾楫摧，薄暮冥冥，虎啸猿啼。登斯楼也，则有去国怀乡，忧谗畏讥，满目萧然，感极而悲者矣。
+至若春和景明，波澜不惊，上下天光，一碧万顷，沙鸥翔集，锦鳞游泳，岸芷汀兰，郁郁青青。而或长烟一空，皓月千里，浮光跃金，静影沉璧，渔歌互答，此乐何极！登斯楼也，则有心旷神怡，宠辱偕忘，把酒临风，其喜洋洋者矣。
+嗟夫！予尝求古仁人之心，或异二者之为，何哉？不以物喜，不以己悲，居庙堂之高则忧其民，处江湖之远则忧其君。是进亦忧，退亦忧。然则何时而乐耶？其必曰“先天下之忧而忧，后天下之乐而乐”乎！噫！微斯人，吾谁与归？
+时六年九月十五日
+ 英语  《The Story of Yueyang Tower》     In the spring of the fourth year of Qingli, Teng Zijing was exiled to guard Baling County.</description>
+    </item>
+    
+    <item>
+      <title>1.目录</title>
+      <link>https://opsbear2.com/afrontpage/1.toc/</link>
+      <pubDate>Thu, 28 Jul 2022 23:28:30 +0800</pubDate>
+      
+      <guid>https://opsbear2.com/afrontpage/1.toc/</guid>
+      <description>生成页面目录toc
+用法:
+{{&amp;lt; toc &amp;gt;}}例子:
+   标题 1 标题 2  标题 2.1  标题 2.1.1  标题 2.1.1.1     标题 2.2        标题 1     HelloWrold
+标题 2     HelloWrold
+标题 2.1     HelloWrold
+标题 2.1.1     HelloWrold
+标题 2.1.1.1     HelloWrold
+标题 2.</description>
+    </item>
+    
+  </channel>
+</rss>
