@@ -61,6 +61,15 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
     
     <item>
       <title>1.foreword</title>
+      <link>https://opsbear2.com/kubernetes/1.foreword/</link>
+      <pubDate>Tue, 02 Aug 2022 11:02:43 +0800</pubDate>
+      
+      <guid>https://opsbear2.com/kubernetes/1.foreword/</guid>
+      <description>Hello World     </description>
+    </item>
+    
+    <item>
+      <title>1.foreword</title>
       <link>https://opsbear2.com/windows/1.foreword/</link>
       <pubDate>Tue, 02 Aug 2022 11:02:43 +0800</pubDate>
       
