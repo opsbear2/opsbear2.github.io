@@ -2,19 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://opsbear2.com/docker/1.foreword/</loc>
-    <lastmod>2022-08-11T17:40:40+08:00</lastmod>
-  </url><url>
-    <loc>https://opsbear2.com/docker/</loc>
-    <lastmod>2022-08-11T17:40:40+08:00</lastmod>
-  </url><url>
-    <loc>https://opsbear2.com/</loc>
-    <lastmod>2022-08-11T17:40:40+08:00</lastmod>
-  </url><url>
     <loc>https://opsbear2.com/mydocs/blog/4.sitemap/</loc>
     <lastmod>2022-08-05T18:25:13+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/mydocs/</loc>
+    <lastmod>2022-08-05T18:25:13+08:00</lastmod>
+  </url><url>
+    <loc>https://opsbear2.com/</loc>
     <lastmod>2022-08-05T18:25:13+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/mydocs/blog/</loc>
@@ -29,7 +23,13 @@
     <loc>https://opsbear2.com/mydocs/blog/3.favicon/</loc>
     <lastmod>2022-08-03T18:26:38+08:00</lastmod>
   </url><url>
+    <loc>https://opsbear2.com/docker/2.containerconcept/</loc>
+    <lastmod>2022-08-03T15:56:45+08:00</lastmod>
+  </url><url>
     <loc>https://opsbear2.com/kubernetes/2.containerconcept/</loc>
+    <lastmod>2022-08-03T15:56:45+08:00</lastmod>
+  </url><url>
+    <loc>https://opsbear2.com/docker/</loc>
     <lastmod>2022-08-03T15:56:45+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/kubernetes/</loc>
@@ -78,6 +78,9 @@
     <lastmod>2022-07-29T15:12:02+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/golang/1.foreword/</loc>
+    <lastmod>2022-07-29T10:39:27+08:00</lastmod>
+  </url><url>
+    <loc>https://opsbear2.com/docker/1.beginning/</loc>
     <lastmod>2022-07-29T10:39:27+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/kubernetes/1.beginning/</loc>
