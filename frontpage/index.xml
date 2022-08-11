@@ -33,9 +33,9 @@
       
       <guid>https://opsbear2.com/frontpage/6.buttons/</guid>
       <description>点击按钮可以指向本地页面
-{{&amp;lt; button relref=&amp;#34;/&amp;#34; [class=&amp;#34;...&amp;#34;, size=&amp;#34;large|regular&amp;#34;] &amp;gt;}}Get Home{{&amp;lt; /button &amp;gt;}}或者外部链接
-{{&amp;lt; button href=&amp;#34;https://www.bilibili.com&amp;#34; &amp;gt;}}Contribute{{&amp;lt; /button &amp;gt;}}​
-    例子      Get Home   B站传送门   </description>
+{{&amp;lt; button relref=&amp;#34;/&amp;#34; [class=&amp;#34;...&amp;#34;, size=&amp;#34;large|regular&amp;#34;] &amp;gt;}}Get Home{{&amp;lt; /button &amp;gt;}}Get Home   或者外部链接
+{{&amp;lt; button href=&amp;#34;https://www.bilibili.com&amp;#34; &amp;gt;}}Contribute{{&amp;lt; /button &amp;gt;}}B站传送门   在新标签打开链接
+&amp;lt;a href=&amp;#34;https://www.bilibili.com&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;Contribute&amp;lt;/a&amp;gt; B站传送门</description>
     </item>
     
     <item>

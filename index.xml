@@ -82,11 +82,10 @@ $ docker run -it alpine sh	# -it参数，临时离开当前操作系统，进入
 【Settings】-&amp;gt;【Developer settings】-&amp;gt;【Personal access tokens】
 点击创建新的token，至此Github配置到此结束
 3 安装PicGo     1.下载PicGo
-你可以从PicGo官网下载软件，或者从第三方软件源下载，例如
-https://www.macat.vip/?cat=&amp;s=PicGo
+你可以从PicGo官网下载软件，或者从第三方软件源下载，例如PicGo下载通道
 更多安装方式见PicGo官方文档传输门🚪 PicGoDocs   2.配置PicGo
 安装完成后，右侧点击【图床配置】，选择GitHub图床，填写以下信息
- 1.</description>
+ 1.指定存储路径可以缺省</description>
     </item>
     
     <item>
@@ -140,9 +139,9 @@ sh openvpn-install.sh &amp;gt;IP address: #脚本自动捕获 &amp;gt;Protocol [
       
       <guid>https://opsbear2.com/frontpage/6.buttons/</guid>
       <description>点击按钮可以指向本地页面
-{{&amp;lt; button relref=&amp;#34;/&amp;#34; [class=&amp;#34;...&amp;#34;, size=&amp;#34;large|regular&amp;#34;] &amp;gt;}}Get Home{{&amp;lt; /button &amp;gt;}}或者外部链接
-{{&amp;lt; button href=&amp;#34;https://www.bilibili.com&amp;#34; &amp;gt;}}Contribute{{&amp;lt; /button &amp;gt;}}​
-    例子      Get Home   B站传送门   </description>
+{{&amp;lt; button relref=&amp;#34;/&amp;#34; [class=&amp;#34;...&amp;#34;, size=&amp;#34;large|regular&amp;#34;] &amp;gt;}}Get Home{{&amp;lt; /button &amp;gt;}}Get Home   或者外部链接
+{{&amp;lt; button href=&amp;#34;https://www.bilibili.com&amp;#34; &amp;gt;}}Contribute{{&amp;lt; /button &amp;gt;}}B站传送门   在新标签打开链接
+&amp;lt;a href=&amp;#34;https://www.bilibili.com&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;Contribute&amp;lt;/a&amp;gt; B站传送门</description>
     </item>
     
     <item>

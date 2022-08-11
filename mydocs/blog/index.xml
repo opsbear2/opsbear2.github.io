@@ -49,11 +49,10 @@ bear2 ~/git/blog find . -name &amp;#34;*favicon*&amp;#34; ./public/favicon .</de
 【Settings】-&amp;gt;【Developer settings】-&amp;gt;【Personal access tokens】
 点击创建新的token，至此Github配置到此结束
 3 安装PicGo     1.下载PicGo
-你可以从PicGo官网下载软件，或者从第三方软件源下载，例如
-https://www.macat.vip/?cat=&amp;s=PicGo
+你可以从PicGo官网下载软件，或者从第三方软件源下载，例如PicGo下载通道
 更多安装方式见PicGo官方文档传输门🚪 PicGoDocs   2.配置PicGo
 安装完成后，右侧点击【图床配置】，选择GitHub图床，填写以下信息
- 1.</description>
+ 1.指定存储路径可以缺省</description>
     </item>
     
     <item>
