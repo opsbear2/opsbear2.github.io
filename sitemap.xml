@@ -26,13 +26,7 @@
     <loc>https://opsbear2.com/docker/2.containerconcept/</loc>
     <lastmod>2022-08-03T15:56:45+08:00</lastmod>
   </url><url>
-    <loc>https://opsbear2.com/kubernetes/2.containerconcept/</loc>
-    <lastmod>2022-08-03T15:56:45+08:00</lastmod>
-  </url><url>
     <loc>https://opsbear2.com/docker/</loc>
-    <lastmod>2022-08-03T15:56:45+08:00</lastmod>
-  </url><url>
-    <loc>https://opsbear2.com/kubernetes/</loc>
     <lastmod>2022-08-03T15:56:45+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/windows/1.foreword/</loc>
@@ -83,9 +77,6 @@
     <loc>https://opsbear2.com/docker/1.beginning/</loc>
     <lastmod>2022-07-29T10:39:27+08:00</lastmod>
   </url><url>
-    <loc>https://opsbear2.com/kubernetes/1.beginning/</loc>
-    <lastmod>2022-07-29T10:39:27+08:00</lastmod>
-  </url><url>
     <loc>https://opsbear2.com/golang/</loc>
     <lastmod>2022-07-29T10:39:27+08:00</lastmod>
   </url><url>
@@ -97,6 +88,8 @@
   </url><url>
     <loc>https://opsbear2.com/afrontpage/1.toc/</loc>
     <lastmod>2022-07-28T23:28:30+08:00</lastmod>
+  </url><url>
+    <loc>https://opsbear2.com/kubernetes/</loc>
   </url><url>
     <loc>https://opsbear2.com/tags/</loc>
   </url>
