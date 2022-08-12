@@ -12,7 +12,11 @@
       <pubDate>Fri, 12 Aug 2022 13:57:43 +0800</pubDate>
       
       <guid>https://opsbear2.com/docker/1.installation/</guid>
-      <description>为什么要用容器     </description>
+      <description>1 为什么要用容器 2 Dockek核心概述  2.1 Docker是什么 2.2 Docker的形态 2.3 Docker的设计目标 2.4 Docker应用场景   3 Docker的架构 4 Docker的隔离性  4.1 为什么要隔离 4.2 与虚拟机的区别 4.3 隔离原理   5 Docker安装  5.1 手动安装 5.2 自动安装 5.3 卸载        1 为什么要用容器       上线流程繁琐 开发-&amp;gt;测试-&amp;gt;申请资源-&amp;gt;审批-&amp;gt;部署-&amp;gt;测试等环节
+  资源利用率低 普遍服务器利用率低，造成过多浪费
+  扩容/缩容不及时 业务高峰期扩容流程繁琐，上线不及时
+  服务器环境臃肿 服务器越来越臃肿，对维护、迁移带来困难
+  2 Dockek核心概述     2.</description>
     </item>
     
   </channel>

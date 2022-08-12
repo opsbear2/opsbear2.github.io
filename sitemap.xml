@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://opsbear2.com/afrontpage/9.color/</loc>
+    <lastmod>2022-08-12T15:34:59+08:00</lastmod>
+  </url><url>
+    <loc>https://opsbear2.com/afrontpage/</loc>
+    <lastmod>2022-08-12T15:34:59+08:00</lastmod>
+  </url><url>
+    <loc>https://opsbear2.com/</loc>
+    <lastmod>2022-08-12T15:34:59+08:00</lastmod>
+  </url><url>
     <loc>https://opsbear2.com/docker/1.installation/</loc>
     <lastmod>2022-08-12T13:57:43+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/docker/</loc>
-    <lastmod>2022-08-12T13:57:43+08:00</lastmod>
-  </url><url>
-    <loc>https://opsbear2.com/</loc>
     <lastmod>2022-08-12T13:57:43+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/mydocs/blog/4.sitemap/</loc>
@@ -54,9 +60,6 @@
     <lastmod>2022-07-31T14:29:33+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/afrontpage/8.images/</loc>
-    <lastmod>2022-07-29T16:20:07+08:00</lastmod>
-  </url><url>
-    <loc>https://opsbear2.com/afrontpage/</loc>
     <lastmod>2022-07-29T16:20:07+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/afrontpage/7.icons/</loc>
