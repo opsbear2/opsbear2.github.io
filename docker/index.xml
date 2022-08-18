@@ -5,7 +5,16 @@
     <link>https://opsbear2.com/docker/</link>
     <description>Recent content in Docker on Welcome to Bear2&#39;s Secret Garden 💬🐻💬</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 12 Aug 2022 13:57:43 +0800</lastBuildDate><atom:link href="https://opsbear2.com/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Aug 2022 16:50:36 +0800</lastBuildDate><atom:link href="https://opsbear2.com/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2.Docker镜像管理</title>
+      <link>https://opsbear2.com/docker/2.mirror/</link>
+      <pubDate>Fri, 12 Aug 2022 16:50:36 +0800</pubDate>
+      
+      <guid>https://opsbear2.com/docker/2.mirror/</guid>
+      <description>   1 镜像是什么      1 镜像是什么      一个分层存储的文件 一个软件的环境 一个镜像可以创建N个容器 一种标准化的交付 一个不包含Linux内核而又精简的Linux操作系统 镜像不是一个单一的文件，而是有多层构成  </description>
+    </item>
+    
     <item>
       <title>1.Docker概述与安装</title>
       <link>https://opsbear2.com/docker/1.installation/</link>

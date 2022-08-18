@@ -12,10 +12,9 @@
 <meta name="generator" content="Hugo 0.93.2" />
 
 
-  <meta name="description" content="Package Software into Standardized Units for Development, Shipment and Deployment A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
-Container images become containers at runtime and in the case of Docker containers – images become containers when they run on Docker Engine." />
+  <meta name="description" content="# -*- coding: utf-8 -*- import sys import oss2 from itertools import islice # 阿里云账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM用户进行API访问或日常运维，请登录RAM控制台创建RAM用户。 auth = oss2.Auth(&#39;LTAIYnWR33enCcJA&#39;, &#39;pyVvErVWItwiooSK5JZb192s6wMSC7&#39;) # 填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。 service = oss2.Service(auth, &#39;https://oss-cn-hangzhou.aliyuncs.com&#39;) bucket = oss2.Bucket(auth, &#39;https://oss-cn-hangzhou.aliyuncs.com&#39;, &#39;lzgwydbbak&#39;) DAILY_INFO = &#39;/data1/celery_tasks/scripts/lzgwy_get_oss_dbbak.txt&#39; def describe_oss_directory(oss_directory): # 列举当前账号下的所有存储空间 file = open(DAILY_INFO, &#39;a&#39;, newline=&#39;&#39;) prefix = &#34;LZGWY/&#34; &#43; oss_directory &#43; &#34;/&#34; # print(prefix) for obj in oss2.ObjectIterator(bucket, prefix=prefix, delimiter=&#39;/&#39;): # print(type(obj)) if obj.is_prefix(): # 判断obj为文件夹 print(obj.key) else: # 判断obj为文件 print(obj.key) file.write(str(obj)) # object_name = &#39;LZGWY/2001/dragon-2001-dbbak-202206071312." />
 
-    <title>Docker | Welcome to Bear2&#39;s Secret Garden 💬🐻💬</title>
+    <title>10.oss | Welcome to Bear2&#39;s Secret Garden 💬🐻💬</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link
@@ -36,48 +35,50 @@ Container images become containers at runtime and in the case of Docker containe
     
   <meta
     property="og:title"
-    content="Docker"
+    content="10.oss"
   />
   <meta property="og:site_name" content="Welcome to Bear2's Secret Garden 💬🐻💬" />
-  <meta property="og:description" content="Package Software into Standardized Units for Development, Shipment and Deployment A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
-Container images become containers at runtime and in the case of Docker containers – images become containers when they run on Docker Engine." />
+  <meta property="og:description" content="# -*- coding: utf-8 -*- import sys import oss2 from itertools import islice # 阿里云账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM用户进行API访问或日常运维，请登录RAM控制台创建RAM用户。 auth = oss2.Auth(&#39;LTAIYnWR33enCcJA&#39;, &#39;pyVvErVWItwiooSK5JZb192s6wMSC7&#39;) # 填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。 service = oss2.Service(auth, &#39;https://oss-cn-hangzhou.aliyuncs.com&#39;) bucket = oss2.Bucket(auth, &#39;https://oss-cn-hangzhou.aliyuncs.com&#39;, &#39;lzgwydbbak&#39;) DAILY_INFO = &#39;/data1/celery_tasks/scripts/lzgwy_get_oss_dbbak.txt&#39; def describe_oss_directory(oss_directory): # 列举当前账号下的所有存储空间 file = open(DAILY_INFO, &#39;a&#39;, newline=&#39;&#39;) prefix = &#34;LZGWY/&#34; &#43; oss_directory &#43; &#34;/&#34; # print(prefix) for obj in oss2.ObjectIterator(bucket, prefix=prefix, delimiter=&#39;/&#39;): # print(type(obj)) if obj.is_prefix(): # 判断obj为文件夹 print(obj.key) else: # 判断obj为文件 print(obj.key) file.write(str(obj)) # object_name = &#39;LZGWY/2001/dragon-2001-dbbak-202206071312." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://opsbear2.com/docker/" />
+<meta property="og:url" content="https://opsbear2.com/afrontpage/10.oss/" />
 
-<meta property="article:section" content="Docker" />
+<meta property="article:section" content="Afrontpage" />
+    <meta
+      property="article:published_time"
+      content="2022-08-18T10:18:45+08:00"
+    />
     <meta
       property="article:modified_time"
-      content="2022-08-12T16:50:36+08:00"
+      content="2022-08-18T10:18:45+08:00"
     />
 
 
   <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Docker" />
-  <meta name="twitter:description" content="Package Software into Standardized Units for Development, Shipment and Deployment A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
-Container images become containers at runtime and in the case of Docker containers – images become containers when they run on Docker Engine." />
+<meta name="twitter:title" content="10.oss" />
+  <meta name="twitter:description" content="# -*- coding: utf-8 -*- import sys import oss2 from itertools import islice # 阿里云账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM用户进行API访问或日常运维，请登录RAM控制台创建RAM用户。 auth = oss2.Auth(&#39;LTAIYnWR33enCcJA&#39;, &#39;pyVvErVWItwiooSK5JZb192s6wMSC7&#39;) # 填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。 service = oss2.Service(auth, &#39;https://oss-cn-hangzhou.aliyuncs.com&#39;) bucket = oss2.Bucket(auth, &#39;https://oss-cn-hangzhou.aliyuncs.com&#39;, &#39;lzgwydbbak&#39;) DAILY_INFO = &#39;/data1/celery_tasks/scripts/lzgwy_get_oss_dbbak.txt&#39; def describe_oss_directory(oss_directory): # 列举当前账号下的所有存储空间 file = open(DAILY_INFO, &#39;a&#39;, newline=&#39;&#39;) prefix = &#34;LZGWY/&#34; &#43; oss_directory &#43; &#34;/&#34; # print(prefix) for obj in oss2.ObjectIterator(bucket, prefix=prefix, delimiter=&#39;/&#39;): # print(type(obj)) if obj.is_prefix(): # 判断obj为文件夹 print(obj.key) else: # 判断obj为文件 print(obj.key) file.write(str(obj)) # object_name = &#39;LZGWY/2001/dragon-2001-dbbak-202206071312." />
 
 
   <script type="application/ld+json">
   {
       "@context": "http://schema.org",
       "@type": "TechArticle",
-      "articleSection": "Docker",
-      "name": "Docker",
-      "url" : "https://opsbear2.com/docker/",
-      "headline": "Docker",
-      "description": "Package Software into Standardized Units for Development, Shipment and Deployment A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.\nContainer images become containers at runtime and in the case of Docker containers – images become containers when they run on Docker Engine.",
-      "wordCount" : "193",
+      "articleSection": "Afrontpage",
+      "name": "10.oss",
+      "url" : "https://opsbear2.com/afrontpage/10.oss/",
+      "headline": "10.oss",
+      "description": "# -*- coding: utf-8 -*- import sys import oss2 from itertools import islice # 阿里云账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM用户进行API访问或日常运维，请登录RAM控制台创建RAM用户。 auth = oss2.Auth(\u0027LTAIYnWR33enCcJA\u0027, \u0027pyVvErVWItwiooSK5JZb192s6wMSC7\u0027) # 填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https:\/\/oss-cn-hangzhou.aliyuncs.com。 service = oss2.Service(auth, \u0027https:\/\/oss-cn-hangzhou.aliyuncs.com\u0027) bucket = oss2.Bucket(auth, \u0027https:\/\/oss-cn-hangzhou.aliyuncs.com\u0027, \u0027lzgwydbbak\u0027) DAILY_INFO = \u0027\/data1\/celery_tasks\/scripts\/lzgwy_get_oss_dbbak.txt\u0027 def describe_oss_directory(oss_directory): # 列举当前账号下的所有存储空间 file = open(DAILY_INFO, \u0027a\u0027, newline=\u0027\u0027) prefix = \u0022LZGWY\/\u0022 \u002b oss_directory \u002b \u0022\/\u0022 # print(prefix) for obj in oss2.ObjectIterator(bucket, prefix=prefix, delimiter=\u0027\/\u0027): # print(type(obj)) if obj.is_prefix(): # 判断obj为文件夹 print(obj.key) else: # 判断obj为文件 print(obj.key) file.write(str(obj)) # object_name = \u0027LZGWY\/2001\/dragon-2001-dbbak-202206071312.",
+      "wordCount" : "113",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://opsbear2.com/docker/"
+          "@id": "https://opsbear2.com/afrontpage/10.oss/"
       },
       "copyrightHolder" : "Welcome to Bear2\u0027s Secret Garden 💬🐻💬",
       "copyrightYear" : "2022",
-      "dateCreated": "2022-08-12T16:50:36.00Z",
-      "datePublished": "0001-01-01T00:00:00.00Z",
-      "dateModified": "2022-08-12T16:50:36.00Z",
+      "dateCreated": "2022-08-18T10:18:45.00Z",
+      "datePublished": "2022-08-18T10:18:45.00Z",
+      "dateModified": "2022-08-18T10:18:45.00Z",
       "publisher":{
           "@type":"Organization",
           "name": "Welcome to Bear2's Secret Garden 💬🐻💬",
@@ -153,7 +154,7 @@ Container images become containers at runtime and in the case of Docker containe
   href="/custom.css"
   media="all"
 />
-  <link href="https://opsbear2.com/docker/" rel="canonical" type="text/html" />
+  <link href="https://opsbear2.com/afrontpage/10.oss/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -311,7 +312,7 @@ Container images become containers at runtime and in the case of Docker containe
               type="checkbox"
               
                 class="gdoc-nav__toggle" id="navtree-34d2b6cd"
-                
+                checked
               
             />
             <label
@@ -413,7 +414,7 @@ Container images become containers at runtime and in the case of Docker containe
                 <span class="flex">
                   <a
                     href="/afrontpage/10.oss/"
-                    class="gdoc-nav__entry"
+                    class="gdoc-nav__entry is-active"
                   >
                     10.oss
                   </a>
@@ -735,7 +736,7 @@ Container images become containers at runtime and in the case of Docker containe
               type="checkbox"
               
                 class="gdoc-nav__toggle" id="navtree-13855310"
-                checked
+                
               
             />
             <label
@@ -747,7 +748,7 @@ Container images become containers at runtime and in the case of Docker containe
                 <span class="flex">
                   <a
                     href="/docker/"
-                    class="gdoc-nav__entry is-active"
+                    class="gdoc-nav__entry"
                   >
                     Docker
                   </a>
@@ -1896,7 +1897,15 @@ Container images become containers at runtime and in the case of Docker containe
     
   
   
-    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>Welcome to Bear2's Secret Garden 💬🐻💬</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Docker</span><meta itemprop='position' content='2' /></li>
+    
+    
+    
+    
+  
+  
+    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>Welcome to Bear2's Secret Garden 💬🐻💬</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/afrontpage/' href='/afrontpage/'><span itemprop='name'>Afrontpage</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>10.oss</span><meta itemprop='position' content='3' /></li>
+  
+
   
 
   
@@ -1912,20 +1921,51 @@ Container images become containers at runtime and in the case of Docker containe
   <article
     class="gdoc-markdown gdoc-markdown__align--left"
   >
-    <h1>Docker</h1>
-    <p>Package Software into Standardized Units for Development, Shipment and Deployment
-A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.</p>
-<p>Container images become containers at runtime and in the case of Docker containers – images become containers when they run on Docker Engine. Available for both Linux and Windows-based applications, containerized software will always run the same, regardless of the infrastructure. Containers isolate software from its environment and ensure that it works uniformly despite differences for instance between development and staging.</p>
-<p>Docker containers that run on Docker Engine:</p>
-<p>Standard: Docker created the industry standard for containers, so they could be portable anywhere
-Lightweight: Containers share the machine’s OS system kernel and therefore do not require an OS per application, driving higher server efficiencies and reducing server and licensing costs
-Secure: Applications are safer in containers and Docker provides the strongest default isolation capabilities in the industry</p>
-<p><img
-  src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png"
-  alt="image-20220811175843533"
-  
-/></p>
-
+    <h1>10.oss</h1>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># -*- coding: utf-8 -*-</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">oss2</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">islice</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 阿里云账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM用户进行API访问或日常运维，请登录RAM控制台创建RAM用户。</span>
+</span></span><span class="line"><span class="cl"><span class="n">auth</span> <span class="o">=</span> <span class="n">oss2</span><span class="o">.</span><span class="n">Auth</span><span class="p">(</span><span class="s1">&#39;LTAIYnWR33enCcJA&#39;</span><span class="p">,</span> <span class="s1">&#39;pyVvErVWItwiooSK5JZb192s6wMSC7&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。</span>
+</span></span><span class="line"><span class="cl"><span class="n">service</span> <span class="o">=</span> <span class="n">oss2</span><span class="o">.</span><span class="n">Service</span><span class="p">(</span><span class="n">auth</span><span class="p">,</span> <span class="s1">&#39;https://oss-cn-hangzhou.aliyuncs.com&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">bucket</span> <span class="o">=</span> <span class="n">oss2</span><span class="o">.</span><span class="n">Bucket</span><span class="p">(</span><span class="n">auth</span><span class="p">,</span> <span class="s1">&#39;https://oss-cn-hangzhou.aliyuncs.com&#39;</span><span class="p">,</span> <span class="s1">&#39;lzgwydbbak&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">DAILY_INFO</span> <span class="o">=</span> <span class="s1">&#39;/data1/celery_tasks/scripts/lzgwy_get_oss_dbbak.txt&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">describe_oss_directory</span><span class="p">(</span><span class="n">oss_directory</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 列举当前账号下的所有存储空间</span>
+</span></span><span class="line"><span class="cl">    <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">DAILY_INFO</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">prefix</span> <span class="o">=</span> <span class="s2">&#34;LZGWY/&#34;</span> <span class="o">+</span> <span class="n">oss_directory</span> <span class="o">+</span> <span class="s2">&#34;/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print(prefix)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">oss2</span><span class="o">.</span><span class="n">ObjectIterator</span><span class="p">(</span><span class="n">bucket</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="n">prefix</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;/&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># print(type(obj))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">is_prefix</span><span class="p">():</span>  <span class="c1"># 判断obj为文件夹</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>  <span class="c1"># 判断obj为文件</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># object_name = &#39;LZGWY/2001/dragon-2001-dbbak-202206071312.tgz&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_oss_wget_url</span><span class="p">(</span><span class="n">object_name</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">url</span> <span class="o">=</span> <span class="n">bucket</span><span class="o">.</span><span class="n">sign_url</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="n">object_name</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">slash_safe</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;签名url的地址为：&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;| oss oss_directory  ----  查看oss对应目录文件&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="cl">              <span class="s1">&#39;| file filename  ----   oss文件名称&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;oss&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">describe_oss_directory</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;filename&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">get_oss_wget_url</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span></code></pre></div>
   </article>
 
 
