@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 22 Jul 2023 06:11:06 +0800</lastBuildDate><atom:link href="https://opsbear2.com/mydocs/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>1.kodi</title>
+      <title>KODI-家庭影音系统解决方案</title>
       <link>https://opsbear2.com/mydocs/1.kodi/</link>
       <pubDate>Sat, 22 Jul 2023 06:11:06 +0800</pubDate>
       
       <guid>https://opsbear2.com/mydocs/1.kodi/</guid>
-      <description>KODI-家庭影音系统解决方案  项目介绍 组件说明 快速部署  环境说明 数据流转 Alist挂载阿里云盘 Rclone映射云盘文件 Nastool刮削元数据          KODI-家庭影音系统解决方案     项目介绍      【项目名称】KODI-家庭影音系统解决方案
+      <description>KODI-家庭影音系统解决方案  项目介绍 组件说明 快速部署  环境说明 数据流转 Alist挂载阿里云盘 Rclone映射云盘文件 Nastool刮削元数据        KODI-家庭影音系统解决方案     项目介绍      【项目名称】KODI-家庭影音系统解决方案
 本项目旨在为家人提供流畅的视频资源播放体验。为实现这一目标，利用阿里云盘作为资源存储平台，Alist提供WebDAV协议方便访问，使用Rclone进行网络文件映射，Nastool负责刮削元数据。最后通过KODI媒体播放器在投影仪或电视上轻松播放视频，享受高效便捷的视听体验
 【视频介绍】视频传送门 🎬
 斥资8元，历时2天半，搭建4K私人家庭影院，纵享10T高清资源，从此实现观影自由 
