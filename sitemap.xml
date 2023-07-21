@@ -2,19 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://opsbear2.com/mydocs/1.kodi/</loc>
-    <lastmod>2023-07-22T05:19:00+08:00</lastmod>
-  </url><url>
-    <loc>https://opsbear2.com/mydocs/</loc>
-    <lastmod>2023-07-22T05:19:00+08:00</lastmod>
-  </url><url>
-    <loc>https://opsbear2.com/</loc>
-    <lastmod>2023-07-22T05:19:00+08:00</lastmod>
-  </url><url>
     <loc>https://opsbear2.com/docker/2.mirror/</loc>
     <lastmod>2022-08-12T16:50:36+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/docker/</loc>
+    <lastmod>2022-08-12T16:50:36+08:00</lastmod>
+  </url><url>
+    <loc>https://opsbear2.com/</loc>
     <lastmod>2022-08-12T16:50:36+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/afrontpage/9.color/</loc>
@@ -27,6 +21,9 @@
     <lastmod>2022-08-12T13:57:43+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/mydocs/blog/4.sitemap/</loc>
+    <lastmod>2022-08-05T18:25:13+08:00</lastmod>
+  </url><url>
+    <loc>https://opsbear2.com/mydocs/</loc>
     <lastmod>2022-08-05T18:25:13+08:00</lastmod>
   </url><url>
     <loc>https://opsbear2.com/mydocs/blog/</loc>
