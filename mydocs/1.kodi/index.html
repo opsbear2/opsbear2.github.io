@@ -12,8 +12,10 @@
 <meta name="generator" content="Hugo 0.93.2" />
 
 
-  <meta name="description" content="&quot;/entrypoint.sh&quot; 8 hours ago Up 7 hours 0.0.0.0:5244-&gt;5244/tcp, :::5244-&gt;5244/tcp, 5245/tcp alist   **查询初始密码** ```shell docker exec -it alist ./alist admin INFO[2023-07-21 19:55:09] reading config file: data/config.json INFO[2023-07-21 19:55:09] load config from env with prefix: ALIST_ INFO[2023-07-21 19:55:09] init logrus... INFO[2023-07-21 19:55:09] admin user&#39;s info: username: admin password: IcZOvMFKksJx #初始密码，登录控制台后修改新密码 挂载阿里云盘
-  登录控制台，初始密码参考./alist admin的password   修改密码   挂载阿里云盘，选择阿里云盘OPEN，添加刷新令牌，令牌获取方法参考 获取阿里云盘refresh_token   挂载完成后，可以看到阿里云盘的文件，如下图所示  Rclone映射云盘文件到本地      安装Rclone环境" />
+  <meta name="description" content="KODI-家庭影音系统解决方案  项目介绍 组件说明 快速部署  环境说明 数据流转 Alist挂载阿里云盘 Rclone映射云盘文件到本地          KODI-家庭影音系统解决方案     项目介绍      项目名称：KODI-家庭影音系统解决方案
+本项目旨在为家人提供流畅的视频资源播放体验。为实现这一目标，利用阿里云盘作为资源存储平台，Alist提供WebDAV协议方便访问，使用Rclone进行网络文
+件映射，Nastool负责刮削元数据。最后通过KODI媒体播放器在投影仪或电视上轻松播放视频，享受高效便捷的视听体验
+组件说明       阿里云盘：阿里云盘是一款速度快、不打扰、够安全、易于分享的网盘，你可以在这里存储、管理和探索内容，尽情打造丰富的数字世界 Alist：一个支持多种存储，支持网页浏览和 WebDAV 的文件列表程序，由 gin 和 Solidjs 驱动 Rclone: 一个用于管理云存储上的文件的命令行程序，它是云供应商 Web 存储接口的功能丰富的替代方案。超过 70 种云存储产品支持 rclone，包括 S3 对象存储、企业和消费者文件存储服务以及标准传输协议 Nastool: 一个专注于刮削媒体资源元数据的工具，能够自动添加详细描述和封面等信息，以优化资源管理和浏览效率 KODI：一款功能强大的媒体播放器，支持多种音视频格式，并提供丰富的插件和扩展功能。用户可将其安装在投影仪或电视上，从而轻松享受高品质的视频播放体验，丰富家庭娱乐生活  快速部署     环境说明       硬件环境：Centos 7." />
 
     <title>KODI-家庭影音系统解决方案 | Welcome to Bear2&#39;s Secret Garden 💬🐻💬</title>
 
@@ -39,8 +41,10 @@
     content="KODI-家庭影音系统解决方案"
   />
   <meta property="og:site_name" content="Welcome to Bear2's Secret Garden 💬🐻💬" />
-  <meta property="og:description" content="&#34;/entrypoint.sh&#34; 8 hours ago Up 7 hours 0.0.0.0:5244-&gt;5244/tcp, :::5244-&gt;5244/tcp, 5245/tcp alist   **查询初始密码** ```shell docker exec -it alist ./alist admin INFO[2023-07-21 19:55:09] reading config file: data/config.json INFO[2023-07-21 19:55:09] load config from env with prefix: ALIST_ INFO[2023-07-21 19:55:09] init logrus... INFO[2023-07-21 19:55:09] admin user&#39;s info: username: admin password: IcZOvMFKksJx #初始密码，登录控制台后修改新密码 挂载阿里云盘
-  登录控制台，初始密码参考./alist admin的password   修改密码   挂载阿里云盘，选择阿里云盘OPEN，添加刷新令牌，令牌获取方法参考 获取阿里云盘refresh_token   挂载完成后，可以看到阿里云盘的文件，如下图所示  Rclone映射云盘文件到本地      安装Rclone环境" />
+  <meta property="og:description" content="KODI-家庭影音系统解决方案  项目介绍 组件说明 快速部署  环境说明 数据流转 Alist挂载阿里云盘 Rclone映射云盘文件到本地          KODI-家庭影音系统解决方案     项目介绍      项目名称：KODI-家庭影音系统解决方案
+本项目旨在为家人提供流畅的视频资源播放体验。为实现这一目标，利用阿里云盘作为资源存储平台，Alist提供WebDAV协议方便访问，使用Rclone进行网络文
+件映射，Nastool负责刮削元数据。最后通过KODI媒体播放器在投影仪或电视上轻松播放视频，享受高效便捷的视听体验
+组件说明       阿里云盘：阿里云盘是一款速度快、不打扰、够安全、易于分享的网盘，你可以在这里存储、管理和探索内容，尽情打造丰富的数字世界 Alist：一个支持多种存储，支持网页浏览和 WebDAV 的文件列表程序，由 gin 和 Solidjs 驱动 Rclone: 一个用于管理云存储上的文件的命令行程序，它是云供应商 Web 存储接口的功能丰富的替代方案。超过 70 种云存储产品支持 rclone，包括 S3 对象存储、企业和消费者文件存储服务以及标准传输协议 Nastool: 一个专注于刮削媒体资源元数据的工具，能够自动添加详细描述和封面等信息，以优化资源管理和浏览效率 KODI：一款功能强大的媒体播放器，支持多种音视频格式，并提供丰富的插件和扩展功能。用户可将其安装在投影仪或电视上，从而轻松享受高品质的视频播放体验，丰富家庭娱乐生活  快速部署     环境说明       硬件环境：Centos 7." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://opsbear2.com/mydocs/1.kodi/" />
 
@@ -57,8 +61,10 @@
 
   <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="KODI-家庭影音系统解决方案" />
-  <meta name="twitter:description" content="&#34;/entrypoint.sh&#34; 8 hours ago Up 7 hours 0.0.0.0:5244-&gt;5244/tcp, :::5244-&gt;5244/tcp, 5245/tcp alist   **查询初始密码** ```shell docker exec -it alist ./alist admin INFO[2023-07-21 19:55:09] reading config file: data/config.json INFO[2023-07-21 19:55:09] load config from env with prefix: ALIST_ INFO[2023-07-21 19:55:09] init logrus... INFO[2023-07-21 19:55:09] admin user&#39;s info: username: admin password: IcZOvMFKksJx #初始密码，登录控制台后修改新密码 挂载阿里云盘
-  登录控制台，初始密码参考./alist admin的password   修改密码   挂载阿里云盘，选择阿里云盘OPEN，添加刷新令牌，令牌获取方法参考 获取阿里云盘refresh_token   挂载完成后，可以看到阿里云盘的文件，如下图所示  Rclone映射云盘文件到本地      安装Rclone环境" />
+  <meta name="twitter:description" content="KODI-家庭影音系统解决方案  项目介绍 组件说明 快速部署  环境说明 数据流转 Alist挂载阿里云盘 Rclone映射云盘文件到本地          KODI-家庭影音系统解决方案     项目介绍      项目名称：KODI-家庭影音系统解决方案
+本项目旨在为家人提供流畅的视频资源播放体验。为实现这一目标，利用阿里云盘作为资源存储平台，Alist提供WebDAV协议方便访问，使用Rclone进行网络文
+件映射，Nastool负责刮削元数据。最后通过KODI媒体播放器在投影仪或电视上轻松播放视频，享受高效便捷的视听体验
+组件说明       阿里云盘：阿里云盘是一款速度快、不打扰、够安全、易于分享的网盘，你可以在这里存储、管理和探索内容，尽情打造丰富的数字世界 Alist：一个支持多种存储，支持网页浏览和 WebDAV 的文件列表程序，由 gin 和 Solidjs 驱动 Rclone: 一个用于管理云存储上的文件的命令行程序，它是云供应商 Web 存储接口的功能丰富的替代方案。超过 70 种云存储产品支持 rclone，包括 S3 对象存储、企业和消费者文件存储服务以及标准传输协议 Nastool: 一个专注于刮削媒体资源元数据的工具，能够自动添加详细描述和封面等信息，以优化资源管理和浏览效率 KODI：一款功能强大的媒体播放器，支持多种音视频格式，并提供丰富的插件和扩展功能。用户可将其安装在投影仪或电视上，从而轻松享受高品质的视频播放体验，丰富家庭娱乐生活  快速部署     环境说明       硬件环境：Centos 7." />
 
 
   <script type="application/ld+json">
@@ -69,8 +75,8 @@
       "name": "KODI-家庭影音系统解决方案",
       "url" : "https://opsbear2.com/mydocs/1.kodi/",
       "headline": "KODI-家庭影音系统解决方案",
-      "description": "\u0022\/entrypoint.sh\u0022 8 hours ago Up 7 hours 0.0.0.0:5244-\u003e5244\/tcp, :::5244-\u003e5244\/tcp, 5245\/tcp alist   **查询初始密码** ```shell docker exec -it alist .\/alist admin INFO[2023-07-21 19:55:09] reading config file: data\/config.json INFO[2023-07-21 19:55:09] load config from env with prefix: ALIST_ INFO[2023-07-21 19:55:09] init logrus... INFO[2023-07-21 19:55:09] admin user\u0027s info: username: admin password: IcZOvMFKksJx #初始密码，登录控制台后修改新密码 挂载阿里云盘\n  登录控制台，初始密码参考.\/alist admin的password   修改密码   挂载阿里云盘，选择阿里云盘OPEN，添加刷新令牌，令牌获取方法参考 获取阿里云盘refresh_token   挂载完成后，可以看到阿里云盘的文件，如下图所示  Rclone映射云盘文件到本地      安装Rclone环境",
-      "wordCount" : "882",
+      "description": "KODI-家庭影音系统解决方案  项目介绍 组件说明 快速部署  环境说明 数据流转 Alist挂载阿里云盘 Rclone映射云盘文件到本地          KODI-家庭影音系统解决方案     项目介绍      项目名称：KODI-家庭影音系统解决方案\n本项目旨在为家人提供流畅的视频资源播放体验。为实现这一目标，利用阿里云盘作为资源存储平台，Alist提供WebDAV协议方便访问，使用Rclone进行网络文\n件映射，Nastool负责刮削元数据。最后通过KODI媒体播放器在投影仪或电视上轻松播放视频，享受高效便捷的视听体验\n组件说明       阿里云盘：阿里云盘是一款速度快、不打扰、够安全、易于分享的网盘，你可以在这里存储、管理和探索内容，尽情打造丰富的数字世界 Alist：一个支持多种存储，支持网页浏览和 WebDAV 的文件列表程序，由 gin 和 Solidjs 驱动 Rclone: 一个用于管理云存储上的文件的命令行程序，它是云供应商 Web 存储接口的功能丰富的替代方案。超过 70 种云存储产品支持 rclone，包括 S3 对象存储、企业和消费者文件存储服务以及标准传输协议 Nastool: 一个专注于刮削媒体资源元数据的工具，能够自动添加详细描述和封面等信息，以优化资源管理和浏览效率 KODI：一款功能强大的媒体播放器，支持多种音视频格式，并提供丰富的插件和扩展功能。用户可将其安装在投影仪或电视上，从而轻松享受高品质的视频播放体验，丰富家庭娱乐生活  快速部署     环境说明       硬件环境：Centos 7.",
+      "wordCount" : "966",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -1925,22 +1931,134 @@
     class="gdoc-markdown gdoc-markdown__align--left"
   >
     <h1>KODI-家庭影音系统解决方案</h1>
-    <pre><code>  &quot;/entrypoint.sh&quot;          8 hours ago    Up 7 hours             0.0.0.0:5244-&gt;5244/tcp, :::5244-&gt;5244/tcp, 5245/tcp   alist
-</code></pre>
-<pre tabindex="0"><code>
- 
-
-**查询初始密码**
-
-```shell
-docker exec -it alist ./alist admin
-INFO[2023-07-21 19:55:09] reading config file: data/config.json
-INFO[2023-07-21 19:55:09] load config from env with prefix: ALIST_
-INFO[2023-07-21 19:55:09] init logrus...
-INFO[2023-07-21 19:55:09] admin user&#39;s info:
-username: admin
-password: IcZOvMFKksJx #初始密码，登录控制台后修改新密码
-</code></pre><p><strong>挂载阿里云盘</strong></p>
+    <div class="gdoc-toc gdoc-toc__level--6">
+      <nav id="TableOfContents"><ul>
+        <li><a href="#kodi-家庭影音系统解决方案">KODI-家庭影音系统解决方案</a>
+          <ul>
+            <li><a href="#项目介绍">项目介绍</a></li>
+            <li><a href="#组件说明">组件说明</a></li>
+            <li><a href="#快速部署">快速部署</a>
+              <ul>
+                <li><a href="#环境说明">环境说明</a></li>
+                <li><a href="#数据流转">数据流转</a></li>
+                <li><a href="#alist挂载阿里云盘">Alist挂载阿里云盘</a></li>
+                <li><a href="#rclone映射云盘文件到本地">Rclone映射云盘文件到本地</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul></nav>
+      <hr />
+    </div>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="kodi-家庭影音系统解决方案">
+        KODI-家庭影音系统解决方案
+        <a data-clipboard-text="https://opsbear2.com/mydocs/1.kodi/#kodi-家庭影音系统解决方案" class="gdoc-page__anchor clip flex align-center" title="Anchor to: KODI-家庭影音系统解决方案" aria-label="Anchor to: KODI-家庭影音系统解决方案" href="#kodi-%e5%ae%b6%e5%ba%ad%e5%bd%b1%e9%9f%b3%e7%b3%bb%e7%bb%9f%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<div class="gdoc-page__anchorwrap">
+    <h3 id="项目介绍">
+        项目介绍
+        <a data-clipboard-text="https://opsbear2.com/mydocs/1.kodi/#项目介绍" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 项目介绍" aria-label="Anchor to: 项目介绍" href="#%e9%a1%b9%e7%9b%ae%e4%bb%8b%e7%bb%8d">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div>
+<hr>
+<p>项目名称：KODI-家庭影音系统解决方案</p>
+<p>本项目旨在为家人提供流畅的视频资源播放体验。为实现这一目标，利用阿里云盘作为资源存储平台，<code>Alist</code>提供<code>WebDAV</code>协议方便访问，使用<code>Rclone</code>进行网络文</p>
+<p>件映射，<code>Nastool</code>负责刮削元数据。最后通过<code>KODI</code>媒体播放器在投影仪或电视上轻松播放视频，享受高效便捷的视听体验</p>
+<div class="gdoc-page__anchorwrap">
+    <h3 id="组件说明">
+        组件说明
+        <a data-clipboard-text="https://opsbear2.com/mydocs/1.kodi/#组件说明" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 组件说明" aria-label="Anchor to: 组件说明" href="#%e7%bb%84%e4%bb%b6%e8%af%b4%e6%98%8e">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div>
+<hr>
+<ul>
+<li>阿里云盘：阿里云盘是一款速度快、不打扰、够安全、易于分享的网盘，你可以在这里存储、管理和探索内容，尽情打造丰富的数字世界</li>
+<li><code>Alist</code>：一个支持多种存储，支持网页浏览和 WebDAV 的文件列表程序，由 gin 和 Solidjs 驱动</li>
+<li><code>Rclone</code>:  一个用于管理云存储上的文件的命令行程序，它是云供应商 Web 存储接口的功能丰富的替代方案。超过 70 种云存储产品支持 rclone，包括 S3 对象存储、企业和消费者文件存储服务以及标准传输协议</li>
+<li><code>Nastool</code>: 一个专注于刮削媒体资源元数据的工具，能够自动添加详细描述和封面等信息，以优化资源管理和浏览效率</li>
+<li><code>KODI</code>：一款功能强大的媒体播放器，支持多种音视频格式，并提供丰富的插件和扩展功能。用户可将其安装在投影仪或电视上，从而轻松享受高品质的视频播放体验，丰富家庭娱乐生活</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h3 id="快速部署">
+        快速部署
+        <a data-clipboard-text="https://opsbear2.com/mydocs/1.kodi/#快速部署" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 快速部署" aria-label="Anchor to: 快速部署" href="#%e5%bf%ab%e9%80%9f%e9%83%a8%e7%bd%b2">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div>
+<div class="gdoc-page__anchorwrap">
+    <h4 id="环境说明">
+        环境说明
+        <a data-clipboard-text="https://opsbear2.com/mydocs/1.kodi/#环境说明" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 环境说明" aria-label="Anchor to: 环境说明" href="#%e7%8e%af%e5%a2%83%e8%af%b4%e6%98%8e">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h4>
+</div>
+<ul>
+<li>
+<p>硬件环境：Centos 7.9 *1 | 2cores | 4G | 40G云磁盘</p>
+</li>
+<li>
+<p>软件环境</p>
+<ul>
+<li>Docker 24.0.4</li>
+<li>Python 3.6.8</li>
+<li>fusermount  2.9.2</li>
+<li>rclone v1.63.1</li>
+</ul>
+</li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h4 id="数据流转">
+        数据流转
+        <a data-clipboard-text="https://opsbear2.com/mydocs/1.kodi/#数据流转" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 数据流转" aria-label="Anchor to: 数据流转" href="#%e6%95%b0%e6%8d%ae%e6%b5%81%e8%bd%ac">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h4>
+</div>
+<hr>
+<img src="https://cdn.jsdelivr.net/gh/opsbear2/ImagesForBlog@master/default/2023-07-22/20230722-033412.jpg" alt="示例图片" width="75%" height="75%" />
+<blockquote>
+<p>数据流转说明</p>
+</blockquote>
+<ol>
+<li>从各种影视网站或者<code>Telegram</code>频道转存资源到阿里云盘；</li>
+<li><code>Alist</code>挂载阿里云盘后支持<code>webdav</code>协议；</li>
+<li><code>rclone</code>工具使用<code>webdav</code>协议，将阿里云盘作为网络文件映射到服务器上，完成本地的读写；</li>
+<li><code>Nastool</code>启动后，控制台配置<code>IMDB</code>网站的<code>API Key</code>进行刮削，元数据直接远程落盘到阿里云盘；</li>
+<li><code>KODI</code> 安装到电视或者投影仪，通过<code>Alist</code>提供的<code>webdav</code>协议，播放影视资源</li>
+</ol>
+<div class="gdoc-page__anchorwrap">
+    <h4 id="alist挂载阿里云盘">
+        Alist挂载阿里云盘
+        <a data-clipboard-text="https://opsbear2.com/mydocs/1.kodi/#alist挂载阿里云盘" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Alist挂载阿里云盘" aria-label="Anchor to: Alist挂载阿里云盘" href="#alist%e6%8c%82%e8%bd%bd%e9%98%bf%e9%87%8c%e4%ba%91%e7%9b%98">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h4>
+</div>
+<p>服务器需要<code>docker</code>环境，参考：<a href="https://docs.docker.com/engine/install/centos/" target="_blank">docker官方文档</a></p>
+<p><strong>启动alist容器</strong></p>
+<pre tabindex="0"><code>docker run -d --restart=always -v /data/alist:/opt/alist/data -p 5244:5244 --name=&#34;alist&#34; xhofe/alist:latest
+</code></pre><p><strong>检查alist容器状态</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker ps -a <span class="p">|</span> grep alist
+</span></span><span class="line"><span class="cl">0163adad6f08   xhofe/alist:latest            <span class="s2">&#34;/entrypoint.sh&#34;</span>          <span class="m">8</span> hours ago    Up <span class="m">7</span> hours             0.0.0.0:5244-&gt;5244/tcp, :::5244-&gt;5244/tcp, 5245/tcp   alist
+</span></span></code></pre></div><p><strong>查询初始密码</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it alist ./alist admin
+</span></span><span class="line"><span class="cl">INFO<span class="o">[</span>2023-07-21 19:55:09<span class="o">]</span> reading config file: data/config.json
+</span></span><span class="line"><span class="cl">INFO<span class="o">[</span>2023-07-21 19:55:09<span class="o">]</span> load config from env with prefix: ALIST_
+</span></span><span class="line"><span class="cl">INFO<span class="o">[</span>2023-07-21 19:55:09<span class="o">]</span> init logrus...
+</span></span><span class="line"><span class="cl">INFO<span class="o">[</span>2023-07-21 19:55:09<span class="o">]</span> admin user<span class="err">&#39;</span>s info:
+</span></span><span class="line"><span class="cl">username: admin
+</span></span><span class="line"><span class="cl">password: IcZOvMFKksJx <span class="c1">#初始密码，登录控制台后修改新密码</span>
+</span></span></code></pre></div><p><strong>挂载阿里云盘</strong></p>
 <hr>
 <ol>
 <li>登录控制台，初始密码参考<code>./alist admin</code>的password</li>
@@ -1977,11 +2095,11 @@ password: IcZOvMFKksJx #初始密码，登录控制台后修改新密码
 <p>配置文件路径：<code>/root/.config/rclone/rclone.conf</code>，点开查看配置步骤</p>
 
 <div class="gdoc-expand">
-  <label class="gdoc-expand__head flex justify-between" for="736bb384-0">
+  <label class="gdoc-expand__head flex justify-between" for="736bb384-1">
     <span>配置详情</span>
     <span>...</span>
   </label>
-  <input id="736bb384-0" type="checkbox" class="gdoc-expand__control hidden" />
+  <input id="736bb384-1" type="checkbox" class="gdoc-expand__control hidden" />
   <div class="gdoc-markdown--nested gdoc-expand__content">
     <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rclone config
 </span></span><span class="line"><span class="cl">Current remotes:
