@@ -5,6 +5,16 @@
     <link>https://opsbear2.com/mydocs/</link>
     <description>Recent content in Mydocs on Welcome to Bear2&#39;s Secret Garden 💬🐻💬</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 05 Aug 2022 18:25:13 +0800</lastBuildDate><atom:link href="https://opsbear2.com/mydocs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Jul 2023 05:19:00 +0800</lastBuildDate><atom:link href="https://opsbear2.com/mydocs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KODI-家庭影音系统解决方案</title>
+      <link>https://opsbear2.com/mydocs/1.kodi/</link>
+      <pubDate>Sat, 22 Jul 2023 05:19:00 +0800</pubDate>
+      
+      <guid>https://opsbear2.com/mydocs/1.kodi/</guid>
+      <description>&amp;quot;/entrypoint.sh&amp;quot; 8 hours ago Up 7 hours 0.0.0.0:5244-&amp;gt;5244/tcp, :::5244-&amp;gt;5244/tcp, 5245/tcp alist   **查询初始密码** ```shell docker exec -it alist ./alist admin INFO[2023-07-21 19:55:09] reading config file: data/config.json INFO[2023-07-21 19:55:09] load config from env with prefix: ALIST_ INFO[2023-07-21 19:55:09] init logrus... INFO[2023-07-21 19:55:09] admin user&amp;#39;s info: username: admin password: IcZOvMFKksJx #初始密码，登录控制台后修改新密码 挂载阿里云盘
+  登录控制台，初始密码参考./alist admin的password   修改密码   挂载阿里云盘，选择阿里云盘OPEN，添加刷新令牌，令牌获取方法参考 获取阿里云盘refresh_token   挂载完成后，可以看到阿里云盘的文件，如下图所示  Rclone映射云盘文件到本地      安装Rclone环境</description>
+    </item>
+    
   </channel>
 </rss>
