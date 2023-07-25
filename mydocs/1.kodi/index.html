@@ -79,7 +79,7 @@
       "url" : "https://opsbear2.com/mydocs/1.kodi/",
       "headline": "Kodi-家庭影音系统解决方案",
       "description": "Kodi-家庭影院系统解决方案  项目介绍 组件说明 快速部署  环境说明 数据流转 Alist挂载阿里云盘 Rclone映射云盘文件 Nastool刮削元数据 Kodi播放高清视频   其他      Kodi-家庭影院系统解决方案     项目介绍      【项目名称】Kodi-家庭影院系统解决方案\n本项目旨在为家庭提供流畅高清视频资源的播放体验。为实现这一目标，利用阿里云盘作为资源存储平台，Alist提供WebDAV协议方便访问，使用Rclone进行网络文件映射，Nastool负责刮削元数据。最后通过Kodi媒体播放器在投影仪或电视上轻松播放视频，享受高效便捷的视听体验\n【视频介绍】视频传送门 🎬\n【斥资8元，历时2天半，搭建4K私人家庭影院，纵享10T高清资源，从此实现观影自由】 \n组件说明       Aliyunpan：阿里云盘是一款速度快|不打扰|够安全|易于分享的网盘，你可以在这里存储管理和探索内容，尽情打造丰富的数字世界 Alist：一个支持多种存储，支持网页浏览和 WebDAV 的文件列表程序，由 gin 和 Solidjs 驱动 Rclone: 一个用于管理云存储上的文件的命令行程序，它是云供应商 Web 存储接口的功能丰富的替代方案。超过 70 种云存储产品支持 rclone，包括 S3 对象存储、企业和消费者文件存储服务以及标准传输协议 Nastool: 一个专注于刮削媒体资源元数据的工具，能够自动添加详细描述和封面等信息，以优化资源管理和浏览效率 Kodi：一款功能强大的媒体播放器，支持多种音视频格式，并提供丰富的插件和扩展功能。用户可将其安装在投影仪或电视上，从而轻松享受高品质的视频播放体验，丰富家庭娱乐生活  快速部署     环境说明        硬件环境：Centos 7.",
-      "wordCount" : "1310",
+      "wordCount" : "1405",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -2419,8 +2419,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v /data1/aliyunpan/bear2:/media/  <span class="se">\ </span><span class="c1"># 媒体资源目录，即rclone挂载云盘的目录</span>
 </span></span><span class="line"><span class="cl">    -e <span class="nv">NASTOOL_AUTO_UPDATE</span><span class="o">=</span><span class="nb">false</span>  <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    --add-host api.themoviedb.org:52.84.18.87 <span class="se">\ </span><span class="c1"># tmdb自定义解析</span>
-</span></span><span class="line"><span class="cl">    --add-host image.tmdb.org:84.17.46.53 <span class="se">\ </span><span class="c1"># tmdb自定义解析</span>
-</span></span><span class="line"><span class="cl">    --add-host www.themoviedb.org:52.84.125.129 <span class="se">\ </span><span class="c1"># tmdb自定义解析</span>
+</span></span><span class="line"><span class="cl">		--add-host image.tmdb.org:84.17.46.53 <span class="se">\ </span><span class="c1"># tmdb自定义解析</span>
+</span></span><span class="line"><span class="cl">		--add-host www.themoviedb.org:52.84.125.129 <span class="se">\ </span><span class="c1"># tmdb自定义解析</span>
 </span></span><span class="line"><span class="cl">    --restart unless-stopped <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    nastool/nas-tools:latest
 </span></span></code></pre></div><p><strong>查看容器运行状态</strong></p>
@@ -2517,8 +2517,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># 挂载云盘</span>
 </span></span><span class="line"><span class="cl">rclone mount alist: /data1/aliyunpan --use-mmap --umask <span class="m">000</span> --allow-other --allow-non-empty --dir-cache-time 24h --cache-dir<span class="o">=</span>/home/cache --vfs-cache-mode full --buffer-size 512M --vfs-read-chunk-size 16M --vfs-read-chunk-size-limit 64M --vfs-cache-max-size 10G --daemon
 </span></span></code></pre></div><p>为方便重载磁盘，已将操作过程封装成脚本</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 使用方法</span>
-</span></span><span class="line"><span class="cl">sh rclone_tool.sh 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sh rclone_tool.sh 
 </span></span><span class="line"><span class="cl">Usage: sh rclone_tool.sh <span class="o">[</span>mount<span class="p">|</span>umount<span class="p">|</span>reload<span class="p">|</span>check<span class="o">]</span>
 </span></span></code></pre></div>
 <div class="gdoc-expand">
@@ -2576,27 +2575,77 @@
 </div>
 
 <p><font color=red>同样Nastool容器中的资源目录也有缓存，需要重启容器加载资源文件</font></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sh restart_nastool.sh <span class="c1"># 重启nastool容器</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sh nastool_manage.sh
+</span></span><span class="line"><span class="cl">Usage: sh nastool_manage.sh <span class="o">[</span>stop<span class="p">|</span>start<span class="p">|</span>check<span class="o">]</span>
 </span></span></code></pre></div>
 <div class="gdoc-expand">
-  <label class="gdoc-expand__head flex justify-between" for="2dff9c73-9">
+  <label class="gdoc-expand__head flex justify-between" for="a1a94105-9">
     <span>展开查看 </span>
-    <span>restart_nastool.sh</span>
+    <span>nastool_manage.sh</span>
   </label>
-  <input id="2dff9c73-9" type="checkbox" class="gdoc-expand__control hidden" />
+  <input id="a1a94105-9" type="checkbox" class="gdoc-expand__control hidden" />
   <div class="gdoc-markdown--nested gdoc-expand__content">
     <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 重启容器,用户刷新文件缓存</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># nastool管理工具</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">docker ps -a <span class="p">|</span>grep nas-tool <span class="p">|</span> awk  <span class="s1">'{print $NF}'</span> <span class="p">|</span> xargs  docker restart
+</span></span><span class="line"><span class="cl">usage<span class="o">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> -e <span class="s2">"\033[33mUsage: sh </span><span class="nv">$0</span><span class="s2"> [stop|start|check]\033[0m"</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">stop<span class="o">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> -e <span class="s2">"\033[33m>>> nastool is stopping, wait a minute\033[0m"</span>
+</span></span><span class="line"><span class="cl">    docker ps -a <span class="p">|</span>grep nas-tools-v2 <span class="p">|</span> awk  <span class="s1">'{print $NF}'</span> <span class="p">|</span> xargs  docker stop >/dev/null
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">start<span class="o">(){</span>
+</span></span><span class="line"><span class="cl">    docker ps -a <span class="p">|</span>grep nas-tools-v2 <span class="p">|</span> awk  <span class="s1">'{print $NF}'</span> <span class="p">|</span> xargs  docker start >/dev/null
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">check<span class="o">(){</span>
+</span></span><span class="line"><span class="cl">    netstat -nltp <span class="p">|</span>grep <span class="m">9092</span> >/dev/null <span class="o">&&</span> <span class="nb">echo</span> -e <span class="s2">"\033[32m>>> nastool is running\033[0m"</span> <span class="o">||</span> <span class="nb">echo</span> -e <span class="s2">"\033[33m>>> nastool has stopped\033[0m"</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">case</span> <span class="nv">$1</span> in
+</span></span><span class="line"><span class="cl">    stop<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        stop <span class="o">&&</span> check <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">    start<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        start <span class="o">&&</span> check<span class="p">;;</span>
+</span></span><span class="line"><span class="cl">    check<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        check<span class="p">;;</span>
+</span></span><span class="line"><span class="cl">    *<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        usage<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">esac</span>
 </span></span></code></pre></div>
   </div>
 </div>
 
-<ol start="5">
-<li>控制台右上角，打开【实时日志】查看刮削记录</li>
-</ol>
+<p><font color=red>调用刷新缓存脚本</font>
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="c6a4f06c-10">
+    <span>展开查看 </span>
+    <span>refresh.sh</span>
+  </label>
+  <input id="c6a4f06c-10" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 阿里云盘新增资源后,刷新rclone挂载本地网盘,重启nastool容器刷新文件缓存</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 关闭nastool容器</span>
+</span></span><span class="line"><span class="cl">sh /data1/nastool/bin/nastool_manage.sh stop
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重载rclone</span>
+</span></span><span class="line"><span class="cl">sh /data1/rclone/rclone_tool.sh reload
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动nastool容器</span>
+</span></span><span class="line"><span class="cl">sh /data1/nastool/bin/nastool_manage.sh start
+</span></span></code></pre></div>
+  </div>
+</div>
+
+5. 控制台右上角，打开【实时日志】查看刮削记录</p>
 <p><img
   src="https://cdn.jsdelivr.net/gh/opsbear2/ImagesForBlog@master/default/2023-07-22/20230722-112113.png"
   alt="image-20230722112113333"
